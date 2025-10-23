@@ -475,6 +475,16 @@
 	dir = 8
 	},
 /area/rogue/indoors/town/physician)
+"agb" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/natural/stone,
+/obj/item/natural/stone,
+/obj/item/natural/stone,
+/obj/item/natural/stone,
+/obj/item/natural/stone,
+/obj/item/natural/stone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors/town/magician)
 "agd" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
 /turf/open/floor/rogue/herringbone,
@@ -15293,6 +15303,10 @@
 	icon_state = "borderfall"
 	},
 /obj/machinery/light/rogue/wallfire/candle/blue/r,
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/reagent_containers/food/snacks/grown/berries/rogue,
+/obj/item/reagent_containers/food/snacks/grown/berries/rogue,
+/obj/item/reagent_containers/food/snacks/grown/berries/rogue,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/magician)
 "dUg" = (
@@ -20453,6 +20467,16 @@
 "fju" = (
 /turf/open/water/swamp,
 /area/rogue/under/cave)
+"fjz" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/ash,
+/obj/item/ash,
+/obj/item/ash,
+/obj/item/ash,
+/obj/item/ash,
+/obj/item/ash,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors/town/magician)
 "fjF" = (
 /obj/structure/fluff/walldeco/innsign,
 /turf/closed/wall/mineral/rogue/stonebrick,
@@ -67754,6 +67778,11 @@
 /obj/machinery/light/rogue/wallfire/candle/blue{
 	pixel_y = -32
 	},
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/magician)
 "rdk" = (
@@ -157177,7 +157206,7 @@ nyh
 hke
 aST
 dcf
-rDp
+fjz
 iSm
 ukG
 ukG
@@ -159889,7 +159918,7 @@ dGr
 hke
 aST
 dUf
-rDp
+agb
 iSm
 ukG
 ukG
