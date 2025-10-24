@@ -337,7 +337,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			var/agevetted = user.check_agevet()
 			dat += "<td style='width:33%;text-align:right'>"
-			dat += "<a href='?_src_=prefs;preference=agevet'><b>ВЕРЕФИЦИРОВАН:</b></a> [agevetted ? "<font color='#74cde0'>АГА!</font>" : "<font color='#897472'>НЕ-А?</font>"]"
+			dat += "<a href='?_src_=prefs;preference=agevet'><b>ВЕРИФИЦИРОВАН:</b></a> [agevetted ? "<font color='#74cde0'>АГА!</font>" : "<font color='#897472'>НЕ-А?</font>"]"
 			dat += "</td>"
 
 			dat += "</table>"
@@ -534,7 +534,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<a href='?_src_=prefs;preference=change_artist;task=input'>Изменить автора</a>"
 			dat += "<br><B>Галерея изображений:</b> <a href='?_src_=prefs;preference=img_gallery;task=input'>Добавить</a>"
 			dat+= "<a href='?_src_=prefs;preference=clear_gallery;task=input'>Очистить Галерею</a>"
-			dat += "<br><a href='?_src_=prefs;preference=ooc_preview;task=input'><b>Предворительный просмотр</b></a>"
+			dat += "<br><a href='?_src_=prefs;preference=ooc_preview;task=input'><b>Предварительный просмотр</b></a>"
 
 			dat += "<br><b>Элемент Снаряжения I:</b> <a href='?_src_=prefs;preference=loadout_item;task=input'>[loadout ? loadout.name : "Выбрать"]</a>"
 
@@ -789,9 +789,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 		if(SSticker.current_state <= GAME_STATE_PREGAME)
 			switch(N.ready)
 				if(PLAYER_NOT_READY)
-					dat += "<b>UNREADY</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>ГОТОВ</a>"
+					dat += "<b>НЕ ГОТОВ</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>ГОТОВ</a>"
 				if(PLAYER_READY_TO_PLAY)
-					dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>UNREADY</a> <b>НЕ ГОТОВ</b>"
+					dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>НЕ ГОТОВ</a> <b>ГОТОВ</b>"
 					log_game("([user || "NO KEY"]) readied as ([real_name])")
 		else
 			if(!is_active_migrant())
