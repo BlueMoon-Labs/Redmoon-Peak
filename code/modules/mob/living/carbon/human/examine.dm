@@ -103,12 +103,6 @@
 			else
 				. = list(span_info("ø ------------ ø\nThis is the <EM>[used_name]</EM>, the [race_name]."))
 
-		if(HAS_TRAIT(src, TRAIT_DNR) && src != user)
-			if(HAS_TRAIT(src, TRAIT_DEATHSIGHT))
-				. += span_danger("They extrude a pale aura. Their soul [user.stat == DEAD ? "was not" : "is not"] clean. This is it for them.")
-			else if(user.stat == DEAD)
-				. += span_danger("This was their only chance at lyfe.")
-
 		if(HAS_TRAIT(src, TRAIT_WITCH))
 			if(HAS_TRAIT(user, TRAIT_NOBLE) || HAS_TRAIT(user, TRAIT_INQUISITION) || HAS_TRAIT(user, TRAIT_WITCH))
 				. += span_warning("A witch! Their presence brings an unsettling aura.")
@@ -139,28 +133,28 @@
 		if(observer_privilege || get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
 			creampie = has_status_effect(/datum/status_effect/facial/internal)
 		if(facial && creampie)
-			var/facial_wet_or_dry = !facial?.has_dried_up ? "высохшим семенем" : "семенем"
+			var/facial_wet_or_dry = !facial?.has_dried_up ? "высохшей генитальной субстанцией" : "генитальной субстанцией"
 			var/creampie_wet_or_dry = !creampie?.has_dried_up ? "капает" : "стекает"
-			var/we_wet_or_dry = facial?.has_dried_up && creampie?.has_dried_up ? "высохшая семень" : "семень"
+			var/we_wet_or_dry = facial?.has_dried_up && creampie?.has_dried_up ? "высохшая генитальная субстанция" : "генитальная субстанция"
 			if(user != src && isliving(user))
 				var/mob/living/L = user
-				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [facial_wet_or_dry] and [creampie_wet_or_dry] [we_wet_or_dry]!") : span_warning("[m1] covered in something glossy!")
+				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("Лицо покрыто [facial_wet_or_dry]. С бёдер [creampie_wet_or_dry] [we_wet_or_dry]!") : span_warning("Всё тело измазано чем-то блестящим!")
 			else
-				. += span_aiprivradio("Лицо [m1] покрыто [facial_wet_or_dry] и на внутренней стороне бёдер [creampie_wet_or_dry] [we_wet_or_dry]!")
+				. += span_aiprivradio("Моё лицо покрыто [facial_wet_or_dry] и на внутренней стороне бёдер [creampie_wet_or_dry] [we_wet_or_dry]!")
 		else if(facial)
-			var/wet_or_dry = !facial?.has_dried_up ? "высохшим семенем" : "семенем"
+			var/wet_or_dry = !facial?.has_dried_up ? "высохшей генитальной субстанцией" : "генитальной субстанцией"
 			if(user != src && isliving(user))
 				var/mob/living/L = user
-				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("Лицо [m1] покрыто [wet_or_dry]!") : span_warning("Лицо [m1] намазано чем-то блестящим!")
+				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("Лицо покрыто [wet_or_dry]!") : span_warning("Лицо намазано чем-то блестящим!")
 			else
-				. += span_aiprivradio("[m1] [wet_or_dry]!")
+				. += span_aiprivradio("Моё лицо покрыто [wet_or_dry]!")
 		else if(creampie)
 			var/wet_or_dry = !creampie?.has_dried_up ? "капает" : "стекает"
 			if(user != src && isliving(user))
 				var/mob/living/L = user
-				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [wet_or_dry]!") : span_warning("Бёдра [m1] измазаны чем-то блестящим!")
+				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("С бёдер [wet_or_dry] генитальная субстанция!") : span_warning("Бёдра измазаны чем-то блестящим!")
 			else
-				. += span_aiprivradio("На внутренней стороне бёдер [m1] [wet_or_dry] семя!")
+				. += span_aiprivradio("На внутренней стороне бёдер [wet_or_dry] генитальная субстанция!")
 
 		//For tennite schism god-event
 		if(length(GLOB.tennite_schisms))
@@ -265,6 +259,19 @@
 					. += span_redtext("[m1] repugnant!")
 				if (THEY_THEM, THEY_THEM_F, IT_ITS)
 					. += span_redtext("[m1] repulsive!")
+		
+		// Shouldn't be able to tell they are unrevivable through a mask as a Necran
+		if(HAS_TRAIT(src, TRAIT_DNR) && src != user)
+			if(HAS_TRAIT(user, TRAIT_DEATHSIGHT))
+				. += span_danger("They extrude a pale aura. Their soul [src.stat == DEAD ? "was not" : "is not"] clean. This is it for them.")
+			else if(user.stat == DEAD)
+				. += span_danger("This was their only chance at lyfe.")
+
+	// Real medical role can tell at a glance it is a waste of time, but only if the Necra message don't come first.
+
+	if(user.get_skill_level(/datum/skill/misc/medicine) >= SKILL_LEVEL_EXPERT && src.stat == DEAD)
+		if(HAS_TRAIT(src, TRAIT_DNR) && src != user && !HAS_TRAIT(user, TRAIT_DEATHSIGHT)) // A lot of conditional to avoid a redundant message, but we also want unknown DNRs to be covered.
+			. += span_danger("Their body holds not even a glimmer of life. No medicine can bring them back.")
 
 	if (HAS_TRAIT(src, TRAIT_CRITICAL_WEAKNESS) && (!HAS_TRAIT(src, TRAIT_VAMP_DREAMS)))
 		if(isliving(user))

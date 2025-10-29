@@ -281,7 +281,10 @@
 /obj/item/rogueweapon/scabbard/sheath/weapon_check(mob/living/user, obj/item/A)
 	. = ..()
 	if(.)
-		if(!sheathe_icon)
+		if(!istype(A, /obj/item/rogueweapon))
+			return
+		var/obj/item/rogueweapon/sheathing = A
+		if(!sheathing.sheathe_icon)
 			return FALSE
 
 /obj/item/rogueweapon/scabbard/sheath/getonmobprop(tag)
@@ -512,8 +515,12 @@
 /obj/item/rogueweapon/scabbard/sheath/weapon_check(mob/living/user, obj/item/A)
 	. = ..()
 	if(.)
-		if(!sheathe_icon)
+		if(!istype(A, /obj/item/rogueweapon))
+			return
+		var/obj/item/rogueweapon/sheathing = A
+		if(!sheathing.sheathe_icon)
 			return FALSE
+
 
 /*
 	KAZENGUN
@@ -533,6 +540,13 @@
 	wdefense = 8
 
 	max_integrity = 0
+
+/obj/item/rogueweapon/scabbard/sword/kazengun/noparry
+	name = "ceremonial kazengun scabbard"
+	desc = "A simple wooden scabbard, trimmed with bronze. Unlike its steel cousins, this one cannot parry."
+	
+	valid_blade = /obj/item/rogueweapon/sword/long/kriegmesser/ssangsudo
+	can_parry = FALSE
 
 
 /obj/item/rogueweapon/scabbard/sword/kazengun/steel
