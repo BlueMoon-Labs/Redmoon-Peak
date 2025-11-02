@@ -2844,9 +2844,8 @@
 	},
 /area/rogue/under/cave/dungeon1/gethsmane/inner)
 "aJO" = (
-/obj/structure/flora/grass/green,
-/turf/open/floor/rogue/grasscold,
-/area/rogue/indoors/town/magician)
+/turf/closed/wall/mineral/rogue/stonebrick,
+/area/rogue/under/town/sewer)
 "aJW" = (
 /obj/structure/fluff/walldeco/chains{
 	icon_state = "chains8"
@@ -6993,12 +6992,6 @@
 /obj/item/flint,
 /turf/open/floor/rogue/tile/checkeralt,
 /area/rogue/indoors/town/steward)
-"bOc" = (
-/obj/machinery/light/rogue/wallfire/candle/blue{
-	pixel_y = -32
-	},
-/turf/open/water/bath,
-/area/rogue/indoors/town/magician)
 "bOf" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/spawner/lootdrop/roguetown/sewers,
@@ -15182,8 +15175,18 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "dQN" = (
-/obj/structure/flora/grass/both,
-/turf/open/floor/rogue/grasscold,
+/obj/structure/closet/crate/chest/crate,
+/obj/item/alch/berrypowder,
+/obj/item/alch/berrypowder,
+/obj/item/ash,
+/obj/item/ash,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
+/obj/item/reagent_containers/food/snacks/grown/fruit/blackberry,
+/obj/item/magic/artifact,
+/obj/item/magic/artifact,
+/turf/open/floor/rogue/church,
 /area/rogue/indoors/town/magician)
 "dQP" = (
 /obj/structure/well,
@@ -30879,9 +30882,16 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/tavern)
 "hKB" = (
-/obj/structure/bars,
-/turf/open/floor/rogue/concrete,
-/area/rogue/indoors/town/magician)
+/obj/effect/decal/edge{
+	color = "#3f3f3f";
+	dir = 8
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 8;
+	pixel_x = -10
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/exposed/town/keep)
 "hKD" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -36481,8 +36491,17 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave)
 "jfv" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/open/floor/rogue/grasscold,
+/obj/structure/closet/crate/chest/crate,
+/obj/item/natural/stone,
+/obj/item/natural/stone,
+/obj/item/natural/stone,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
+/obj/item/magic/obsidian,
+/obj/item/magic/obsidian,
+/obj/item/magic/obsidian,
+/turf/open/floor/rogue/church,
 /area/rogue/indoors/town/magician)
 "jfA" = (
 /obj/effect/decal/remains/human,
@@ -73761,9 +73780,15 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement/keep)
 "sws" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/mob/living/simple_animal/butterfly,
-/turf/open/floor/rogue/grasscold,
+/obj/structure/closet/crate/chest/crate,
+/obj/item/natural/stone,
+/obj/item/natural/stone,
+/obj/item/natural/stone,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
+/obj/item/rogueore/cinnabar,
+/obj/item/magic/melded/t1,
+/turf/open/floor/rogue/church,
 /area/rogue/indoors/town/magician)
 "swt" = (
 /turf/open/floor/carpet/red,
@@ -156146,8 +156171,8 @@ iSm
 gnP
 lXF
 ukG
+ukG
 nFM
-iSm
 iSm
 iSm
 rTw
@@ -156599,8 +156624,8 @@ rwC
 lXF
 ukG
 ukG
+ukG
 iSm
-aJO
 iSm
 oBt
 pBV
@@ -157051,8 +157076,8 @@ vZo
 lXF
 ukG
 ukG
+ukG
 anI
-sws
 iSm
 oBt
 esv
@@ -157501,10 +157526,10 @@ iSm
 aPk
 iSm
 iSm
-rvB
+iSm
+ukG
 ukG
 anI
-jfv
 iSm
 rTw
 qsq
@@ -157951,12 +157976,12 @@ xVh
 xVh
 xVh
 nyh
+xVh
 hke
 iSm
 ukG
 ukG
 anI
-sws
 iSm
 ahp
 nsm
@@ -158404,11 +158429,11 @@ aST
 aST
 aST
 xVh
+aST
 tir
 ukG
 ukG
 iSm
-dQN
 iSm
 ogs
 ogs
@@ -158856,9 +158881,11 @@ aST
 aST
 aST
 xVh
+dQN
 iSm
 ukG
 ukG
+ukG
 iSm
 iSm
 iSm
@@ -158869,9 +158896,7 @@ iSm
 iSm
 iSm
 iSm
-iSm
-iSm
-ogs
+bVo
 cqm
 ylh
 mMx
@@ -159308,12 +159333,13 @@ jNJ
 aST
 aST
 xVh
+jfv
 iSm
 hMg
-nFM
+ukG
+ukG
 iSm
 kak
-iSm
 iSm
 iDb
 oRv
@@ -159322,8 +159348,7 @@ lZr
 ftw
 oRv
 bGU
-iSm
-ogs
+bVo
 cqm
 ylh
 mMx
@@ -159760,12 +159785,13 @@ aST
 aST
 aST
 xVh
+sws
 iSm
 ukG
 ukG
-xVf
 ukG
 xVf
+ukG
 iSm
 oRv
 oRv
@@ -159774,8 +159800,7 @@ aIt
 ftw
 ftw
 oRv
-iSm
-ogs
+bVo
 cqm
 ylh
 mMx
@@ -160212,6 +160237,7 @@ aST
 aST
 tPf
 xVh
+aST
 tir
 ukG
 ukG
@@ -160226,8 +160252,7 @@ ftw
 ftw
 oRv
 ftw
-iSm
-ogs
+bVo
 cqm
 ylh
 mMx
@@ -160663,13 +160688,14 @@ xVh
 xVh
 xVh
 dGr
+xVh
 hke
 iSm
 ukG
 ukG
-fZC
 ukG
 fZC
+ukG
 iSm
 oRv
 xuk
@@ -160678,8 +160704,7 @@ ftw
 ftw
 ftw
 ftw
-iSm
-ogs
+bVo
 cqm
 urZ
 mMx
@@ -161117,11 +161142,12 @@ iSm
 iSm
 iSm
 iSm
+iSm
 rvB
+ukG
 ukG
 iSm
 lTE
-iSm
 iSm
 dqe
 oRv
@@ -161130,8 +161156,7 @@ rfS
 ftw
 ftw
 qbb
-iSm
-ogs
+bVo
 cqm
 ylh
 mMx
@@ -161569,8 +161594,10 @@ fZH
 fZH
 urk
 iSm
+iSm
 ukG
-nFM
+ukG
+ukG
 iSm
 iSm
 iSm
@@ -161581,9 +161608,7 @@ iSm
 iSm
 iSm
 iSm
-iSm
-iSm
-ogs
+bVo
 cqm
 urZ
 mMx
@@ -162020,11 +162045,11 @@ aew
 faH
 faH
 faH
+faH
 iSm
 ukG
 ukG
-iSm
-ogs
+bVo
 ogs
 ogs
 ogs
@@ -162472,12 +162497,12 @@ faH
 faH
 faH
 faH
+faH
 bsQ
 ukG
 ukG
-iSm
+aJO
 gau
-iZp
 iZp
 iZp
 iZp
@@ -162924,13 +162949,13 @@ wfO
 wfO
 wfO
 wfO
+wfO
 iSm
 ukG
 ukG
-iSm
+aJO
 dlK
 urZ
-ylh
 urZ
 ylh
 ylh
@@ -163376,11 +163401,11 @@ wfO
 wfO
 wfO
 wfO
+wfO
 iSm
 ukG
 ukG
-hKB
-mMx
+hKQ
 mMx
 mMx
 mMx
@@ -163827,14 +163852,14 @@ iSm
 nDY
 wfO
 wfO
-bOc
+wfO
+wfO
 iSm
 yes
 xIm
-iSm
+aJO
 dlK
 ylh
-urZ
 ylh
 mMx
 urZ
@@ -164284,9 +164309,9 @@ iSm
 iSm
 iSm
 iSm
+aJO
 ltb
 iZp
-sIr
 vVx
 dVJ
 fsV
@@ -264166,10 +264191,10 @@ bge
 bge
 bge
 bge
-nCI
-dru
-dru
-dru
+eFA
+hKB
+hKB
+hKB
 pgu
 hgU
 hgU
