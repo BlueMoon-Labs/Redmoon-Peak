@@ -8,6 +8,7 @@
 // END_PREFERENCES
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
+#include "_maps\ctf.dm"
 #include "_maps\map_files\generic\CentCom.dmm"
 #include "_maps\templates\arcyne_fortress.dm"
 #include "_maps\templates\bog_shack_small.dm"
@@ -3071,4 +3072,6 @@
 #include "modular_redmoon\modules\overseers_equipment\code\clothing.dm"
 #include "modular_redmoon\modules\overseers_equipment\code\inqshop.dm"
 #include "modular_redmoon\modules\overseers_equipment\code\jobs\puritan.dm"
+#include "modular_redmoon\rogue_fight\Azure_Dawn.dm"
+#include "modular_redmoon\rogue_fight\Hartfield.dm"
 // END_INCLUDE
