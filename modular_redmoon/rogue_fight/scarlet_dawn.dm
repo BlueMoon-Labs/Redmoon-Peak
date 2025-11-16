@@ -1,5 +1,5 @@
 /datum/job/roguetown/captain/ctf_north
-	title = "Heartfelt Knight Captain"
+	title = "Scarlet Dawn Knight Captain"
 	total_positions = 1
 	spawn_positions = 1
 
@@ -11,9 +11,12 @@
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/knight/ctf_north
-	title = "Heartfelt Knight"
+	title = "Scarlet Dawn Knight"
 	total_positions = 5
 	spawn_positions = 5
+	always_show_on_latechoices = TRUE
+	job_reopens_slots_on_death = TRUE
+	min_pq = 0
 
 /datum/job/roguetown/knight/north/after_spawn(mob/living/L, mob/M, latejoin)
 	. = ..()
@@ -24,7 +27,7 @@
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/magician/ctf_north
-	title = "Heartfelt Caster"
+	title = "Scarlet Dawn Caster"
 	total_positions = 5
 	spawn_positions = 5
 
@@ -36,7 +39,7 @@
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/templar/ctf_north
-	title = "Heartfelt Templar"
+	title = "Scarlet Dawn Templar"
 	total_positions = 5
 	spawn_positions = 5
 
@@ -48,7 +51,7 @@
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/manorguard/ctf_north
-	title = "Heartfelt Footman"
+	title = "Scarlet Dawn Footman"
 	total_positions = 100
 	spawn_positions = 100
 
@@ -60,7 +63,7 @@
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/guildmaster/ctf_north
-	title = "Heartfelt Guildmaster"
+	title = "Scarlet Dawn Guildmaster"
 	total_positions = 5
 	spawn_positions = 5
 
