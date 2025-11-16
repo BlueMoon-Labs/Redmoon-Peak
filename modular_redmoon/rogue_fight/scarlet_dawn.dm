@@ -37,8 +37,8 @@
 
 /datum/job/roguetown/magician/ctf_south
 	title = "Scarlet Dawn Caster"
-	total_positions = 5
-	spawn_positions = 5
+	total_positions = 1
+	spawn_positions = 1
 
 /datum/job/roguetown/magician/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
