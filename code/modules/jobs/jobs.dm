@@ -167,14 +167,16 @@ GLOBAL_LIST_INIT(roguewar_positions, list(
 ))
 
 GLOBAL_LIST_INIT(roguefight_positions, list(
-	"Red Captain",
-	"Red Caster",
-	"Red Ranger",
-	"Red Fighter",
-	"Green Captain",
-	"Green Caster",
-	"Green Ranger",
-	"Green Fighter",
+	"Hartfield Captain",
+	"Hartfield Caster",
+	"Hartfield Ranger",
+	"Hartfield Fighter",
+	"Hartfield Guildmaster",
+	"Azure Dawn Captain",
+	"Azure Dawn Caster",
+	"Azure Dawn Ranger",
+	"Azure Dawn Fighter",
+	"Azure Dawn Guildmaster"
 ))
 
 //This list is used to prevent the duke from stripping nobility from certain jobs that aren't intrinsically a part of the town.
@@ -205,6 +207,7 @@ GLOBAL_LIST_INIT(job_assignment_order, get_job_assignment_order())
 	sorting_order += GLOB.yeoman_positions
 	sorting_order += GLOB.peasant_positions
 	sorting_order += GLOB.youngfolk_positions
+	sorting_order += GLOB.roguefight_positions
 	return sorting_order
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(

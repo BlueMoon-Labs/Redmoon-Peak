@@ -21,6 +21,7 @@
 	var/traits = null
 	var/space_ruin_levels = 7
 	var/space_empty_levels = 1
+	var/list/job_override = list()
 
 	/// List of unit tests that are skipped when running this map
 	var/list/skipped_tests
@@ -114,7 +115,13 @@
 	else if (!isnull(traits))
 		log_world("map_config traits is not a list!")
 		return
-
+//REDMOON EDIT START
+	if (islist(json["job_override"]))
+		job_override += json["job_override"]
+	else
+		log_world("map_config job_override is not a list!")
+		return
+//REDMOON EDIT END
 	var/temp = json["space_ruin_levels"]
 	if (isnum(temp))
 		space_ruin_levels = temp

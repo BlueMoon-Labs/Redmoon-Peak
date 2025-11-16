@@ -1,32 +1,37 @@
-/datum/job/roguetown/captain/ctf/north
+/datum/job/roguetown/captain/ctf_north
 	title = "Hartfield Captain" 
+	catego
 
-/datum/job/roguetown/captain/ctf/north/after_spawn(mob/living/H, mob/M, latejoin)
+/datum/job/roguetown/captain/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
+		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
 		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
 		H.put_in_hands(key, forced = TRUE)
 
-/datum/job/roguetown/magician/ctf/north
+/datum/job/roguetown/magician/ctf_north
 	title = "Hartfield Caster"
 
-/datum/job/roguetown/magician/ctf/north/after_spawn(mob/living/H, mob/M, latejoin)
+/datum/job/roguetown/magician/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
+		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
 		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
 		H.put_in_hands(key, forced = TRUE)
 
-/datum/job/roguetown/adventurer/ctf/north
+/datum/job/roguetown/adventurer/ctf_north
 	title = "Hartfield Ranger"
 
-/datum/job/roguetown/adventurer/ctf/north/after_spawn(mob/living/H, mob/M, latejoin)
+/datum/job/roguetown/adventurer/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
+		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
 		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
 		H.put_in_hands(key, forced = TRUE)
 
-/datum/job/roguetown/knight/ctf/north
+/datum/job/roguetown/knight/ctf_north
 	title = "Hartfield Fighter"
+	always_show_on_latechoices = 1
 
 	job_subclasses = list(
 		/datum/advclass/knight/heavy,
@@ -37,16 +42,18 @@
 /datum/job/roguetown/knight/north/after_spawn(mob/living/L, mob/M, latejoin)
 	. = ..()
 	if(L)
+		L.mind.add_antag_datum(/datum/antagonist/ctf/north)
 		var/mob/living/carbon/human/H = L
 		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
 		H.put_in_hands(key, forced = TRUE)
 
-/datum/job/roguetown/guildmaster/ctf/north
+/datum/job/roguetown/guildmaster/ctf_north
 	title = "Hartfield Guildmaster"
 
-/datum/job/roguetown/guildmaster/ctf/north/after_spawn(mob/living/H, mob/M, latejoin)
+/datum/job/roguetown/guildmaster/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
+		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
 		var/obj/item/roguekey/manor/ctf/key = new /obj/item/roguekey/manor/ctf/north(src)
 		H.put_in_hands(key, forced = TRUE)
 		H.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, SKILL_EXP_LEGENDARY)

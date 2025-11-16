@@ -33,6 +33,13 @@ GLOBAL_LIST_EMPTY(cmode_tracks_by_name)
 	var/credits
 	var/musicpath = list()
 
+/datum/combat_music/crazy_necross
+	name = "Crazy Necross"
+	desc = ""
+	shortname = "Necross"
+	credits = "Vangers Gold Edition Soundtrack (2007) MP3 Crazy Necross"
+	musicpath = list('sound/music/crazy_necross.ogg')
+
 // Shit WILL break if you change /default's typepath. Don't do it.
 /datum/combat_music/default
 	name = "Default"

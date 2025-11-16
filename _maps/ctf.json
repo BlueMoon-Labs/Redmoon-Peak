@@ -2,9 +2,20 @@
     "map_name": "CTF HartField VS Azure Dawn",
     "map_path": "map_files/ctf",
     "map_file": ["ctf.dmm"],
-	"traits": [{"Up": true}, {"Up": true, "Down": true}, {"Up": true, "Down": true}, {"Up": true, "Down": true}, {"Down": true}],
+	"traits": [{"Up": true}, {"Up": true, "Down": true}, {"Up": true, "Down": true}],
 	"minetype": null,
 	"space_empty_levels": 0,
 	"space_ruin_levels": 0,
+	"job_override": ["/datum/job/roguetown/captain/ctf", 
+					"/datum/job/roguetown/magician/ctf",
+					"/datum/job/roguetown/adventurer/ctf",
+					"/datum/job/roguetown/knight/ctf",
+					"/datum/job/roguetown/guildmaster/ctf",
+					"/datum/job/roguetown/captain/ctf/north", 
+					"/datum/job/roguetown/magician/ctf/north",
+					"/datum/job/roguetown/adventurer/ctf/north",
+					"/datum/job/roguetown/knight/ctf/north",
+					"/datum/job/roguetown/guildmaster/ctf/north"
+				],
 	"shuttles": {}
 }
