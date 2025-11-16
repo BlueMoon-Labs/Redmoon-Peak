@@ -41,7 +41,7 @@ SUBSYSTEM_DEF(job)
 /datum/controller/subsystem/job/proc/SetupOccupations(faction = "Station")
 	occupations = list()
 	var/list/all_jobs = subtypesof(/datum/job/roguetown)
-	if(SSmapping.config.job_override)
+	if(SSmapping.config.is_ctf)
 		all_jobs = SSmapping.config.job_override
 	if(!all_jobs.len)
 		to_chat(world, span_boldannounce("Error setting up jobs, no job datums found"))

@@ -4,6 +4,7 @@
     "map_file": ["ctf.dmm"],
 	"traits": [{"Up": true}, {"Up": true, "Down": true}, {"Up": true, "Down": true}],
 	"minetype": null,
+	"is_ctf":true,
 	"space_empty_levels": 0,
 	"space_ruin_levels": 0,
 	"job_override": ["/datum/job/roguetown/captain/ctf_south", 

@@ -12,6 +12,7 @@
 	var/config_min_users = 0
 	var/voteweight = 1
 	var/votable = FALSE
+	var/is_ctf
 
 	// Config actually from the JSON - should default to Dun World
 	var/map_name = "Dun World"
@@ -118,6 +119,7 @@
 //REDMOON EDIT START
 	if (islist(json["job_override"]))
 		job_override += json["job_override"]
+	is_ctf = json["is_ctf"]
 //REDMOON EDIT END
 	var/temp = json["space_ruin_levels"]
 	if (isnum(temp))
