@@ -1,16 +1,16 @@
-/datum/job/roguetown/captain/ctf_north
+/datum/job/roguetown/captain/ctf_south
 	title = "Scarlet Dawn Knight Captain"
 	total_positions = 1
 	spawn_positions = 1
 
-/datum/job/roguetown/captain/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
+/datum/job/roguetown/captain/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
 		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
 		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
 		H.put_in_hands(key, forced = TRUE)
 
-/datum/job/roguetown/knight/ctf_north
+/datum/job/roguetown/knight/ctf_south
 	title = "Scarlet Dawn Knight"
 	total_positions = 5
 	spawn_positions = 5
@@ -26,48 +26,48 @@
 		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
 		H.put_in_hands(key, forced = TRUE)
 
-/datum/job/roguetown/magician/ctf_north
+/datum/job/roguetown/magician/ctf_south
 	title = "Scarlet Dawn Caster"
 	total_positions = 5
 	spawn_positions = 5
 
-/datum/job/roguetown/magician/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
+/datum/job/roguetown/magician/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
 		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
 		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
 		H.put_in_hands(key, forced = TRUE)
 
-/datum/job/roguetown/templar/ctf_north
+/datum/job/roguetown/templar/ctf_south
 	title = "Scarlet Dawn Templar"
 	total_positions = 5
 	spawn_positions = 5
 
-/datum/job/roguetown/templar/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
+/datum/job/roguetown/templar/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
 		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
 		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
 		H.put_in_hands(key, forced = TRUE)
 
-/datum/job/roguetown/manorguard/ctf_north
+/datum/job/roguetown/manorguard/ctf_south
 	title = "Scarlet Dawn Footman"
 	total_positions = 100
 	spawn_positions = 100
 
-/datum/job/roguetown/manorguard/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
+/datum/job/roguetown/manorguard/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
 		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
 		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
 		H.put_in_hands(key, forced = TRUE)
 
-/datum/job/roguetown/guildmaster/ctf_north
+/datum/job/roguetown/guildmaster/ctf_south
 	title = "Scarlet Dawn Guildmaster"
 	total_positions = 5
 	spawn_positions = 5
 
-/datum/job/roguetown/guildmaster/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
+/datum/job/roguetown/guildmaster/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
 		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
