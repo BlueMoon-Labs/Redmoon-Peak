@@ -453,7 +453,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue)
 "iy" = (
-/turf/open/floor/rogue/rooftop/green/north,
+/turf/closed/wall/mineral/rogue/tent,
 /area/rogue)
 "iQ" = (
 /turf/closed/wall/mineral/rogue/stone,
@@ -1339,6 +1339,10 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
+"xh" = (
+/obj/structure/fluff/railing/fence,
+/turf/open/floor/rogue/wood/nosmooth,
+/area/rogue)
 "xm" = (
 /obj/effect/decal/cobbleedge,
 /turf/open/floor/rogue/cobble/mossy,
@@ -22468,7 +22472,7 @@ SQ
 li
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -22598,7 +22602,7 @@ SQ
 Km
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -22728,7 +22732,7 @@ SQ
 Km
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -22858,7 +22862,7 @@ SQ
 Km
 nV
 cP
-dy
+xh
 SQ
 SQ
 SQ
@@ -22988,7 +22992,7 @@ SQ
 WD
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -23118,7 +23122,7 @@ SQ
 Un
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -23248,7 +23252,7 @@ SQ
 Km
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -23378,7 +23382,7 @@ SQ
 Km
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -23508,7 +23512,7 @@ SQ
 Ox
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -23638,7 +23642,7 @@ SQ
 Un
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -23768,7 +23772,7 @@ SQ
 li
 nV
 cP
-dy
+xh
 SQ
 SQ
 SQ
@@ -23898,7 +23902,7 @@ SQ
 Km
 nV
 Ra
-dy
+xh
 SQ
 SQ
 SQ
@@ -24028,7 +24032,7 @@ SQ
 RT
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -24158,7 +24162,7 @@ SQ
 Un
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -24288,7 +24292,7 @@ SQ
 Km
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -24418,7 +24422,7 @@ SQ
 Km
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -24548,7 +24552,7 @@ SQ
 WD
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -24678,7 +24682,7 @@ SQ
 Un
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -24808,7 +24812,7 @@ SQ
 Km
 nV
 cP
-dy
+xh
 SQ
 SQ
 SQ
@@ -24938,7 +24942,7 @@ SQ
 rs
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -25068,7 +25072,7 @@ SQ
 uP
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
@@ -25198,7 +25202,7 @@ SQ
 li
 nV
 nV
-dy
+xh
 SQ
 SQ
 SQ
