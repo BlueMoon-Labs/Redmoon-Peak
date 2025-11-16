@@ -1,6 +1,7 @@
 /datum/job/roguetown/captain/ctf_north
-	title = "Hartfield Captain" 
-	catego
+	title = "Hartfield Captain"
+	total_positions = 1
+	spawn_positions = 1
 
 /datum/job/roguetown/captain/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
@@ -11,6 +12,8 @@
 
 /datum/job/roguetown/magician/ctf_north
 	title = "Hartfield Caster"
+	total_positions = 3
+	spawn_positions = 3
 
 /datum/job/roguetown/magician/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
@@ -21,6 +24,8 @@
 
 /datum/job/roguetown/adventurer/ctf_north
 	title = "Hartfield Ranger"
+	total_positions = 5
+	spawn_positions = 5
 
 /datum/job/roguetown/adventurer/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
@@ -31,8 +36,11 @@
 
 /datum/job/roguetown/knight/ctf_north
 	title = "Hartfield Fighter"
-	always_show_on_latechoices = 1
-
+	total_positions = 90
+	spawn_positions = 90
+	always_show_on_latechoices = TRUE
+	job_reopens_slots_on_death = TRUE
+	min_pq = 0
 	job_subclasses = list(
 		/datum/advclass/knight/heavy,
 		/datum/advclass/knight/footknight,
@@ -49,6 +57,8 @@
 
 /datum/job/roguetown/guildmaster/ctf_north
 	title = "Hartfield Guildmaster"
+	total_positions = 3
+	spawn_positions = 3
 
 /datum/job/roguetown/guildmaster/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()

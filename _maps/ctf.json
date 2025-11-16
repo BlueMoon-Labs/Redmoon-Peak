@@ -11,11 +11,11 @@
 					"/datum/job/roguetown/adventurer/ctf",
 					"/datum/job/roguetown/knight/ctf",
 					"/datum/job/roguetown/guildmaster/ctf",
-					"/datum/job/roguetown/captain/ctf/north", 
-					"/datum/job/roguetown/magician/ctf/north",
-					"/datum/job/roguetown/adventurer/ctf/north",
-					"/datum/job/roguetown/knight/ctf/north",
-					"/datum/job/roguetown/guildmaster/ctf/north"
+					"/datum/job/roguetown/captain/ctf_north", 
+					"/datum/job/roguetown/magician/ctf_north",
+					"/datum/job/roguetown/adventurer/ctf_north",
+					"/datum/job/roguetown/knight/ctf_north",
+					"/datum/job/roguetown/guildmaster/ctf_north"
 				],
 	"shuttles": {}
 }
