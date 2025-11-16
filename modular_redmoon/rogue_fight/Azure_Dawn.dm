@@ -21,15 +21,15 @@
 		SSblackbox.record_feedback("tally", "ctf_flag", 1, "End Round")
 
 /obj/structure/fluff/walldeco/customflag/ctf/Azure_Dawn
-	name = "Azure Dawn flag"
+	name = "Scarlet Dawn flag"
 
-/obj/structure/fluff/walldeco/customflag/ctf/Hartfield
-	name = "Hartfield flag"
+/obj/structure/fluff/walldeco/customflag/ctf/Heartfelt
+	name = "Heartfelt flag"
 
 /datum/antagonist/ctf
-	name = "Azure Dawn warrior"
+	name = "Scarlet Dawn warrior"
 	antag_hud_name = "hog-blue-1"
-	antagpanel_category = "Azure Dawn Warrior's"
+	antagpanel_category = "Scarlet Dawn Warrior's"
 	var/team_name = "Алый рассвет"
 	antag_hud_type = ANTAG_HUD_AZURE_CTF
 	can_coexist_with_others = FALSE //Никаких вампиров-бойцов CTF или еще чего-нибудь.	
@@ -47,16 +47,16 @@
 
 
 /datum/antagonist/ctf/north
-	name = "Hartfield warrior"
+	name = "Heartfelt warrior"
 	antag_hud_name = "hog-red-1"
-	antagpanel_category = "Hartfield warrior's"
+	antagpanel_category = "Heartfelt warrior's"
 	team_name = "Хартфилд"
-	antag_hud_type = ANTAG_HUD_HARTFIELD_CTF
+	antag_hud_type = ANTAG_HUD_Heartfelt_CTF
 //-----------------------------------------------------------------------
 
 //Далее джобки и их особенности.
 /datum/job/roguetown/captain/ctf
-	title = "Azure Dawn Captain" 
+	title = "Scarlet Dawn Captain" 
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
@@ -78,7 +78,7 @@
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/magician/ctf
-	title = "Azure Dawn Caster"
+	title = "Scarlet Dawn Caster"
 	total_positions = 3
 	spawn_positions = 3
 	outfit = /datum/outfit/job/roguetown/magician
@@ -91,7 +91,7 @@
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/adventurer/ctf
-	title = "Azure Dawn Ranger"
+	title = "Scarlet Dawn Ranger"
 	total_positions = 5
 	spawn_positions = 5
 	job_subclasses = list(
@@ -106,7 +106,7 @@
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/knight/ctf
-	title = "Azure Dawn Fighter" //Back to proper knights.
+	title = "Scarlet Dawn Fighter" //Back to proper knights.
 	total_positions = 90
 	spawn_positions = 90
 	always_show_on_latechoices = TRUE
@@ -128,7 +128,7 @@
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/guildmaster/ctf
-	title = "Azure Dawn Guildmaster"
+	title = "Scarlet Dawn Guildmaster"
 	total_positions = 3
 	spawn_positions = 3
 	outfit = /datum/outfit/job/roguetown/guildmaster
@@ -149,50 +149,50 @@
 		H.adjust_skillrank_up_to(/datum/skill/craft/masonry, SKILL_EXP_LEGENDARY)
 
 /obj/effect/landmark/start/red_captain
-	name = "Hartfield Captain"
+	name = "Heartfelt Captain"
 	icon_state = "arrow"
 	delete_after_roundstart = FALSE
-	jobspawn_override = list("Hartfield Captain")
+	jobspawn_override = list("Heartfelt Captain")
 
 /obj/effect/landmark/start/red_captain/Initialize(mapload)
 	..()
 	SSjob.latejoin_trackers += loc
 
 /obj/effect/landmark/start/red_caster
-	name = "Hartfield Caster"
+	name = "Heartfelt Caster"
 	icon_state = "arrow"
 	delete_after_roundstart = FALSE
-	jobspawn_override = list("Hartfield Caster")
+	jobspawn_override = list("Heartfelt Caster")
 
 /obj/effect/landmark/start/red_caster/Initialize(mapload)
 	..()
 	SSjob.latejoin_trackers += loc
 
 /obj/effect/landmark/start/red_ranger
-	name = "Hartfield Ranger"
+	name = "Heartfelt Ranger"
 	icon_state = "arrow"
 	delete_after_roundstart = FALSE
-	jobspawn_override = list("Hartfield Ranger")
+	jobspawn_override = list("Heartfelt Ranger")
 
 /obj/effect/landmark/start/red_ranger/Initialize(mapload)
 	..()
 	SSjob.latejoin_trackers += loc
 
 /obj/effect/landmark/start/red_fighter
-	name = "Hartfield Fighter"
+	name = "Heartfelt Fighter"
 	icon_state = "arrow"
 	delete_after_roundstart = FALSE
-	jobspawn_override = list("Hartfield Fighter")
+	jobspawn_override = list("Heartfelt Fighter")
 
 /obj/effect/landmark/start/red_fighter/Initialize(mapload)
 	..()
 	SSjob.latejoin_trackers += loc
 
 /obj/effect/landmark/start/red_master
-	name = "Hartfield Guildmaster"
+	name = "Heartfelt Guildmaster"
 	icon_state = "arrow"
 	delete_after_roundstart = FALSE
-	jobspawn_override = list("Hartfield Guildmaster")
+	jobspawn_override = list("Heartfelt Guildmaster")
 
 
 /obj/effect/landmark/start/red_master/Initialize(mapload)
@@ -200,50 +200,50 @@
 	SSjob.latejoin_trackers += loc
 
 /obj/effect/landmark/start/blue_captain
-	name = "Azure Dawn Captain"
+	name = "Scarlet Dawn Captain"
 	icon_state = "arrow"
 	delete_after_roundstart = FALSE
-	jobspawn_override = list("Azure Dawn Captain")
+	jobspawn_override = list("Scarlet Dawn Captain")
 
 /obj/effect/landmark/start/blue_captain/Initialize(mapload)
 	..()
 	SSjob.latejoin_trackers += loc
 
 /obj/effect/landmark/start/blue_caster
-	name = "Azure Dawn Caster"
+	name = "Scarlet Dawn Caster"
 	icon_state = "arrow"
 	delete_after_roundstart = FALSE
-	jobspawn_override = list("Azure Dawn Caster")
+	jobspawn_override = list("Scarlet Dawn Caster")
 
 /obj/effect/landmark/start/blue_caster/Initialize(mapload)
 	..()
 	SSjob.latejoin_trackers += loc
 
 /obj/effect/landmark/start/blue_ranger
-	name = 	"Azure Dawn Ranger"
+	name = 	"Scarlet Dawn Ranger"
 	icon_state = "arrow"
 	delete_after_roundstart = FALSE
-	jobspawn_override = list("Azure Dawn Ranger")
+	jobspawn_override = list("Scarlet Dawn Ranger")
 
 /obj/effect/landmark/start/blue_ranger/Initialize(mapload)
 	..()
 	SSjob.latejoin_trackers += loc
 
 /obj/effect/landmark/start/blue_fighter
-	name = "Azure Dawn Fighter"
+	name = "Scarlet Dawn Fighter"
 	icon_state = "arrow"
 	delete_after_roundstart = FALSE
-	jobspawn_override = list("Azure Dawn Fighter")
+	jobspawn_override = list("Scarlet Dawn Fighter")
 
 /obj/effect/landmark/start/blue_fighter/Initialize(mapload)
 	..()
 	SSjob.latejoin_trackers += loc
 
 /obj/effect/landmark/start/blue_master
-	name = "Azure Dawn Guildmaster"
+	name = "Scarlet Dawn Guildmaster"
 	icon_state = "arrow"
 	delete_after_roundstart = FALSE
-	jobspawn_override = list("Azure Dawn Guildmaster")
+	jobspawn_override = list("Scarlet Dawn Guildmaster")
 
 /obj/effect/landmark/start/blue_master/Initialize(mapload)
 	..()

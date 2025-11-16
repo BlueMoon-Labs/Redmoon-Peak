@@ -167,16 +167,16 @@ GLOBAL_LIST_INIT(roguewar_positions, list(
 ))
 
 GLOBAL_LIST_INIT(roguefight_positions, list(
-	"Hartfield Captain",
-	"Hartfield Caster",
-	"Hartfield Ranger",
-	"Hartfield Fighter",
-	"Hartfield Guildmaster",
-	"Azure Dawn Captain",
-	"Azure Dawn Caster",
-	"Azure Dawn Ranger",
-	"Azure Dawn Fighter",
-	"Azure Dawn Guildmaster"
+	"Heartfelt Captain",
+	"Heartfelt Caster",
+	"Heartfelt Ranger",
+	"Heartfelt Fighter",
+	"Heartfelt Guildmaster",
+	"Scarlet Dawn Captain",
+	"Scarlet Dawn Caster",
+	"Scarlet Dawn Ranger",
+	"Scarlet Dawn Fighter",
+	"Scarlet Dawn Guildmaster"
 ))
 
 //This list is used to prevent the duke from stripping nobility from certain jobs that aren't intrinsically a part of the town.

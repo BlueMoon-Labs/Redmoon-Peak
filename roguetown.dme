@@ -3072,6 +3072,6 @@
 #include "modular_redmoon\modules\overseers_equipment\code\inqshop.dm"
 #include "modular_redmoon\modules\overseers_equipment\code\jobs\puritan.dm"
 #include "modular_redmoon\rogue_fight\Azure_Dawn.dm"
-#include "modular_redmoon\rogue_fight\Hartfield.dm"
+#include "modular_redmoon\rogue_fight\Heartfelt.dm"
 #include "modular_redmoon\sound\combat_music\redmoon_combat_music.dm"
 // END_INCLUDE

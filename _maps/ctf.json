@@ -1,5 +1,5 @@
 {
-    "map_name": "CTF HartField VS Azure Dawn",
+    "map_name": "CTF Heartfelt VS Scarlet Dawn",
     "map_path": "map_files/ctf",
     "map_file": ["ctf.dmm"],
 	"traits": [{"Up": true}, {"Up": true, "Down": true}, {"Up": true, "Down": true}],

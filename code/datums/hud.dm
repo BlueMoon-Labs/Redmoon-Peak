@@ -9,7 +9,7 @@ GLOBAL_LIST_INIT(huds, alist(
 	ANTAG_HUD_REV = new/datum/atom_hud/antag(),
 	ANTAG_HUD_VAMPIRE = new/datum/atom_hud/antag(),
 	ANTAG_HUD_AZURE_CTF = new/datum/atom_hud/antag/ctf(),
-	ANTAG_HUD_HARTFIELD_CTF = new/datum/atom_hud/antag/ctf/north()
+	ANTAG_HUD_HEARTFELT_CTF = new/datum/atom_hud/antag/ctf/north()
 	))
 
 /datum/atom_hud

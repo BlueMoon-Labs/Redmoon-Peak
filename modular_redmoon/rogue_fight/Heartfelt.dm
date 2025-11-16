@@ -1,5 +1,5 @@
 /datum/job/roguetown/captain/ctf_north
-	title = "Hartfield Captain"
+	title = "Heartfelt Captain"
 	total_positions = 1
 	spawn_positions = 1
 
@@ -11,7 +11,7 @@
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/magician/ctf_north
-	title = "Hartfield Caster"
+	title = "Heartfelt Caster"
 	total_positions = 3
 	spawn_positions = 3
 
@@ -23,7 +23,7 @@
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/adventurer/ctf_north
-	title = "Hartfield Ranger"
+	title = "Heartfelt Ranger"
 	total_positions = 5
 	spawn_positions = 5
 
@@ -35,7 +35,7 @@
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/knight/ctf_north
-	title = "Hartfield Fighter"
+	title = "Heartfelt Fighter"
 	total_positions = 90
 	spawn_positions = 90
 	always_show_on_latechoices = TRUE
@@ -56,7 +56,7 @@
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/guildmaster/ctf_north
-	title = "Hartfield Guildmaster"
+	title = "Heartfelt Guildmaster"
 	total_positions = 3
 	spawn_positions = 3
 
