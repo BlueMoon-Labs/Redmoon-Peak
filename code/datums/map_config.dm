@@ -116,8 +116,9 @@
 		log_world("map_config traits is not a list!")
 		return
 //REDMOON EDIT START
-	if (islist(json["job_override"]))
-		job_override += json["job_override"]
+	if(job_override.len)
+		if (islist(json["job_override"]))
+			job_override += json["job_override"]
 //REDMOON EDIT END
 	var/temp = json["space_ruin_levels"]
 	if (isnum(temp))
