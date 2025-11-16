@@ -35,7 +35,7 @@
 	. = ..()
 	if(H)
 		H.mind.add_antag_datum(/datum/antagonist/ctf)
-		var/obj/item/roguekey/manor/ctfkey = new /obj/item/roguekey/manor/ctf(src)
+		var/obj/item/roguekey/manor/ctf/key = new /obj/item/roguekey/manor/ctf(src)
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/templar/ctf_south
@@ -47,7 +47,7 @@
 	. = ..()
 	if(H)
 		H.mind.add_antag_datum(/datum/antagonist/ctf)
-		var/obj/item/roguekey/manor/ctfkey = new /obj/item/roguekey/manor/ctf(src)
+		var/obj/item/roguekey/manor/ctf/key = new /obj/item/roguekey/manor/ctf(src)
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/manorguard/ctf_south
@@ -59,7 +59,7 @@
 	. = ..()
 	if(H)
 		H.mind.add_antag_datum(/datum/antagonist/ctf)
-		var/obj/item/roguekey/manor/ctfkey = new /obj/item/roguekey/manor/ctf(src)
+		var/obj/item/roguekey/manor/ctf/key = new /obj/item/roguekey/manor/ctf(src)
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/guildmaster/ctf_south
