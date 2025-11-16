@@ -156,6 +156,11 @@
 /obj/structure/telescope,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue)
+"cQ" = (
+/obj/structure/bed/rogue,
+/obj/effect/landmark/start/red_knight,
+/turf/open/floor/rogue/wood,
+/area/rogue/under/town/basement)
 "cV" = (
 /obj/structure/roguerock,
 /turf/open/floor/rogue/dirt/road,
@@ -559,6 +564,10 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/basement)
+"kq" = (
+/obj/effect/landmark/start/red_templar,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue)
 "kr" = (
 /turf/open/water/river/flow,
 /area/rogue)
@@ -691,7 +700,7 @@
 /area/rogue)
 "mg" = (
 /obj/structure/bed/rogue,
-/obj/effect/landmark/start/red_fighter,
+/obj/effect/landmark/start/red_footman,
 /turf/open/floor/rogue/wood,
 /area/rogue/under/town/basement)
 "mx" = (
@@ -1517,14 +1526,7 @@
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue)
 "zX" = (
-/obj/structure/chair/stool/rogue,
-/obj/structure/lever/wall{
-	pixel_y = -32;
-	redstone_id = "zamok_vnutri";
-	name = "Рычаг южных ворот"
-	},
-/obj/effect/landmark/start/blue_ranger,
-/turf/open/floor/rogue/blocks,
+/turf/closed/wall/mineral/rogue/stone/unbreakable,
 /area/rogue/under/town/basement)
 "Ab" = (
 /obj/machinery/light/rogue/firebowl/stump,
@@ -1568,8 +1570,9 @@
 /turf/open/floor/rogue/grassyel,
 /area/rogue/under/town/basement)
 "AJ" = (
-/obj/effect/landmark/start/blue_ranger,
-/turf/open/floor/rogue/blocks,
+/obj/structure/bed/rogue,
+/obj/effect/landmark/start/blue_knight,
+/turf/open/floor/rogue/wood,
 /area/rogue/under/town/basement)
 "AL" = (
 /obj/effect/decal/cleanable/blood,
@@ -1751,7 +1754,7 @@
 /area/rogue/under/town/basement)
 "EE" = (
 /obj/structure/bed/rogue,
-/obj/effect/landmark/start/blue_fighter,
+/obj/effect/landmark/start/blue_footman,
 /turf/open/floor/rogue/wood,
 /area/rogue/under/town/basement)
 "EF" = (
@@ -1910,7 +1913,7 @@
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
 	},
-/obj/effect/landmark/start/red_fighter,
+/obj/effect/landmark/start/red_footman,
 /turf/open/floor/rogue/wood,
 /area/rogue/under/town/basement)
 "Gt" = (
@@ -2273,6 +2276,10 @@
 /obj/item/natural/rock/random,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue)
+"Ol" = (
+/obj/effect/landmark/start/blue_templar,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue)
 "Om" = (
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/item/storage/roguebag,
@@ -2437,6 +2444,14 @@
 /obj/item/rogueweapon/tongs,
 /turf/open/floor/rogue/hexstone,
 /area/rogue)
+"Rf" = (
+/obj/structure/bed/rogue,
+/obj/machinery/light/rogue/torchholder{
+	dir = 4
+	},
+/obj/effect/landmark/start/red_knight,
+/turf/open/floor/rogue/wood,
+/area/rogue/under/town/basement)
 "Rl" = (
 /obj/effect/landmark/start/blue_caster,
 /turf/open/floor/rogue/cobblerock,
@@ -2461,7 +2476,7 @@
 	pixel_y = 32;
 	pixel_x = -18
 	},
-/turf/closed/wall/mineral/rogue/craftstone,
+/turf/closed/wall/mineral/rogue/stone/unbreakable,
 /area/rogue/under/town/basement)
 "RS" = (
 /obj/structure/flora/roguegrass/herb/random,
@@ -2625,7 +2640,7 @@
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
 	},
-/obj/effect/landmark/start/blue_fighter,
+/obj/effect/landmark/start/blue_knight,
 /turf/open/floor/rogue/wood,
 /area/rogue/under/town/basement)
 "UD" = (
@@ -2800,8 +2815,7 @@
 /obj/machinery/light/rogue/torchholder{
 	dir = 4
 	},
-/obj/effect/landmark/start/blue_fighter,
-/obj/effect/landmark/start/blue_fighter,
+/obj/effect/landmark/start/blue_footman,
 /turf/open/floor/rogue/wood,
 /area/rogue/under/town/basement)
 "Xm" = (
@@ -2820,7 +2834,7 @@
 	pixel_y = 32;
 	pixel_x = 18
 	},
-/turf/closed/wall/mineral/rogue/craftstone,
+/turf/closed/wall/mineral/rogue/stone/unbreakable,
 /area/rogue/under/town/basement)
 "XB" = (
 /obj/structure/closet/crate/chest,
@@ -8537,7 +8551,7 @@ LV
 hV
 yj
 eA
-yj
+kq
 yj
 Yq
 sH
@@ -8621,7 +8635,7 @@ LV
 Rl
 yj
 eA
-yj
+Ol
 yj
 Yq
 sH
@@ -8667,7 +8681,7 @@ lI
 hV
 yj
 Sl
-yj
+kq
 yj
 yj
 vX
@@ -8751,7 +8765,7 @@ lI
 Rl
 yj
 Sl
-yj
+Ol
 yj
 yj
 vX
@@ -8797,7 +8811,7 @@ yj
 hV
 yj
 yj
-yj
+kq
 yj
 tN
 Ea
@@ -8881,7 +8895,7 @@ yj
 Rl
 yj
 yj
-yj
+Ol
 yj
 tN
 Ea
@@ -13668,21 +13682,6 @@ zL
 zL
 zL
 Yi
-AJ
-zL
-zL
-zL
-zL
-zL
-zL
-Yi
-zL
-zL
-zL
-zL
-zL
-zL
-zL
 zL
 zL
 zL
@@ -13696,7 +13695,22 @@ zL
 zL
 zL
 zL
-AJ
+zL
+zL
+zL
+zL
+zL
+zL
+zL
+zL
+zL
+Yi
+zL
+zL
+zL
+zL
+zL
+zL
 zL
 zL
 zL
@@ -14457,7 +14471,7 @@ SY
 Nn
 wg
 fB
-Up
+Xj
 EE
 EE
 EE
@@ -14466,11 +14480,11 @@ fB
 pc
 pc
 fB
-Up
+Xj
 EE
 EE
 EE
-Up
+Xj
 fB
 gz
 gz
@@ -15015,11 +15029,11 @@ zL
 zL
 Nn
 RP
-Hn
-Hn
-Hn
-Hn
-Hn
+zX
+zX
+zX
+zX
+zX
 Pe
 Ab
 lR
@@ -15097,7 +15111,7 @@ Qy
 FH
 Nn
 tM
-zX
+cZ
 Nn
 sf
 gz
@@ -15119,12 +15133,12 @@ rp
 Cp
 Cp
 Cp
-Hn
-Hn
-Hn
-Hn
-Hn
-Hn
+zX
+zX
+zX
+zX
+zX
+zX
 Nn
 zL
 zL
@@ -15144,12 +15158,12 @@ Nn
 eh
 zL
 Nn
-Hn
+zX
 RA
 ZG
 ZG
 Fo
-Hn
+zX
 wg
 Cp
 wg
@@ -15249,12 +15263,12 @@ rr
 du
 du
 du
-Hn
+zX
 oj
 ZG
 ZG
 sn
-Hn
+zX
 Nn
 zL
 zL
@@ -15274,12 +15288,12 @@ Nn
 Yi
 zL
 Nn
-Hn
+zX
 RA
 RA
 RA
 ZG
-Hn
+zX
 yN
 nB
 nB
@@ -15379,12 +15393,12 @@ pc
 pc
 pc
 jN
-Hn
+zX
 ZG
 RA
 RA
 RA
-Hn
+zX
 Nn
 zL
 zL
@@ -15404,7 +15418,7 @@ Nn
 zL
 zL
 Nn
-Hn
+zX
 zf
 VU
 lv
@@ -15514,7 +15528,7 @@ lv
 lv
 lv
 lh
-Hn
+zX
 Nn
 eh
 zL
@@ -15534,7 +15548,7 @@ Nn
 eh
 zL
 Nn
-Hn
+zX
 he
 le
 vx
@@ -15644,7 +15658,7 @@ vx
 vx
 vx
 le
-Hn
+zX
 Nn
 zL
 zL
@@ -15664,12 +15678,12 @@ Nn
 zL
 zL
 Nn
-Hn
+zX
 RA
 RA
 RA
 hi
-Hn
+zX
 XO
 kY
 kY
@@ -15769,12 +15783,12 @@ pc
 pc
 pc
 kt
-Hn
+zX
 hi
 RA
 RA
 RA
-Hn
+zX
 Nn
 zL
 zL
@@ -15794,12 +15808,12 @@ Nn
 zL
 zL
 Nn
-Hn
+zX
 RA
 ZG
 ZG
 om
-Hn
+zX
 qq
 Cp
 Cp
@@ -15899,12 +15913,12 @@ Zy
 jU
 jU
 aY
-Hn
+zX
 wT
 ZG
 ZG
 nK
-Hn
+zX
 Nn
 zL
 zL
@@ -15925,11 +15939,11 @@ eh
 zL
 Nn
 XA
-Hn
-Hn
-Hn
-Hn
-Hn
+zX
+zX
+zX
+zX
+zX
 wg
 EW
 EW
@@ -16029,12 +16043,12 @@ rp
 Pe
 Cp
 Cp
-Hn
-Hn
-Hn
-Hn
-Hn
-Hn
+zX
+zX
+zX
+zX
+zX
+zX
 Nn
 eh
 Yi
@@ -16327,11 +16341,11 @@ fB
 pc
 pc
 fB
-Gr
-mg
-mg
-mg
-Gr
+Rf
+cQ
+cQ
+cQ
+Rf
 fB
 wg
 Uk
@@ -16408,19 +16422,19 @@ Uk
 wg
 fB
 Up
-EE
-EE
-EE
+AJ
+AJ
+AJ
 Up
 fB
 pc
 pc
 fB
-Up
+Xj
 EE
 EE
 EE
-Up
+Xj
 fB
 gz
 gz
@@ -17438,7 +17452,7 @@ zL
 zL
 zL
 zL
-AJ
+zL
 zL
 zL
 zL
@@ -17466,7 +17480,7 @@ zL
 zL
 zL
 zL
-AJ
+zL
 zL
 by
 pH
