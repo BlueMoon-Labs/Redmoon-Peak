@@ -118,9 +118,6 @@
 //REDMOON EDIT START
 	if (islist(json["job_override"]))
 		job_override += json["job_override"]
-	else
-		log_world("map_config job_override is not a list!")
-		return
 //REDMOON EDIT END
 	var/temp = json["space_ruin_levels"]
 	if (isnum(temp))
