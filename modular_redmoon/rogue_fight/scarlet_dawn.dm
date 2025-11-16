@@ -6,8 +6,8 @@
 /datum/job/roguetown/captain/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
-		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
-		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
+		H.mind.add_antag_datum(/datum/antagonist/ctf)
+		var/obj/item/roguekey/manor/ctf/key = new /obj/item/roguekey/manor/ctf(src)
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/knight/ctf_south
@@ -18,12 +18,12 @@
 	job_reopens_slots_on_death = TRUE
 	min_pq = 0
 
-/datum/job/roguetown/knight/north/after_spawn(mob/living/L, mob/M, latejoin)
+/datum/job/roguetown/knight/ctf_south/after_spawn(mob/living/L, mob/M, latejoin)
 	. = ..()
 	if(L)
-		L.mind.add_antag_datum(/datum/antagonist/ctf/north)
+		L.mind.add_antag_datum(/datum/antagonist/ctf)
 		var/mob/living/carbon/human/H = L
-		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
+		var/obj/item/roguekey/manor/ctf/key = new /obj/item/roguekey/manor/ctf(src)
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/magician/ctf_south
@@ -34,8 +34,8 @@
 /datum/job/roguetown/magician/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
-		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
-		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
+		H.mind.add_antag_datum(/datum/antagonist/ctf)
+		var/obj/item/roguekey/manor/ctfkey = new /obj/item/roguekey/manor/ctf(src)
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/templar/ctf_south
@@ -46,8 +46,8 @@
 /datum/job/roguetown/templar/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
-		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
-		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
+		H.mind.add_antag_datum(/datum/antagonist/ctf)
+		var/obj/item/roguekey/manor/ctfkey = new /obj/item/roguekey/manor/ctf(src)
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/manorguard/ctf_south
@@ -58,8 +58,8 @@
 /datum/job/roguetown/manorguard/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
-		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
-		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
+		H.mind.add_antag_datum(/datum/antagonist/ctf)
+		var/obj/item/roguekey/manor/ctfkey = new /obj/item/roguekey/manor/ctf(src)
 		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/guildmaster/ctf_south
@@ -70,8 +70,8 @@
 /datum/job/roguetown/guildmaster/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
-		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
-		var/obj/item/roguekey/manor/ctf/key = new /obj/item/roguekey/manor/ctf/north(src)
+		H.mind.add_antag_datum(/datum/antagonist/ctf)
+		var/obj/item/roguekey/manor/ctf/key = new /obj/item/roguekey/manor/ctf(src)
 		H.put_in_hands(key, forced = TRUE)
 		H.adjust_skillrank_up_to(/datum/skill/craft/armorsmithing, SKILL_EXP_LEGENDARY)
 		H.adjust_skillrank_up_to(/datum/skill/craft/blacksmithing, SKILL_EXP_LEGENDARY)
