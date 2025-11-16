@@ -167,15 +167,18 @@ GLOBAL_LIST_INIT(roguewar_positions, list(
 ))
 
 GLOBAL_LIST_INIT(roguefight_positions, list(
-	"Heartfelt Captain",
+	"Heartfelt Knight Captain",
+	"Heartfelt Knight",
+	"Heartfelt Templar",
 	"Heartfelt Caster",
-	"Heartfelt Ranger",
-	"Heartfelt Fighter",
+	"Heartfelt Footman",
 	"Heartfelt Guildmaster",
-	"Scarlet Dawn Captain",
+	
+	"Scarlet Dawn Knight Captain",
+	"Scarlet Dawn Knight",
+	"Scarlet Dawn Templar",
 	"Scarlet Dawn Caster",
-	"Scarlet Dawn Ranger",
-	"Scarlet Dawn Fighter",
+	"Scarlet Dawn Footman",
 	"Scarlet Dawn Guildmaster"
 ))
 
