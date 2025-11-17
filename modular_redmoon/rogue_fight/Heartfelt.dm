@@ -15,7 +15,7 @@
 	total_positions = 5
 	spawn_positions = 5
 
-/datum/job/roguetown/knight/north/after_spawn(mob/living/L, mob/M, latejoin)
+/datum/job/roguetown/knight/ctf_north/after_spawn(mob/living/L, mob/M, latejoin)
 	. = ..()
 	if(L)
 		L.mind.add_antag_datum(/datum/antagonist/ctf/north)
