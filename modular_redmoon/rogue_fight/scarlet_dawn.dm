@@ -43,7 +43,7 @@
 /datum/job/roguetown/wretch/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
-		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
+		H.mind.add_antag_datum(/datum/antagonist/ctf)
 		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
 		H.put_in_hands(key, forced = TRUE)
 
