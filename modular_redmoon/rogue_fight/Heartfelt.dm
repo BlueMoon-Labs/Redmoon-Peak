@@ -10,10 +10,6 @@
 		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
 		H.put_in_hands(key, forced = TRUE)
 
-/datum/job/roguetown/captain/ctf_north/pre_equip(mob/living/carbon/human/H)
-	..()
-	H.adjust_skillrank(/datum/skill/combat/firearms, 4, TRUE)
-
 /datum/job/roguetown/knight/ctf_north
 	title = "Heartfelt Knight"
 	total_positions = 5
@@ -33,6 +29,18 @@
 	spawn_positions = 5
 
 /datum/job/roguetown/templar/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
+	. = ..()
+	if(H)
+		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
+		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
+		H.put_in_hands(key, forced = TRUE)
+
+/datum/job/roguetown/wretch/ctf_north
+	title = "Heartfelt Heretic"
+	total_positions = 5
+	spawn_positions = 5
+
+/datum/job/roguetown/wretch/ctf_north/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
 	if(H)
 		H.mind.add_antag_datum(/datum/antagonist/ctf/north)

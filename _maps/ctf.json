@@ -10,6 +10,7 @@
 	"job_override": ["/datum/job/roguetown/captain/ctf_south", 
 					"/datum/job/roguetown/knight/ctf_south",
 					"/datum/job/roguetown/templar/ctf_south",
+					"/datum/job/roguetown/wretch/ctf_south",
 					"/datum/job/roguetown/magician/ctf_south",
 					"/datum/job/roguetown/manorguard/ctf_south",
 					"/datum/job/roguetown/guildmaster/ctf_south",
@@ -17,6 +18,7 @@
 					"/datum/job/roguetown/captain/ctf_north", 
 					"/datum/job/roguetown/knight/ctf_north",
 					"/datum/job/roguetown/templar/ctf_north",
+					"/datum/job/roguetown/wretch/ctf_north",
 					"/datum/job/roguetown/magician/ctf_north",
 					"/datum/job/roguetown/manorguard/ctf_north",
 					"/datum/job/roguetown/guildmaster/ctf_north"

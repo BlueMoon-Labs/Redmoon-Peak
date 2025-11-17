@@ -170,6 +170,7 @@ GLOBAL_LIST_INIT(roguefight_positions, list(
 	"Heartfelt Knight Captain",
 	"Heartfelt Knight",
 	"Heartfelt Templar",
+	"Heartfelt Heretic",
 	"Heartfelt Caster",
 	"Heartfelt Footman",
 	"Heartfelt Guildmaster",
@@ -177,6 +178,7 @@ GLOBAL_LIST_INIT(roguefight_positions, list(
 	"Scarlet Dawn Knight Captain",
 	"Scarlet Dawn Knight",
 	"Scarlet Dawn Templar",
+	"Scarlet Dawn Heretic",
 	"Scarlet Dawn Caster",
 	"Scarlet Dawn Footman",
 	"Scarlet Dawn Guildmaster"

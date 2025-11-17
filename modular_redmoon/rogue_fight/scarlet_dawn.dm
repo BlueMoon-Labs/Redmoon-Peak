@@ -10,10 +10,6 @@
 		var/obj/item/roguekey/manor/ctf/key = new /obj/item/roguekey/manor/ctf(src)
 		H.put_in_hands(key, forced = TRUE)
 
-/datum/job/roguetown/captain/ctf_south/pre_equip(mob/living/carbon/human/H)
-	..()
-	H.adjust_skillrank(/datum/skill/combat/firearms, 4, TRUE)
-
 /datum/job/roguetown/knight/ctf_south
 	title = "Scarlet Dawn Knight"
 	total_positions = 5
@@ -39,10 +35,29 @@
 		var/obj/item/roguekey/manor/ctf/key = new /obj/item/roguekey/manor/ctf(src)
 		H.put_in_hands(key, forced = TRUE)
 
+/datum/job/roguetown/wretch/ctf_south
+	title = "Scarlet Dawn Heretic"
+	total_positions = 5
+	spawn_positions = 5
+
+/datum/job/roguetown/wretch/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
+	. = ..()
+	if(H)
+		H.mind.add_antag_datum(/datum/antagonist/ctf/north)
+		var/obj/item/roguekey/manor/ctf/north/key = new /obj/item/roguekey/manor/ctf/north(src)
+		H.put_in_hands(key, forced = TRUE)
+
 /datum/job/roguetown/magician/ctf_south
 	title = "Scarlet Dawn Caster"
 	total_positions = 1
 	spawn_positions = 1
+
+/datum/job/roguetown/magician/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
+	. = ..()
+	if(H)
+		H.mind.add_antag_datum(/datum/antagonist/ctf)
+		var/obj/item/roguekey/manor/ctf/key = new /obj/item/roguekey/manor/ctf(src)
+		H.put_in_hands(key, forced = TRUE)
 
 /datum/job/roguetown/magician/ctf_south/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
