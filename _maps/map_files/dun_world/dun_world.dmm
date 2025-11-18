@@ -31360,9 +31360,6 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/underdark/south)
 "hVk" = (
-/obj/structure/roguemachine/scomm/r{
-	scom_tag = "Physician - Basement"
-	},
 /obj/structure/fluff/railing/corner/north_east,
 /obj/structure/fluff/railing/corner,
 /turf/open/floor/rogue/ruinedwood/turned,
@@ -42917,6 +42914,13 @@
 "kOl" = (
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town/dwarfin)
+"kOn" = (
+/obj/structure/chair/stool/rogue,
+/obj/machinery/light/rogue/wallfire/candle{
+	pixel_y = -32
+	},
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/physician)
 "kOq" = (
 /turf/closed/wall/mineral/rogue/roofwall/outercorner/dir4,
 /area/rogue/indoors/town/shop)
@@ -56432,6 +56436,7 @@
 "ogk" = (
 /obj/structure/fluff/alch,
 /obj/item/natural/bundle/stick,
+/obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/physician)
 "ogn" = (
@@ -63073,6 +63078,9 @@
 /obj/item/roguebin/water{
 	pixel_x = 0;
 	pixel_y = 7
+	},
+/obj/machinery/light/rogue/wallfire/candle{
+	pixel_y = -32
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/physician)
@@ -247387,7 +247395,7 @@ jEy
 nbL
 nZZ
 nbL
-vRV
+kOn
 sGj
 rCj
 gXs
