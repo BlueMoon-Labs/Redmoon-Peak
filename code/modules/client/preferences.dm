@@ -95,7 +95,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/static/datum/patron/default_patron = /datum/patron/divine/undivided
 	var/list/features = MANDATORY_FEATURE_LIST
 	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = FALSE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
-	var/list/friendlyGenders = list("male" = "мужское", "female" = "женское")
+	var/list/friendlyGenders = list("male" = "masculine", "female" = "feminine")
 	var/phobia = "spiders"
 	var/shake = TRUE
 	var/sexable = FALSE
@@ -153,7 +153,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/action_buttons_screen_locs = list()
 
 	var/domhand = 2
-	var/nickname = "Пожалуйста смени меня"
+	var/nickname = "Please Change Me"
 	var/highlight_color = "#FF0000"
 	var/datum/charflaw/charflaw
 
@@ -259,7 +259,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	if(user)
 		if(pref_species.desc)
 			to_chat(user, "[pref_species.desc]")
-		to_chat(user, "<font color='red'>Классы сброшены.</font>")
+		to_chat(user, "<font color='red'>Classes reset.</font>")
 	random_character(gender, FALSE, FALSE)
 	accessory = "Nothing"
 
@@ -285,43 +285,43 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	if(tabchoice == 4)
 		current_tab = 0
 
-//	dat += "<a href='?_src_=prefs;preference=tab;tab=0' [current_tab == 0 ? "class='linkOn'" : ""]>Лист персонажа</a>"
-//	dat += "<a href='?_src_=prefs;preference=tab;tab=1' [current_tab == 1 ? "class='linkOn'" : ""]>Настройки игры</a>"
-//	dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>OOC настройки</a>"
-//	dat += "<a href='?_src_=prefs;preference=tab;tab=3' [current_tab == 3 ? "class='linkOn'" : ""]>Горячие клавиши</a>"
+//	dat += "<a href='?_src_=prefs;preference=tab;tab=0' [current_tab == 0 ? "class='linkOn'" : ""]>Character Sheet</a>"
+//	dat += "<a href='?_src_=prefs;preference=tab;tab=1' [current_tab == 1 ? "class='linkOn'" : ""]>Game Preferences</a>"
+//	dat += "<a href='?_src_=prefs;preference=tab;tab=2' [current_tab == 2 ? "class='linkOn'" : ""]>OOC Preferences</a>"
+//	dat += "<a href='?_src_=prefs;preference=tab;tab=3' [current_tab == 3 ? "class='linkOn'" : ""]>Keybinds</a>"
 
 	dat += "</center>"
 
 	var/used_title
 	switch(current_tab)
 		if (0) // Character Settings#
-			used_title = "Лист персонажа"
+			used_title = "Character Sheet"
 
 			// Top-level menu table
 			dat += "<table style='width: 100%; line-height: 20px;'>"
 			// NEXT ROW
 			dat += "<tr>"
 			dat += "<td style='width:33%;text-align:left'>"
-			dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;'>Сменить персонажа</a>"
+			dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=changeslot;'>Change Character</a>"
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:center'>"
-			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Выбрать класс</a>"
+			dat += "<a href='?_src_=prefs;preference=job;task=menu'>Class Selection</a>"
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:right'>"
-			dat += "<a href='?_src_=prefs;preference=keybinds;task=menu'>Горячие клавиши</a>"
+			dat += "<a href='?_src_=prefs;preference=keybinds;task=menu'>Keybinds</a>"
 			dat += "</td>"
 			dat += "</tr>"
 
 			// ANOTHA ROW
 			dat += "<tr style='padding-top: 0px;padding-bottom:0px'>"
 			dat += "<td style='width:33%;text-align:left'>"
-			dat += "<a href='?_src_=prefs;preference=tgui_ui_prefs;task=menu'>[tgui_pref ? "Интерфейс TG" : "Традиционный интерфейс"]</a>"
+			dat += "<a href='?_src_=prefs;preference=tgui_ui_prefs;task=menu'>[tgui_pref ? "TGUI" : "Legacy"]</a>"
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:center'>"
-			dat += "<a href='?_src_=prefs;preference=antag;task=menu'>Быть ли злодеем?</a>"
+			dat += "<a href='?_src_=prefs;preference=antag;task=menu'>Villain Selection</a>"
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:right'>"
@@ -330,7 +330,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			dat += "<tr style='padding-top: 0px;padding-bottom:0px'>"
 			dat += "<td style='width:33%;text-align:left'>"
-			dat += "<a href='?_src_=prefs;preference=tgui_theme'>Стиль интерфейса: [get_tgui_theme_display_name()]</a>"
+			dat += "<a href='?_src_=prefs;preference=tgui_theme'>Theme: [get_tgui_theme_display_name()]</a>"
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:center'>"
@@ -348,22 +348,22 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "</td>"
 
 			dat += "<td style='width:33%;text-align:center'>"
-			dat += "<a href='?_src_=prefs;preference=triumphs;task=menu'><b>ТРИУМФЫ:</b></a> [user.get_triumphs() ? "\Roman [user.get_triumphs()]" : "Нет"]"
+			dat += "<a href='?_src_=prefs;preference=triumphs;task=menu'><b>TRIUMPHS:</b></a> [user.get_triumphs() ? "\Roman [user.get_triumphs()]" : "None"]"
 			if(SStriumphs.triumph_buys_enabled)
-				dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=triumph_buy_menu'>Триумфальная лавка</a>"
+				dat += "<a style='white-space:nowrap;' href='?_src_=prefs;preference=triumph_buy_menu'>Triumph Buy</a>"
 			dat += "</td>"
 
 			var/agevetted = user.check_agevet()
 			dat += "<td style='width:33%;text-align:right'>"
-			dat += "<a href='?_src_=prefs;preference=agevet'><b>ВОЗРАСТ ПОДТВЕРЖДЁН:</b></a> [agevetted ? "<font color='#74cde0'>АГА!</font>" : "<font color='#897472'>НЕ-А!</font>"]"
+			dat += "<a href='?_src_=prefs;preference=agevet'><b>VERIFIED:</b></a> [agevetted ? "<font color='#74cde0'>YAE!</font>" : "<font color='#897472'>NAE?</font>"]"
 			dat += "</td>"
 
 			dat += "</table>"
 
 			if(CONFIG_GET(flag/roundstart_traits))
-				dat += "<center><h2>Настроить особенности</h2>"
-				dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Настройка ообенностей</a><br></center>"
-				dat += "<center><b>Текущие особенности:</b> [all_quirks.len ? all_quirks.Join(", ") : "Нет"]</center>"
+				dat += "<center><h2>Quirk Setup</h2>"
+				dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
+				dat += "<center><b>Current Quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
 
 			// Encapsulating table
 			dat += "<table width = '100%'>"
@@ -373,26 +373,26 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<td width=40% valign='top'>"
 
 // 			-----------START OF IDENT TABLE-----------
-			dat += "<h2>Идентичность</h2>"
+			dat += "<h2>Identity</h2>"
 			dat += "<table width='100%'><tr><td width='75%' valign='top'>"
 			if(is_banned_from(user.ckey, "Appearance"))
-				dat += "<b>Тебе запрещено самостоятельно выбирать имена и облики. Ты можешь продолжать настраивать своих персонажей, но при входе в игру их имя и облик будут выбраны случайным образом.</b><br>"
-//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_NAME]'>Всегда случайное имя: [(randomise[RANDOM_NAME]) ? "Да" : "Нет"]</a>"
-//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_NAME_ANTAG]'>Будучи антагонистом: [(randomise[RANDOM_NAME_ANTAG]) ? "Да" : "Нет"]</a>"
-			dat += "<b>Имя:</b> "
+				dat += "<b>Thou are banned from using custom names and appearances. Thou can continue to adjust thy characters, but thee will be randomised once thee joins the game.</b><br>"
+//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_NAME]'>Always Random Name: [(randomise[RANDOM_NAME]) ? "Yes" : "No"]</a>"
+//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_NAME_ANTAG]'>When Antagonist: [(randomise[RANDOM_NAME_ANTAG]) ? "Yes" : "No"]</a>"
+			dat += "<b>Name:</b> "
 			if(check_nameban(user.ckey))
 				dat += "<a href='?_src_=prefs;preference=name;task=input'>NAMEBANNED</a><BR>"
 			else
 				dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a> <a href='?_src_=prefs;preference=name;task=random'>\[R\]</a>"
 			dat += "<BR>"
-			dat += "<b>Прозвище:</b> "
+			dat += "<b>Nickname:</b> "
 			dat += "<a href='?_src_=prefs;preference=nickname;task=input'>[nickname]</a><BR>"
 			// LETHALSTONE EDIT BEGIN: add pronoun prefs
-			dat += "<b>Местоимения:</b> <a href='?_src_=prefs;preference=pronouns;task=input'>[pronouns]</a><BR>"
+			dat += "<b>Pronouns:</b> <a href='?_src_=prefs;preference=pronouns;task=input'>[pronouns]</a><BR>"
 			// LETHALSTONE EDIT END
 
 			dat += "<BR>"
-			dat += "<b>Народность:</b> <a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a>[spec_check(user) ? "" : " (!)"]<BR>"
+			dat += "<b>Race:</b> <a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a>[spec_check(user) ? "" : " (!)"]<BR>"
 			if(length(pref_species.custom_selection))
 				var/race_bonus_display
 				if(race_bonus)
@@ -400,72 +400,72 @@ GLOBAL_LIST_EMPTY(chosen_names)
 						if(pref_species.custom_selection[bonus] == race_bonus)
 							race_bonus_display = bonus
 							break
-				dat += "<b>Бонус народа:</b> <a href='?_src_=prefs;preference=race_bonus_select;task=input'>[race_bonus_display ? "[race_bonus_display]" : "Нет"]</a><BR>"
+				dat += "<b>Race Bonus:</b> <a href='?_src_=prefs;preference=race_bonus_select;task=input'>[race_bonus_display ? "[race_bonus_display]" : "None"]</a><BR>"
 			else
 				race_bonus = null
 
 			// LETHALSTONE EDIT BEGIN: add statpack selection
-			dat += "<b>Набор атрибутов:</b> <a href='?_src_=prefs;preference=statpack;task=input'>[statpack.name]</a><BR>"
-//			dat += "<a href='?_src_=prefs;preference=species;task=random'>Случайный народ</A> "
-//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SPECIES]'>Всегда случайный народ: [(randomise[RANDOM_SPECIES]) ? "Да" : "Нет"]</A><br>"
+			dat += "<b>Statpack:</b> <a href='?_src_=prefs;preference=statpack;task=input'>[statpack.name]</a><BR>"
+//			dat += "<a href='?_src_=prefs;preference=species;task=random'>Random Species</A> "
+//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SPECIES]'>Always Random Species: [(randomise[RANDOM_SPECIES]) ? "Yes" : "No"]</A><br>"
 
 			if(!(AGENDER in pref_species.species_traits))
 				var/dispGender
 				if(gender == MALE)
-					dispGender = "Мужское" // LETHALSTONE EDIT: repurpose gender as bodytype, display accordingly
+					dispGender = "Masculine" // LETHALSTONE EDIT: repurpose gender as bodytype, display accordingly
 				else if(gender == FEMALE)
-					dispGender = "Женское" // LETHALSTONE EDIT: repurpose gender as bodytype, display accordingly
+					dispGender = "Feminine" // LETHALSTONE EDIT: repurpose gender as bodytype, display accordingly
 				else
-					dispGender = "Другое"
-				dat += "<b>Телосложение:</b> <a href='?_src_=prefs;preference=gender'>[dispGender]</a><BR>"
+					dispGender = "Other"
+				dat += "<b>Body Type:</b> <a href='?_src_=prefs;preference=gender'>[dispGender]</a><BR>"
 				if(randomise[RANDOM_BODY] || randomise[RANDOM_BODY_ANTAG]) //doesn't work unless random body
-					dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER]'>Всегда случайное телосложение: [(randomise[RANDOM_GENDER]) ? "Да" : "Нет"]</A>"
-					dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER_ANTAG]'>Будучи антагонистом: [(randomise[RANDOM_GENDER_ANTAG]) ? "Да" : "Нет"]</A>"
-			
+					dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER]'>Always Random Bodytype: [(randomise[RANDOM_GENDER]) ? "Yes" : "No"]</A>"
+					dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_GENDER_ANTAG]'>When Antagonist: [(randomise[RANDOM_GENDER_ANTAG]) ? "Yes" : "No"]</A>"
+
 			if(LAZYLEN(pref_species.allowed_taur_types))
 				var/obj/item/bodypart/taur/T = taur_type
-				var/name = ispath(T) ? T::name : "Выбрать"
-				dat += "<b>Тип звериной части:</b> <a href='?_src_=prefs;preference=taur_type;task=input'>[name]</a><BR>"
-				dat += "<b>Цвет звериной части:</b><span style='border: 1px solid #161616; background-color: #[taur_color];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=taur_color;task=input'>Сменить</a><BR>"
+				var/name = ispath(T) ? T::name : "None"
+				dat += "<b>Taur Body Type:</b> <a href='?_src_=prefs;preference=taur_type;task=input'>[name]</a><BR>"
+				dat += "<b>Taur Color:</b><span style='border: 1px solid #161616; background-color: #[taur_color];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=taur_color;task=input'>Change</a><BR>"
 
 			// LETHALSTONE EDIT BEGIN: add voice type prefs
-			dat += "<b>Тип голоса</b>: <a href='?_src_=prefs;preference=voicetype;task=input'>[voice_type]</a><BR>"
+			dat += "<b>Voice Type</b>: <a href='?_src_=prefs;preference=voicetype;task=input'>[voice_type]</a><BR>"
 			// LETHALSTONE EDIT END
 
-			dat += "<b>Возраст:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
+			dat += "<b>Age:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
 
-//			dat += "<br><b>Возраст:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a>"
+//			dat += "<br><b>Age:</b> <a href='?_src_=prefs;preference=age;task=input'>[age]</a>"
 //			if(randomise[RANDOM_BODY] || randomise[RANDOM_BODY_ANTAG]) //doesn't work unless random body
-//				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE]'>Всегда случайный возраст: [(randomise[RANDOM_AGE]) ? "Да" : "Нет"]</A>"
-//				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE_ANTAG]'>Будучи антагонистом: [(randomise[RANDOM_AGE_ANTAG]) ? "Да" : "Нет"]</A>"
+//				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE]'>Always Random Age: [(randomise[RANDOM_AGE]) ? "Yes" : "No"]</A>"
+//				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_AGE_ANTAG]'>When Antagonist: [(randomise[RANDOM_AGE_ANTAG]) ? "Yes" : "No"]</A>"
 
-//			dat += "<b><a href='?_src_=prefs;preference=name;task=random'>Случайное имя</A></b><BR>"
+//			dat += "<b><a href='?_src_=prefs;preference=name;task=random'>Random Name</A></b><BR>"
 			if(length(pref_species.restricted_virtues))
 				if(virtue.type in pref_species.restricted_virtues)
 					virtue = GLOB.virtues[/datum/virtue/none]
 				if(virtuetwo.type in pref_species.restricted_virtues)
 					virtuetwo = GLOB.virtues[/datum/virtue/none]
-			dat += "<b>Достоинство:</b> <a href='?_src_=prefs;preference=virtue;task=input'>[virtue]</a><BR>"
+			dat += "<b>Virtue:</b> <a href='?_src_=prefs;preference=virtue;task=input'>[virtue]</a><BR>"
 			if(statpack.name == "Virtuous")
-				dat += "<b>Второе Достоинство:</b> <a href='?_src_=prefs;preference=virtuetwo;task=input'>[virtuetwo]</a><BR>"
+				dat += "<b>Second Virtue:</b> <a href='?_src_=prefs;preference=virtuetwo;task=input'>[virtuetwo]</a><BR>"
 			else
 				virtuetwo = GLOB.virtues[/datum/virtue/none]
-			dat += "<b>Недостаток:</b> <a href='?_src_=prefs;preference=charflaw;task=input'>[charflaw]</a><BR>"
+			dat += "<b>Vice:</b> <a href='?_src_=prefs;preference=charflaw;task=input'>[charflaw]</a><BR>"
 			var/datum/faith/selected_faith = GLOB.faithlist[selected_patron?.associated_faith]
-			dat += "<b>Верование:</b> <a href='?_src_=prefs;preference=faith;task=input'>[selected_faith?.name || "FUCK!"]</a><BR>"
-			dat += "<b>Покровитель:</b> <a href='?_src_=prefs;preference=patron;task=input'>[selected_patron?.name || "FUCK!"]</a><BR>"
-			dat += "<b>Ведущая рука:</b> <a href='?_src_=prefs;preference=domhand'>[domhand == 1 ? "Левая" : "Правая"]</a><BR>"
-			dat += "<b>Вкусовые предпочтения:</b> <a href='?_src_=prefs;preference=culinary;task=menu'>Изменить</a><BR>"
+			dat += "<b>Faith:</b> <a href='?_src_=prefs;preference=faith;task=input'>[selected_faith?.name || "FUCK!"]</a><BR>"
+			dat += "<b>Patron:</b> <a href='?_src_=prefs;preference=patron;task=input'>[selected_patron?.name || "FUCK!"]</a><BR>"
+			dat += "<b>Dominance:</b> <a href='?_src_=prefs;preference=domhand'>[domhand == 1 ? "Left-handed" : "Right-handed"]</a><BR>"
+			dat += "<b>Food Preferences:</b> <a href='?_src_=prefs;preference=culinary;task=menu'>Change</a><BR>"
 
 			var/musicname = (combat_music.shortname ? combat_music.shortname : combat_music.name)
-			dat += "<b>Музыка в бою:</b> <a href='?_src_=prefs;preference=combat_music;task=input'>[musicname || "FUCK!"]</a><BR>"
+			dat += "<b>Combat Music:</b> <a href='?_src_=prefs;preference=combat_music;task=input'>[musicname || "FUCK!"]</a><BR>"
 
-			dat += "<b>Невоскрешаемый:</b> <a href='?_src_=prefs;preference=dnr;task=input'>[dnr_pref ? "Да" : "Нет"]</a><BR>"
+			dat += "<b>Unrevivable:</b> <a href='?_src_=prefs;preference=dnr;task=input'>[dnr_pref ? "Yes" : "No"]</a><BR>"
 
-			dat += "<b>Становление фамильяром:</b><a href='?_src_=prefs;preference=familiar_prefs;task=input'>Параметры</a>"
-			dat += "<br><b>Цвет имени: </b> </b><a href='?_src_=prefs;preference=highlight_color;task=input'>Изменить</a>"
-			dat += "<br><b>Цвет голоса: </b><a href='?_src_=prefs;preference=voice;task=input'>Изменить</a>"
-			dat += "<br><b>Высота голоса: </b><a href='?_src_=prefs;preference=voice_pitch;task=input'>[voice_pitch]</a>"
+			dat += "<b>Be a Familiar:</b><a href='?_src_=prefs;preference=familiar_prefs;task=input'>Familiar Preferences</a>"
+			dat += "<br><b>Nickname Color: </b> </b><a href='?_src_=prefs;preference=highlight_color;task=input'>Change</a>"
+			dat += "<br><b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
+			dat += "<br><b>Voice Pitch: </b><a href='?_src_=prefs;preference=voice_pitch;task=input'>[voice_pitch]</a>"
 
 /*
 			dat += "<br><br><b>Special Names:</b><BR>"
@@ -496,16 +496,16 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				if(job_preferences[job] > highest_pref)
 					highest_pref = SSjob.GetJob(job)
 			if(!isnull(highest_pref) && !istype(highest_pref, /datum/job/roguetown/jester))
-				dat += "<div style='text-align: center'><br>Предпросмотр подкласса:<br> <a href='?_src_=prefs;preference=subclassoutfit;task=input'>[preview_subclass ? "[preview_subclass.name]" : "Никакой"]</a></div>"
+				dat += "<div style='text-align: center'><br>Subclass Preview:<br> <a href='?_src_=prefs;preference=subclassoutfit;task=input'>[preview_subclass ? "[preview_subclass.name]" : "None"]</a></div>"
 			else
 				preview_subclass = null
 			// Rightmost column, 40% width
 			dat += "<td width=40% valign='top'>"
-			dat += "<h2>Телесность</h2>"
+			dat += "<h2>Body</h2>"
 
 //			-----------START OF BODY TABLE-----------
 			dat += "<table width='100%'><tr><td width='1%' valign='top'>"
-			dat += "<b>Применять цвет окраса на черты внешности при его изменении:</b> <a href='?_src_=prefs;preference=update_mutant_colors;task=input'>[update_mutant_colors ? "Да" : "Нет"]</a><BR>"
+			dat += "<b>Update feature colors with change:</b> <a href='?_src_=prefs;preference=update_mutant_colors;task=input'>[update_mutant_colors ? "Yes" : "No"]</a><BR>"
 			var/use_skintones = pref_species.use_skintones
 			if(use_skintones)
 
@@ -516,61 +516,54 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			if((MUTCOLORS in pref_species.species_traits) || (MUTCOLORS_PARTSONLY in pref_species.species_traits))
 
-				dat += "<b>Окрас #1:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Изменить</a><BR>"
-				dat += "<b>Окрас #2:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color2;task=input'>Изменить</a><BR>"
-				dat += "<b>Окрас #3:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor3"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Изменить</a><BR>"
+				dat += "<b>Mutant Color #1:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
+				dat += "<b>Mutant Color #2:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor2"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color2;task=input'>Change</a><BR>"
+				dat += "<b>Mutant Color #3:</b><span style='border: 1px solid #161616; background-color: #[features["mcolor3"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color3;task=input'>Change</a><BR>"
 
 			var/datum/language/selected_lang
 			var/lang_output = "None"
 			if(ispath(extra_language, /datum/language))
 				selected_lang = extra_language
 				lang_output = initial(selected_lang.name)
-			dat += "<b>Дополнительный язык: </b><a href='?_src_=prefs;preference=extra_language;task=input'>[lang_output]</a>"
-			// var/datum/bark/B = GLOB.bark_list[bark_id] // ! REDMOON
-			// dat += "<br><b>Звук возгласа: </b><a href='?_src_=prefs;preference=barksound;task=input'>[B ? initial(B.name) : "INVALID"]</a>" // ! REDMOON
-			// dat += "<br><b>Темп возгласа: </b><a href='?_src_=prefs;preference=barkspeed;task=input'>[bark_speed]</a>" // ! REDMOON
-			// dat += "<br><b>Высота возгласа: </b><a href='?_src_=prefs;preference=barkpitch;task=input'>[bark_pitch]</a>" // ! REDMOON
-			// dat += "<br><b>Разброс возгласа: </b><a href='?_src_=prefs;preference=barkvary;task=input'>[bark_variance]</a>" // ! REDMOON
-			// dat += "<br><a href='?_src_=prefs;preference=barkpreview'>Послушать возгласы</a>" // ! REDMOON
+			dat += "<b>Extra Language: </b><a href='?_src_=prefs;preference=extra_language;task=input'>[lang_output]</a>"
+			//dat += "<br><b>Accent:</b> <a href='?_src_=prefs;preference=char_accent;task=input'>[char_accent]</a>"
+			dat += "<br><b>Features:</b> <a href='?_src_=prefs;preference=customizers;task=menu'>Change</a>"
+			dat += "<br><b>Sprite Scale:</b><a href='?_src_=prefs;preference=body_size;task=input'>[(features["body_size"] * 100)]%</a>"
+			dat += "<br><b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
+			dat += "<br><b>Descriptors:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
 
-			//dat += "<br><b>Акцент:</b> <a href='?_src_=prefs;preference=char_accent;task=input'>[char_accent]</a>"
-			dat += "<br><b>Черты внешности:</b> <a href='?_src_=prefs;preference=customizers;task=menu'>Изменить</a>"
-			dat += "<br><b>Размер модельки:</b><a href='?_src_=prefs;preference=body_size;task=input'>[(features["body_size"] * 100)]%</a>"
-			dat += "<br><b>Узоры:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Изменить</a>"
-			dat += "<br><b>Приметы:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Изменить</a>"
-
-			dat += "<br><b>Портрет персонажа:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Изменить</a>"
+			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 			if(headshot_link != null)
 				dat += "<br><img src='[headshot_link]' width='100px' height='100px'>"
 
-			dat += "<br><b>[(length(flavortext) < MINIMUM_FLAVOR_TEXT) ? "<font color = '#802929'>" : ""]Описание:[(length(flavortext) < MINIMUM_FLAVOR_TEXT) ? "</font>" : ""]</b><a href='?_src_=prefs;preference=formathelp;task=input'>(?)</a><a href='?_src_=prefs;preference=flavortext;task=input'>Изменить</a>"
-			dat += "<br><b>Откровенное описание:</b><a href='?_src_=prefs;preference=formathelp;task=input'>(?)</a><a href='?_src_=prefs;preference=nsfwflavortext;task=input'>Изменить</a>"
-			dat += "<br><b>[(length(ooc_notes) < MINIMUM_OOC_NOTES) ? "<font color = '#802929'>" : ""]OOC примечания:[(length(ooc_notes) < MINIMUM_OOC_NOTES) ? "</font>" : ""]</b><a href='?_src_=prefs;preference=formathelp;task=input'>(?)</a><a href='?_src_=prefs;preference=ooc_notes;task=input'>Изменить</a>"
-			dat += "<br><b>ERP пристрастия:</b><a href='?_src_=prefs;preference=formathelp;task=input'>(?)</a><a href='?_src_=prefs;preference=erpprefs;task=input'>Изменить</a>"
-			dat += "<br><b>Песня:</b> <a href='?_src_=prefs;preference=ooc_extra;task=input'>Вставить URL</a>"
-			dat += "<a href='?_src_=prefs;preference=change_title;task=input'>Изменить заголовок</a>"
-			dat += "<a href='?_src_=prefs;preference=change_artist;task=input'>Изменить автора</a>"
-			dat += "<br><B>Галерея изображений:</b> <a href='?_src_=prefs;preference=img_gallery;task=input'>Добавить</a>"
-			dat+= "<a href='?_src_=prefs;preference=clear_gallery;task=input'>Очистить галерею</a>"
-			dat += "<br><a href='?_src_=prefs;preference=ooc_preview;task=input'><b>Предварительный осмотр</b></a>"
+			dat += "<br><b>[(length(flavortext) < MINIMUM_FLAVOR_TEXT) ? "<font color = '#802929'>" : ""]Flavortext:[(length(flavortext) < MINIMUM_FLAVOR_TEXT) ? "</font>" : ""]</b><a href='?_src_=prefs;preference=formathelp;task=input'>(?)</a><a href='?_src_=prefs;preference=flavortext;task=input'>Change</a>"
+			dat += "<br><b>NSFW Flavortext:</b><a href='?_src_=prefs;preference=formathelp;task=input'>(?)</a><a href='?_src_=prefs;preference=nsfwflavortext;task=input'>Change</a>"
+			dat += "<br><b>[(length(ooc_notes) < MINIMUM_OOC_NOTES) ? "<font color = '#802929'>" : ""]OOC Notes:[(length(ooc_notes) < MINIMUM_OOC_NOTES) ? "</font>" : ""]</b><a href='?_src_=prefs;preference=formathelp;task=input'>(?)</a><a href='?_src_=prefs;preference=ooc_notes;task=input'>Change</a>"
+			dat += "<br><b>ERP Preferences:</b><a href='?_src_=prefs;preference=formathelp;task=input'>(?)</a><a href='?_src_=prefs;preference=erpprefs;task=input'>Change</a>"
+			dat += "<br><b>Song:</b> <a href='?_src_=prefs;preference=ooc_extra;task=input'>Change URL</a>"
+			dat += "<a href='?_src_=prefs;preference=change_title;task=input'>Change Title</a>"
+			dat += "<a href='?_src_=prefs;preference=change_artist;task=input'>Change Artist</a>"
+			dat += "<br><B>Image Gallery:</b> <a href='?_src_=prefs;preference=img_gallery;task=input'>Add</a>"
+			dat+= "<a href='?_src_=prefs;preference=clear_gallery;task=input'>Clear Gallery</a>"
+			dat += "<br><a href='?_src_=prefs;preference=ooc_preview;task=input'><b>Preview Examine</b></a>"
 
-			dat += "<br><b>Персональный предмет I:</b> <a href='?_src_=prefs;preference=loadout_item;task=input'>[loadout ? loadout.name : "Выбрать"] </a>"
+			dat += "<br><b>Loadout Item I:</b> <a href='?_src_=prefs;preference=loadout_item;task=input'>[loadout ? loadout.name : "None"] </a>"
 			if (loadout_1_hex)
 				dat += "<a href='?_src_=prefs;preference=loadout1hex;task=input'> <span style='border: 1px solid #161616; background-color: [loadout_1_hex ? loadout_1_hex : "#FFFFFF"];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a>"
 			else
-				dat += "<a href='?_src_=prefs;preference=loadout1hex;task=input'>(Ц)</a>"
+				dat += "<a href='?_src_=prefs;preference=loadout1hex;task=input'>(C)</a>"
 
-			dat += "<br><b>Персональный предмет II:</b> <a href='?_src_=prefs;preference=loadout_item2;task=input'>[loadout2 ? loadout2.name : "Выбрать"] </a>"
+			dat += "<br><b>Loadout Item II:</b> <a href='?_src_=prefs;preference=loadout_item2;task=input'>[loadout2 ? loadout2.name : "None"] </a>"
 			if (loadout_2_hex)
 				dat += "<a href='?_src_=prefs;preference=loadout2hex;task=input'> <span style='border: 1px solid #161616; background-color: [loadout_2_hex ? loadout_2_hex : "#FFFFFF"];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a>"
 			else
-				dat += "<a href='?_src_=prefs;preference=loadout2hex;task=input'>(Ц)</a>"
+				dat += "<a href='?_src_=prefs;preference=loadout2hex;task=input'>(C)</a>"
 
-			dat += "<br><b>Персональный предмет III:</b> <a href='?_src_=prefs;preference=loadout_item3;task=input'>[loadout3 ? loadout3.name : "Выбрать"]</a>"
+			dat += "<br><b>Loadout Item III:</b> <a href='?_src_=prefs;preference=loadout_item3;task=input'>[loadout3 ? loadout3.name : "None"]</a>"
 			if (loadout_3_hex)
 				dat += "<a href='?_src_=prefs;preference=loadout3hex;task=input'><span style='border: 1px solid #161616; background-color: [loadout_3_hex ? loadout_3_hex : "#FFFFFF"];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a>"
 			else
-				dat += "<a href='?_src_=prefs;preference=loadout3hex;task=input'>(Ц)</a>"
+				dat += "<a href='?_src_=prefs;preference=loadout3hex;task=input'>(C)</a>"
 			dat += "</td>"
 
 			dat += "</tr></table>"
@@ -580,12 +573,12 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "</table>"
 
 		if (1) // Game Preferences
-			used_title = "Настройки"
+			used_title = "Options"
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
-			dat += "<h2>Основные настройки</h2>"
-//			dat += "<b>Стиль UI :</b> <a href='?_src_=prefs;task=input;preference=ui'>[UI_style]</a><br>"
-			dat += "<b>tgui Мониторы:</b> <a href='?_src_=prefs;preference=tgui_lock'>[(tgui_lock) ? "Primary" : "All"]</a><br>"
-//			dat += "<b>tgui Стиль:</b> <a href='?_src_=prefs;preference=tgui_fancy'>[(tgui_fancy) ? "Fancy" : "No Frills"]</a><br>"
+			dat += "<h2>General Settings</h2>"
+//			dat += "<b>UI Style:</b> <a href='?_src_=prefs;task=input;preference=ui'>[UI_style]</a><br>"
+			dat += "<b>tgui Monitors:</b> <a href='?_src_=prefs;preference=tgui_lock'>[(tgui_lock) ? "Primary" : "All"]</a><br>"
+//			dat += "<b>tgui Style:</b> <a href='?_src_=prefs;preference=tgui_fancy'>[(tgui_fancy) ? "Fancy" : "No Frills"]</a><br>"
 //			dat += "<b>Show Runechat Chat Bubbles:</b> <a href='?_src_=prefs;preference=chat_on_map'>[chat_on_map ? "Enabled" : "Disabled"]</a><br>"
 //			dat += "<b>Runechat message char limit:</b> <a href='?_src_=prefs;preference=max_chat_length;task=input'>[max_chat_length]</a><br>"
 //			dat += "<b>See Runechat for non-mobs:</b> <a href='?_src_=prefs;preference=see_chat_non_mob'>[see_chat_non_mob ? "Enabled" : "Disabled"]</a><br>"
@@ -675,25 +668,25 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			dat += "</td><td width='300px' height='300px' valign='top'>"
 
-			dat += "<h2>Настройки особых классов</h2>"
+			dat += "<h2>Special Role Settings</h2>"
 
 			if(is_banned_from(user.ckey, ROLE_SYNDICATE))
-				dat += "<font color=red><b>Мне запрещено играть за злодейские классы.</b></font><br>"
+				dat += "<font color=red><b>I am banned from antagonist roles.</b></font><br>"
 				src.be_special = list()
 
 
 			for (var/i in GLOB.special_roles_rogue)
 				if(is_banned_from(user.ckey, i))
-					dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;bancheck=[i]'>ЗАБАНЕН</a><br>"
+					dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;bancheck=[i]'>BANNED</a><br>"
 				else
 					var/days_remaining = null
 					if(ispath(GLOB.special_roles_rogue[i]) && CONFIG_GET(flag/use_age_restriction_for_jobs)) //If it's a game mode antag, check if the player meets the minimum age
 						days_remaining = get_remaining_days(user.client)
 
 					if(days_remaining)
-						dat += "<b>[capitalize(i)]:</b> <font color=red> \[ЧЕРЕЗ [days_remaining] ДНЕЙ]</font><br>"
+						dat += "<b>[capitalize(i)]:</b> <font color=red> \[IN [days_remaining] DAYS]</font><br>"
 					else
-						dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;preference=be_special;be_special_type=[i]'>[(i in be_special) ? "Включено" : "Выключено"]</a><br>"
+						dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;preference=be_special;be_special_type=[i]'>[(i in be_special) ? "Enabled" : "Disabled"]</a><br>"
 //			dat += "<br>"
 //			dat += "<b>Midround Antagonist:</b> <a href='?_src_=prefs;preference=allow_midround_antag'>[(toggles & MIDROUND_ANTAG) ? "Enabled" : "Disabled"]</a><br>"
 			dat += "</td></tr></table>"
@@ -701,8 +694,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 		if(2) //OOC Preferences
 			used_title = "ooc"
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
-			dat += "<h2>OOC параметры</h2>"
-			dat += "<b>Мерцание окна:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<h2>OOC Settings</h2>"
+			dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
 			dat += "<b>Play Admin MIDIs:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
@@ -715,27 +708,27 @@ GLOBAL_LIST_EMPTY(chosen_names)
 					dat += "<b>BYOND Membership Publicity:</b> <a href='?_src_=prefs;preference=publicity'>[(toggles & MEMBER_PUBLIC) ? "Public" : "Hidden"]</a><br>"
 
 				if(unlock_content || check_rights_for(user.client, R_ADMIN))
-					dat += "<b>Цвет OOC:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.normal_ooc_colour];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Change</a><br>"
+					dat += "<b>OOC Color:</b> <span style='border: 1px solid #161616; background-color: [ooccolor ? ooccolor : GLOB.normal_ooc_colour];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=ooccolor;task=input'>Change</a><br>"
 
 			dat += "</td>"
 
 			if(user.client.holder)
 				dat +="<td width='300px' height='300px' valign='top'>"
 
-				dat += "<h2>Админ настройки</h2>"
+				dat += "<h2>Admin Settings</h2>"
 
-				dat += "<b>Звуки Админхелпа:</b> <a href='?_src_=prefs;preference=hear_adminhelps'>[(toggles & SOUND_ADMINHELP)?"Включено":"Выключено"]</a><br>"
-				dat += "<b>Звуки Игроков:</b> <a href = '?_src_=prefs;preference=hear_prayers'>[(toggles & SOUND_PRAYERS)?"Включено":"Выключено"]</a><br>"
-				dat += "<b>Announce Login:</b> <a href='?_src_=prefs;preference=announce_login'>[(toggles & ANNOUNCE_LOGIN)?"Включено":"Выключено"]</a><br>"
+				dat += "<b>Adminhelp Sounds:</b> <a href='?_src_=prefs;preference=hear_adminhelps'>[(toggles & SOUND_ADMINHELP)?"Enabled":"Disabled"]</a><br>"
+				dat += "<b>Prayer Sounds:</b> <a href = '?_src_=prefs;preference=hear_prayers'>[(toggles & SOUND_PRAYERS)?"Enabled":"Disabled"]</a><br>"
+				dat += "<b>Announce Login:</b> <a href='?_src_=prefs;preference=announce_login'>[(toggles & ANNOUNCE_LOGIN)?"Enabled":"Disabled"]</a><br>"
 				dat += "<br>"
-				dat += "<b>Комбинированное HUD-освещение:</b> <a href = '?_src_=prefs;preference=combohud_lighting'>[(toggles & COMBOHUD_LIGHTING)?"Full-bright":"Без изменений"]</a><br>"
+				dat += "<b>Combo HUD Lighting:</b> <a href = '?_src_=prefs;preference=combohud_lighting'>[(toggles & COMBOHUD_LIGHTING)?"Full-bright":"No Change"]</a><br>"
 				dat += "<br>"
-				dat += "<b>Скрыть чат мёртвых:</b> <a href = '?_src_=prefs;preference=toggle_dead_chat'>[(chat_toggles & CHAT_DSAY)?"Показано":"Скрыто"]</a><br>"
-				dat += "<b>Скрыть радио:</b> <a href = '?_src_=prefs;preference=toggle_radio_chatter'>[(chat_toggles & CHAT_RADIO)?"Показано":"Скрыто"]</a><br>"
-				dat += "<b>Скрыть шёпот:</b> <a href = '?_src_=prefs;preference=toggle_prayers'>[(chat_toggles & CHAT_PRAYER)?"Показано":"Скрыто"]</a><br>"
+				dat += "<b>Hide Dead Chat:</b> <a href = '?_src_=prefs;preference=toggle_dead_chat'>[(chat_toggles & CHAT_DSAY)?"Shown":"Hidden"]</a><br>"
+				dat += "<b>Hide Radio Messages:</b> <a href = '?_src_=prefs;preference=toggle_radio_chatter'>[(chat_toggles & CHAT_RADIO)?"Shown":"Hidden"]</a><br>"
+				dat += "<b>Hide Prayers:</b> <a href = '?_src_=prefs;preference=toggle_prayers'>[(chat_toggles & CHAT_PRAYER)?"Shown":"Hidden"]</a><br>"
 				if(CONFIG_GET(flag/allow_admin_asaycolor))
 					dat += "<br>"
-					dat += "<b>Цвет ASAY:</b> <span style='border: 1px solid #161616; background-color: [asaycolor ? asaycolor : "#FF4500"];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=asaycolor;task=input'>Изменить</a><br>"
+					dat += "<b>ASAY Color:</b> <span style='border: 1px solid #161616; background-color: [asaycolor ? asaycolor : "#FF4500"];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=asaycolor;task=input'>Change</a><br>"
 
 				//deadmin
 				dat += "<h2>Deadmin While Playing</h2>"
@@ -797,19 +790,19 @@ GLOBAL_LIST_EMPTY(chosen_names)
 						dat += "<br>"
 
 			dat += "<br><br>"
-			dat += "<a href ='?_src_=prefs;preference=keybinds;task=keybindings_set'>\[Вернуться к значениям по умолчанию\]</a>"
+			dat += "<a href ='?_src_=prefs;preference=keybinds;task=keybindings_set'>\[Reset to default\]</a>"
 			dat += "</body>"
 
 
 	if(!IsGuestKey(user.key))
-		dat += "<a href='?_src_=prefs;preference=save'>Сохранить</a><br>"
-		dat += "<a href='?_src_=prefs;preference=load'>Отменить</a><br>"
+		dat += "<a href='?_src_=prefs;preference=save'>Save</a><br>"
+		dat += "<a href='?_src_=prefs;preference=load'>Undo</a><br>"
 
 	// well.... one empty slot here for something I suppose lol
 	dat += "<table width='100%'>"
 	dat += "<tr>"
 	dat += "<td width='33%' align='left'>"
-	dat += "<b>Затенение (AO):</b> <a href='?_src_=prefs;preference=ambientocclusion'>[ambientocclusion ? "Включено" : "Выключено"]</a><br>"
+	dat += "<b>Ambient Occlusion:</b> <a href='?_src_=prefs;preference=ambientocclusion'>[ambientocclusion ? "Enabled" : "Disabled"]</a><br>"
 	dat += "</td>"
 	dat += "<td width='33%' align='center'>"
 	var/mob/dead/new_player/N = user
@@ -818,34 +811,33 @@ GLOBAL_LIST_EMPTY(chosen_names)
 		if(SSticker.current_state <= GAME_STATE_PREGAME)
 			switch(N.ready)
 				if(PLAYER_NOT_READY)
-					dat += "<b>НЕ ГОТОВ</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>ГОТОВ</a>"
+					dat += "<b>UNREADY</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>READY</a>"
 				if(PLAYER_READY_TO_PLAY)
-					dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>НЕ ГОТОВ</a> <b>ГОТОВ</b>"
+					dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>UNREADY</a> <b>READY</b>"
 					log_game("([user || "NO KEY"]) readied as ([real_name])")
 		else
 			if(!is_active_migrant())
-				dat += "<a href='byond://?src=[REF(N)];late_join=1'>ПРИСОЕДИНИТЬСЯ</a>"
+				dat += "<a href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
 			else
-				dat += "<a class='linkOff' href='byond://?src=[REF(N)];late_join=1'>ПРИСОЕДИНИТЬСЯ</a>"
-			dat += "<br><a href='?_src_=prefs;preference=migrants'>ПЕРЕСЕЛЕНИЕ</a>"
-			dat += "<br><a href='?_src_=prefs;preference=manifest'>ДЕЙСТВУЮЩИЕ ЛИЦА</a>"
-			dat += "<br><a href='?_src_=prefs;preference=observe'>НАБЛЮДАТЬ</a>"
+				dat += "<a class='linkOff' href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
+			dat += " - <a href='?_src_=prefs;preference=migrants'>MIGRATION</a>"
+			dat += "<br><a href='?_src_=prefs;preference=manifest'>ACTORS</a>"
+			dat += " - <a href='?_src_=prefs;preference=observe'>VOYEUR</a>"
 	else
-		dat += "<a href='?_src_=prefs;preference=finished'>ГОТОВО</a>"
+		dat += "<a href='?_src_=prefs;preference=finished'>DONE</a>"
 
 	dat += "</td>"
 	dat += "<td width='33%' align='right'>"
-	// dat += "<b>Быть строптивым(-ой):</b> <a href='?_src_=prefs;preference=be_defiant'>[(defiant) ? "Да":"Нет"]</a><br>" // ! REDMOON
-	dat += "<b>Быть Гласом:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Да":"Нет"]</a>"
-	dat += "<br><b>Звуки администраторов:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Включены":"Выключены"]</a>"
+	dat += "<b>Be voice:</b> <a href='?_src_=prefs;preference=schizo_voice'>[(toggles & SCHIZO_VOICE) ? "Enabled":"Disabled"]</a>"
+	dat += "<br><b>Toggle Admin Sounds:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Enabled":"Disabled"]</a>"
 	dat += "</td>"
 	dat += "</tr>"
 	dat += "</table>"
-//	dat += "<a href='?_src_=prefs;preference=reset_all'> настройки</a>"
+//	dat += "<a href='?_src_=prefs;preference=reset_all'>Reset Setup</a>"
 
 
 	if(user.client.is_new_player())
-		dat = list("<center>ЗАРЕГИСТРИРОВАН!</center>")
+		dat = list("<center>REGISTER!</center>")
 
 	winshow(user, "preferencess_window", TRUE)
 	winset(user, "preferencess_window", "size=820x850")
@@ -862,7 +854,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 /datum/preferences/proc/CaptureKeybinding(mob/user, datum/keybinding/kb, old_key)
 	var/HTML = {"
-	<div id='focus' style="outline: 0;" tabindex=0>Keybinding: [kb.full_name]<br>[kb.description]<br><br><b>Нажмите любую кнопку что бы сменить<br>Нажмите ESC чтобы очистить</b></div>
+	<div id='focus' style="outline: 0;" tabindex=0>Keybinding: [kb.full_name]<br>[kb.description]<br><br><b>Press any key to change<br>Press ESC to clear</b></div>
 	<script>
 	var deedDone = false;
 	document.onkeyup = function(e) {
@@ -899,16 +891,16 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/HTML = "<center>"
 	if(SSjob.occupations.len <= 0)
 //		HTML += "The job SSticker is not yet finished creating jobs, please try again later"
-		HTML += "<center><a href='?_src_=prefs;preference=job;task=close'>Сохранить</a></center><br>" // Easier to press up here.
+		HTML += "<center><a href='?_src_=prefs;preference=job;task=close'>Done</a></center><br>" // Easier to press up here.
 
 	else
 //		HTML += "<b>Choose class preferences</b><br>"
 //		HTML += "<div align='center'>Left-click to raise a class preference, right-click to lower it.<br></div>"
-		HTML += "<center><a href='?_src_=prefs;preference=job;task=close'>Сохранить</a></center>" // Easier to press up here.
+		HTML += "<center><a href='?_src_=prefs;preference=job;task=close'>Done</a></center>" // Easier to press up here.
 		if(joblessrole != RETURNTOLOBBY && joblessrole != BERANDOMJOB) // this is to catch those that used the previous definition and reset.
 			joblessrole = RETURNTOLOBBY
-		HTML += "<i>Нажмите на разблокированный класс, чтобы получить дополнительную информацию.</i><br>"
-		HTML += "<b>Если класс недоступен:</b><font color='purple'><a href='?_src_=prefs;preference=job;task=nojob'>[joblessrole]</a></font><BR>"
+		HTML += "<i>Click on an unlocked Class to get more information</i><br>"
+		HTML += "<b>If Role Unavailable:</b><font color='purple'><a href='?_src_=prefs;preference=job;task=nojob'>[joblessrole]</a></font><BR>"
 		HTML += "<script type='text/javascript'>function setJobPrefRedirect(level, rank) { window.location.href='?_src_=prefs;preference=job;task=setJobLevel;level=' + level + ';text=' + encodeURIComponent(rank); return false; }</script>"
 		HTML += "<table width='100%' cellpadding='1' cellspacing='0'><tr><td width='20%'>" // Table within a table for alignment, also allows you to easily add more colomns.
 		HTML += "<table width='100%' cellpadding='1' cellspacing='0'>"
@@ -942,11 +934,11 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				used_name = "[job.f_title]"
 			lastJob = job
 			if(is_banned_from(user.ckey, rank))
-				HTML += "[used_name]</td> <td><a href='?_src_=prefs;bancheck=[rank]'> ЗАБАНЕН</a></td></tr>"
+				HTML += "[used_name]</td> <td><a href='?_src_=prefs;bancheck=[rank]'> BANNED</a></td></tr>"
 				continue
 			var/required_playtime_remaining = job.required_playtime_remaining(user.client)
 			if(required_playtime_remaining)
-				HTML += "[used_name]</td> <td><font color=red> \[ [get_exp_format(required_playtime_remaining)] в качестве [job.get_exp_req_type()] \] </font></td></tr>"
+				HTML += "[used_name]</td> <td><font color=red> \[ [get_exp_format(required_playtime_remaining)] as [job.get_exp_req_type()] \] </font></td></tr>"
 				continue
 			if(!job.player_old_enough(user.client))
 				var/available_in_days = job.available_in_days(user.client)
@@ -954,11 +946,11 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				continue
 			#ifdef USES_PQ
 			if(!job.required && !isnull(job.min_pq) && (get_playerquality(user.ckey) < job.min_pq))
-				HTML += "<font color=#a59461>[used_name] (Минимум PQ: [job.min_pq])</font></td> <td> </td></tr>"
+				HTML += "<font color=#a59461>[used_name] (Min PQ: [job.min_pq])</font></td> <td> </td></tr>"
 				continue
 			#endif
 			if(!job.required && !isnull(job.max_pq) && (get_playerquality(user.ckey) > job.max_pq))
-				HTML += "<font color=#a59461>[used_name] (Максимум PQ: [job.max_pq])</font></td> <td> </td></tr>"
+				HTML += "<font color=#a59461>[used_name] (Max PQ: [job.max_pq])</font></td> <td> </td></tr>"
 				continue
 			if(length(job.virtue_restrictions) && length(job.vice_restrictions))
 				var/name
@@ -977,7 +969,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 					else
 						name += charflaw.name
 				if(!isnull(name))
-					HTML += "<font color='#a561a5'>[used_name] (Запрещено достоинством / пороком: [name])</font></td> <td> </td></tr>"
+					HTML += "<font color='#a561a5'>[used_name] (Disallowed by Virtues / Vice: [name])</font></td> <td> </td></tr>"
 			if(length(job.virtue_restrictions))
 				var/name
 				if(virtue.type in job.virtue_restrictions)
@@ -989,11 +981,11 @@ GLOBAL_LIST_EMPTY(chosen_names)
 					else
 						name = virtuetwo.name
 				if(!isnull(name))
-					HTML += "<font color='#a59461'>[used_name] (Запрещено достоинством: [name])</font></td> <td> </td></tr>"
+					HTML += "<font color='#a59461'>[used_name] (Disallowed by Virtue: [name])</font></td> <td> </td></tr>"
 					continue
 			if(length(job.vice_restrictions))
 				if(charflaw.type in job.vice_restrictions)
-					HTML += "<font color='#a56161'>[used_name] (Запрещено пороком: [charflaw.name])</font></td> <td> </td></tr>"
+					HTML += "<font color='#a56161'>[used_name] (Disallowed by Vice: [charflaw.name])</font></td> <td> </td></tr>"
 					continue
 			var/job_unavailable = JOB_AVAILABLE
 			if(isnewplayer(parent?.mob))
@@ -1111,17 +1103,17 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 
 //		var/message = "Be an [SSjob.overflow_role] if preferences unavailable"
 //		if(joblessrole == BERANDOMJOB)
-//			message = "Получить случайную роль если роли не доступны"
+//			message = "Get random job if preferences unavailable"
 //		else if(joblessrole == RETURNTOLOBBY)
-//			message = "Вернитесь в лобби, если роли недоступны"
+//			message = "Return to lobby if preferences unavailable"
 //		HTML += "<center><br><a href='?_src_=prefs;preference=job;task=random'>[message]</a></center>"
 		if(user.client.prefs.lastclass)
-			HTML += "<center><a href='?_src_=prefs;preference=job;task=triumphthing'>ПОИГРАЙТЕ ЗА [user.client.prefs.lastclass] СНОВА</a></center>"
+			HTML += "<center><a href='?_src_=prefs;preference=job;task=triumphthing'>PLAY AS [user.client.prefs.lastclass] AGAIN</a></center>"
 		else
 			HTML += "<br>"
-		HTML += "<center><a href='?_src_=prefs;preference=job;task=reset'>Сброс</a></center>"
+		HTML += "<center><a href='?_src_=prefs;preference=job;task=reset'>Reset</a></center>"
 
-	var/datum/browser/noclose/popup = new(user, "mob_occupation", "<div align='center'>Выбор класса</div>", width, height)
+	var/datum/browser/noclose/popup = new(user, "mob_occupation", "<div align='center'>Class Selection</div>", width, height)
 	popup.set_window_options("can_close=0")
 	popup.set_content(HTML)
 	popup.open(FALSE)
@@ -1172,7 +1164,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 			var/used_name = job.display_title || job.title
 			if((pronouns == SHE_HER || pronouns == THEY_THEM_F) && job.f_title)
 				used_name = "[job.f_title]"
-			to_chat(user, "<font color='red'>У вас слишком мало PQ для [used_name] (Минимум PQ: [job.min_pq]).</font>")
+			to_chat(user, "<font color='red'>You have too low PQ for [used_name] (Min PQ: [job.min_pq]), you may only set it to low.</font>")
 			jpval = JP_LOW
 	#endif
 
@@ -1189,15 +1181,15 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 	if(user.client?.prefs)
 		if(!user.client.prefs.lastclass)
 			return
-	var/choice = tgalert(user, "Потратить 2 триумфа, чтобы сыграть за этот класс снова?", "Сбросить класс", "Сделать это", "Отмена")
-	if(choice == "Отмена")
+	var/choice = tgalert(user, "Use 2 Triumphs to play as this class again?", "Reset LastPlayed", "Do It", "Cancel")
+	if(choice == "Cancel")
 		return
 	if(!choice)
 		return
 	if(user.client?.prefs)
 		if(user.client.prefs.lastclass)
 			if(user.get_triumphs() < 2)
-				to_chat(user, span_warning("Я недостаточно ТРИУМФАЛЕН"))
+				to_chat(user, span_warning("I haven't TRIUMPHED enough."))
 				return
 			user.adjust_triumphs(-2)
 			user.client.prefs.lastclass = null
@@ -1219,12 +1211,12 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 
 	dat += "<style>label { display: inline-block; width: 200px; }</style><body>"
 
-	dat += "<center><a href='?_src_=prefs;preference=keybinds;task=close'>Сохранить</a></center><br>"
+	dat += "<center><a href='?_src_=prefs;preference=keybinds;task=close'>Done</a></center><br>"
 	for (var/category in kb_categories)
 		for (var/i in kb_categories[category])
 			var/datum/keybinding/kb = i
 			if(!length(user_binds[kb.name]))
-				dat += "<label>[kb.full_name]</label> <a href ='?_src_=prefs;preference=keybinds;task=keybindings_capture;keybinding=[kb.name];old_key=["Unbound"]'>Не выставлена</a>"
+				dat += "<label>[kb.full_name]</label> <a href ='?_src_=prefs;preference=keybinds;task=keybindings_capture;keybinding=[kb.name];old_key=["Unbound"]'>Unbound</a>"
 //						var/list/default_keys = hotkeys ? kb.hotkey_keys : kb.classic_keys
 //						if(LAZYLEN(default_keys))
 //							dat += "| Default: [default_keys.Join(", ")]"
@@ -1236,14 +1228,14 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					bound_key = user_binds[kb.name][bound_key_index]
 					dat += " | <a href ='?_src_=prefs;preference=keybinds;task=keybindings_capture;keybinding=[kb.name];old_key=[bound_key]'>[bound_key]</a>"
 				if(length(user_binds[kb.name]) < MAX_KEYS_PER_KEYBIND)
-					dat += "| <a href ='?_src_=prefs;preference=keybinds;task=keybindings_capture;keybinding=[kb.name]'>Добавить новую</a>"
+					dat += "| <a href ='?_src_=prefs;preference=keybinds;task=keybindings_capture;keybinding=[kb.name]'>Add Secondary</a>"
 				dat += "<br>"
 
 	dat += "<br><br>"
-	dat += "<a href ='?_src_=prefs;preference=keybinds;task=keybindings_reset'>\[Вернуться к значениям по умолчанию\]</a>"
+	dat += "<a href ='?_src_=prefs;preference=keybinds;task=keybindings_reset'>\[Reset to default\]</a>"
 	dat += "</body>"
 
-	var/datum/browser/noclose/popup = new(user, "keybind_setup", "<div align='center'>Горячие клавиши</div>", 600, 600) //no reason not to reuse the occupation window, as it's cleaner that way
+	var/datum/browser/noclose/popup = new(user, "keybind_setup", "<div align='center'>Keybinds</div>", 600, 600) //no reason not to reuse the occupation window, as it's cleaner that way
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
@@ -1257,27 +1249,27 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 
 
 	if(is_banned_from(user.ckey, ROLE_SYNDICATE))
-		dat += "<font color=red><b>Мне запрещено играть за злодейские классы..</b></font><br>"
+		dat += "<font color=red><b>I am banned from antagonist roles.</b></font><br>"
 		src.be_special = list()
 
 
 	for (var/i in GLOB.special_roles_rogue)
 		if(is_banned_from(user.ckey, i))
-			dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;bancheck=[i]'>ЗАБАНЕН</a><br>"
+			dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;bancheck=[i]'>BANNED</a><br>"
 		else
 			var/days_remaining = null
 			if(ispath(GLOB.special_roles_rogue[i]) && CONFIG_GET(flag/use_age_restriction_for_jobs)) //If it's a game mode antag, check if the player meets the minimum age
 				days_remaining = get_remaining_days(user.client)
 
 			if(days_remaining)
-				dat += "<b>[capitalize(i)]:</b> <font color=red> \[ЧЕРЕЗ [days_remaining] ДНЕЙ]</font><br>"
+				dat += "<b>[capitalize(i)]:</b> <font color=red> \[IN [days_remaining] DAYS]</font><br>"
 			else
-				dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;preference=antag;task=be_special;be_special_type=[i]'>[(i in be_special) ? "Включено" : "Выключено"]</a><br>"
+				dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;preference=antag;task=be_special;be_special_type=[i]'>[(i in be_special) ? "Enabled" : "Disabled"]</a><br>"
 
 
 	dat += "</body>"
 
-	var/datum/browser/noclose/popup = new(user, "antag_setup", "<div align='center'>Особые классы</div>", 250, 300) //no reason not to reuse the occupation window, as it's cleaner that way
+	var/datum/browser/noclose/popup = new(user, "antag_setup", "<div align='center'>Special Role</div>", 250, 300) //no reason not to reuse the occupation window, as it's cleaner that way
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
@@ -1378,7 +1370,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 		if(!user.check_agevet())
 			to_chat(usr, span_info("- You are a whitelisted player with full access to the server's features. If you'd also like to show others that you've been <b>AGE-VERIFIED</b> with a censored ID, you can open a ticket in Azure Peak's <b>#vet-here</b> channel. If you are already verified on Discord, but not in-game, ahelp. Note that this is a purely optional process, and - besides awarding a special header for your flavortext - doesn't affect you in any other way."))
 		else
-			to_chat(usr, span_love("- Ваш возраст подтверждён!"))
+			to_chat(usr, span_love("- You have been successfully <b>AGE-VERIFIED!</b>"))
 
 	else if(href_list["preference"] == "culinary")
 		show_culinary_ui(user)
@@ -1465,11 +1457,11 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 				SetKeybinds(user)
 
 			if("keybindings_reset")
-				var/choice = tgalert(user, "Вы правда хотите сбросить горячие клавиши?", "Сброс горячих клавиш", "Подтвердить", "Отмена")
-				if(choice == "Отмена")
+				var/choice = tgalert(user, "Do you really want to reset your keybindings?", "Setup keybindings", "Do It", "Cancel")
+				if(choice == "Cancel")
 					ShowChoices(user,3)
 					return
-				hotkeys = (choice == "Подтвердить")
+				hotkeys = (choice == "Do It")
 				key_bindings = (hotkeys) ? deepCopyList(GLOB.hotkey_keybinding_list_by_key) : deepCopyList(GLOB.classic_keybinding_list_by_key)
 				user.client.update_movement_keys()
 				SetKeybinds(user)
@@ -1554,22 +1546,22 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							ghost_others = GHOST_OTHERS_SIMPLE
 
 				if("name")
-					var/new_name = tgui_input_text(user, "Имя этой оболочки?", "ИМЕНОВАНИЕ", encode = FALSE)
+					var/new_name = tgui_input_text(user, "The name of this vessel?", "IDENTITY", encode = FALSE)
 					if(new_name)
 						new_name = reject_bad_name(new_name)
 						if(new_name)
 							real_name = new_name
 						else
-							to_chat(user, "<font color='red'>Неверное имя. Длина имени должна быть не менее 2 и не более [MAX_NAME_LEN] символов. Оно может содержать только символы A-Z, a-z, -, ', . and ,.</font>")
+							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ', . and ,.</font>")
 
 				if("nickname")
-					var/new_name = tgui_input_text(user, "Выберите прозвище вашего персонажа (Для подсветки):", "СЛОВЕСНОЕ КЛЕЙМО",  encode = FALSE)
+					var/new_name = tgui_input_text(user, "Choose your character's nickname (For Highlighting):", "NICKNAME",  encode = FALSE)
 					if(new_name)
 						new_name = reject_bad_name(new_name)
 						if(new_name)
 							nickname = new_name
 						else
-							to_chat(user, "<font color='red'>Неверное прозвище. Длина прозвища должна быть не менее 2 и не более [MAX_NAME_LEN] символов. Оно может содержать только символы A-Z, a-z, -, ', . and ,.</font>")
+							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ', . and ,.</font>")
 
 				if("subclassoutfit")
 					var/list/choices = list("None")
@@ -1599,7 +1591,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 //						age = max(min( round(text2num(new_age)), AGE_MAX),AGE_MIN)
 
 				if("age")
-					var/new_age = tgui_input_list(user, "Выберите возрастной этап персонажа (в рамках 18-[pref_species.max_age] лет)", "ИСТРАЧЕННЫЕ ЛЕТА", pref_species.possible_ages) 
+					var/new_age = tgui_input_list(user, "Choose your character's age (18-[pref_species.max_age])", "YILS LIVED", pref_species.possible_ages)
 					if(new_age)
 						age = new_age
 						var/list/hairs
@@ -1612,14 +1604,14 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						// LETHALSTONE EDIT: let players know what this shit does stats-wise
 						switch (age)
 							if (AGE_ADULT)
-								to_chat(user, "Вы проживаете свои лучшие годы, какими бы они ни были, не получая никаких преимуществ и не терпя никаких ограничений за свою короткую жизнь в этом мире.")
+								to_chat(user, "You preside in your 'prime', whatever this may be, and gain no bonus nor endure any penalty for your time spent alive.")
 							if (AGE_MIDDLEAGED)
-								to_chat(user, "Мышцы болят, а суставы стираются, когда хватка времени сжимает ваши плечи. (-1 SPD, +1 WIL)")
+								to_chat(user, "Muscles ache and joints begin to slow as Aeon's grasp begins to settle upon your shoulders. (-1 SPD, +1 WIL)")
 							if (AGE_OLD)
-								to_chat(user, "В таком опасном мире, как ПСАЙДОНИЯ, пожилые люди — почти чудо... Или бенефициары родовых привилегий. (-1 STR, -2 SPE, -1 PER, -2 CON, +2 INT, +1 FOR)")
+								to_chat(user, "In a place as lethal as PSYDONIA, the elderly are all but marvels... or beneficiaries of the habitually privileged. (-1 STR, -2 SPE, -1 PER, -2 CON, +2 INT, +1 FOR)")
 						// LETHALSTONE EDIT END
 						ResetJobs()
-						to_chat(user, "<font color='red'>Классы сброшены.</font>")
+						to_chat(user, "<font color='red'>Classes reset.</font>")
 
 				// LETHALSTONE EDIT: add statpack selection
 				if ("statpack")
@@ -1635,7 +1627,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 
 					statpacks_available = sort_list(statpacks_available)
 
-					var/statpack_input = tgui_input_list(user, "Как проявляются ваши качества?", "ПЛОТЬ И СЕРДЦЕ", statpacks_available, statpack)
+					var/statpack_input = tgui_input_list(user, "How shall your strengths manifest?", "STATPACK", statpacks_available, statpack)
 					if (statpack_input)
 						var/datum/statpack/statpack_chosen = statpacks_available[statpack_input]
 						statpack = statpack_chosen
@@ -1644,35 +1636,35 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						/* also, unset our virtue if we're not a virtuous statpack.
 						if (!istype(statpack, /datum/statpack/wildcard/virtuous) && virtue.type != /datum/virtue/none)
 							virtue = new /datum/virtue/none
-							to_chat(user, span_info("Ваша добродетель была удалена из-за принятия взаимоисключающего набора атрибутов.")) */
+							to_chat(user, span_info("Your virtue has been removed due to taking a stat-altering statpack.")) */
 				// LETHALSTONE EDIT: add pronouns
 				if ("pronouns")
-					var pronouns_input = tgui_input_list(user, "Выберите местоимения вашего персонажа", "ПОДМЕНА ОБРАЩЕНИЙ", GLOB.pronouns_list)
+					var pronouns_input = tgui_input_list(user, "Choose your character's pronouns", "PRONOUNS", GLOB.pronouns_list)
 					if(pronouns_input)
 						pronouns = pronouns_input
 						ResetJobs()
-						to_chat(user, "<font color='red'>Местоимения вашего персонажа теперь [pronouns].</font>")
-						to_chat(user, "<font color='red'><b>Ваши классы были сброшены.</b></font>")
+						to_chat(user, "<font color='red'>Your character's pronouns are now [pronouns].</font>")
+						to_chat(user, "<font color='red'><b>Your classes have been reset.</b></font>")
 
 				// LETHALSTONE EDIT: add voice type selection
 				if ("voicetype")
-					var voicetype_input = tgui_input_list(user, "Выберите тип голоса для персонажа", "ПОРОДА ГЛАСА", GLOB.voice_types_list) 
+					var voicetype_input = tgui_input_list(user, "Choose your character's voice type", "VOICE TYPE", GLOB.voice_types_list)
 					if(voicetype_input)
 						voice_type = voicetype_input
-						to_chat(user, "<font color='red'>Ваш персонаж теперь будет звучать как [lowertext(voice_type)] affect.</font>")
+						to_chat(user, "<font color='red'>Your character will now vocalize with a [lowertext(voice_type)] affect.</font>")
 
 				if("taur_type")
 					var/list/species_taur_list = pref_species.get_taur_list()
 					if(!LAZYLEN(species_taur_list))
 						taur_type = null
-						to_chat(user, span_bad("Для этого вида нет звериных частей тела."))
+						to_chat(user, span_bad("There are no available taur bodies for this species."))
 						return
 
 					var/list/taur_selection = list("None")
 					for(var/obj/item/bodypart/taur/tt as anything in pref_species.get_taur_list())
 						taur_selection[tt::name] = tt
-					
-					var/new_taur_type = tgui_input_list(user, "Выберите звериную часть персонажа", "ЗВЕРИНАЯ ПЛОТЬ", taur_selection)
+
+					var/new_taur_type = tgui_input_list(user, "Choose your character's taur body", "TAUR BODY", taur_selection)
 					if(!new_taur_type)
 						return
 
@@ -1682,7 +1674,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						taur_type = taur_selection[new_taur_type]
 
 					var/obj/item/bodypart/taur/tt = taur_type
-					to_chat(user, span_red("Ваш персонаж теперь имеет [tt ? tt::name : "no taurtype."]."))
+					to_chat(user, span_red("Your character now has [tt ? tt::name : "no taurtype."]."))
 
 				if("faith")
 					var/list/faiths_named = list()
@@ -1691,12 +1683,12 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						if(!faith.name)
 							continue
 						faiths_named[faith.name] = faith
-					var/faith_input = tgui_input_list(user, "Мир разлагается. Во что тебе остаётся верить?", "ВЕРА", faiths_named) 
+					var/faith_input = tgui_input_list(user, "The world rots. Which truth you bear?", "FAITH", faiths_named)
 					if(faith_input)
 						var/datum/faith/faith = faiths_named[faith_input]
-						to_chat(user, "<font color='yellow'>Верование: [faith.name]</font>") 					// ! REDMOON
-						to_chat(user, "Описание: [faith.desc]") 												// ! REDMOON
-						to_chat(user, "<font color='red'>Последователи: [faith.worshippers]</font>")			// ! REDMOON	
+						to_chat(user, "<font color='yellow'>Faith: [faith.name]</font>")
+						to_chat(user, "Background: [faith.desc]")
+						to_chat(user, "<font color='red'>Likely Worshippers: [faith.worshippers]</font>")
 						selected_patron = GLOB.patronlist[faith.godhead] || GLOB.patronlist[pick(GLOB.patrons_by_faith[faith_input])]
 
 				if("patron")
@@ -1706,22 +1698,22 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						if(!patron.name)
 							continue
 						patrons_named[patron.name] = patron
-					var/god_input = tgui_input_list(user, "Главный среди множества", "ПОКРОВИТЕЛЬ", patrons_named)
+					var/god_input = tgui_input_list(user, "The first amongst many.", "PATRON", patrons_named)
 					if(god_input)
 						selected_patron = patrons_named[god_input]
-						to_chat(user, "<font color='yellow'>Покровитель: [selected_patron]</font>")
-						to_chat(user, "<font color='#FFA500'>Cфера покровительства: [selected_patron.domain]</font>")
-						to_chat(user, "Предания: [selected_patron.desc]")
-						to_chat(user, "<font color='red'>Типичные почитатели: [selected_patron.worshippers]</font>")
+						to_chat(user, "<font color='yellow'>Patron: [selected_patron]</font>")
+						to_chat(user, "<font color='#FFA500'>Domain: [selected_patron.domain]</font>")
+						to_chat(user, "Background: [selected_patron.desc]")
+						to_chat(user, "<font color='red'>Likely Worshippers: [selected_patron.worshippers]</font>")
 
 				if("combat_music") // if u change shit here look at /client/verb/combat_music() too
 					if(!combat_music_helptext_shown)
-						to_chat(user, span_notice("<span class='bold'>Боевая музыка</span>\n") + \
-						"Варианты, отличные от \"Default\" заменяют музыку, что игра динамически выбирает, \
-						исходя из твоего класса, статуса злодея или иных вещей.\n\
-						Вы можете изменить это позже в \"Combat Mode Music\" во вкладке Options.")
+						to_chat(user, span_notice("<span class='bold'>Combat Music Override</span>\n") + \
+						"Options other than \"Default\" override whatever the game dynamically sets for you, \
+						which is influenced by your job class, villain status, or certain events.\n\
+						You can change this later through \"Combat Mode Music\" in the Options tab.\"</span>")
 						combat_music_helptext_shown = TRUE
-					var/track_select = tgui_input_list(user, "Для вас в бою будет звучать это:", "МЕЛОДИЯ БОЙНИ", GLOB.cmode_tracks_by_name, combat_music?.name)
+					var/track_select = tgui_input_list(user, "To you, the Signal sounds like:", "COMBAT MUSIC", GLOB.cmode_tracks_by_name, combat_music?.name)
 					if(track_select)
 						combat_music = GLOB.cmode_tracks_by_name[track_select]
 						to_chat(user, span_notice("Selected track: <b>[track_select]</b>."))
@@ -1736,49 +1728,12 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					return
 
 				if("voice")
-					var/new_voice = input(user, "Выберите цвет голоса вашего персонажа:", "Настройки персонажа","#"+voice_color) as color|null
+					var/new_voice = input(user, "Choose your character's voice color:", "Character Preference","#"+voice_color) as color|null
 					if(new_voice)
 						if(color_hex2num(new_voice) < 230)
-							to_chat(user, "<font color='red'>Этот голос слишком тёмный для смертных.</font>")
+							to_chat(user, "<font color='red'>This voice color is too dark for mortals.</font>")
 							return
 						voice_color = sanitize_hexcolor(new_voice)
-
-				// if("barksound")
-				// 	var/list/woof_woof = list()
-				// 	for(var/path in GLOB.bark_list)
-				// 		var/datum/bark/B = GLOB.bark_list[path]
-				// 		if(initial(B.ignore))
-				// 			continue
-				// 		if(initial(B.ckeys_allowed))
-				// 			var/list/allowed = initial(B.ckeys_allowed)
-				// 			if(!allowed.Find(user.client.ckey))
-				// 				continue
-				// 		woof_woof[initial(B.name)] = initial(B.id)
-				// 	var/new_bork = input(user, "Выберите желаемый возглас", "Настройки персонажа") as null|anything in woof_woof
-				// 	if(new_bork)
-				// 		bark_id = woof_woof[new_bork]
-				// 		var/datum/bark/B = GLOB.bark_list[bark_id] //Now we need sanitization to take into account bark-specific min/max values
-				// 		bark_speed = round(clamp(bark_speed, initial(B.minspeed), initial(B.maxspeed)), 1)
-				// 		bark_pitch = clamp(bark_pitch, initial(B.minpitch), initial(B.maxpitch))
-				// 		bark_variance = clamp(bark_variance, initial(B.minvariance), initial(B.maxvariance))
-
-				// if("barkspeed")
-				// 	var/datum/bark/B = GLOB.bark_list[bark_id]
-				// 	var/borkset = input(user, "Выберите желаемый темп возгласа (Большее — медленнее, меньше — быстрее). Min: [initial(B.minspeed)]. Max: [initial(B.maxspeed)]", "Настройки персонажа") as null|num
-				// 	if(!isnull(borkset))
-				// 		bark_speed = round(clamp(borkset, initial(B.minspeed), initial(B.maxspeed)), 1)
-
-				// if("barkpitch")
-				// 	var/datum/bark/B = GLOB.bark_list[bark_id]
-				// 	var/borkset = input(user, "Выберите высоту возгласа. Минимум: [initial(B.minpitch)]. Максимум: [initial(B.maxpitch)]", "Настройки персонажа") as null|num
-				// 	if(!isnull(borkset))
-				// 		bark_pitch = clamp(borkset, initial(B.minpitch), initial(B.maxpitch))
-
-				// if("barkvary")
-				// 	var/datum/bark/B = GLOB.bark_list[bark_id]
-				// 	var/borkset = input(user, "Выберите разброс в возгласах. Минимум: [initial(B.minvariance)]. Максимум: [initial(B.maxvariance)]", "Настройки персонажа") as null|num
-				// 	if(!isnull(borkset))
-				// 		bark_variance = clamp(borkset, initial(B.minvariance), initial(B.maxvariance))
 
 				if("extra_language")
 					var/static/list/selectable_languages = list(
@@ -1802,15 +1757,15 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						var/datum/language/a_language = new language()
 						choices[a_language.name] = language
 
-					var/chosen_language = tgui_input_list(user, "Можете выбрать язык, который персонаж знает помимо основных:", "НЕЕСТЕСТВЕННОЕ НАРЕЧИЕ", choices)
+					var/chosen_language = tgui_input_list(user, "Choose your character's extra language:", "EXTRA LANGUAGE", choices)
 					if(chosen_language)
 						if(chosen_language == "None")
-							extra_language = "Выбрать"
+							extra_language = "None"
 						else
 							extra_language = choices[chosen_language]
 
 				if("voice_pitch")
-					var/new_voice_pitch = tgui_input_number(user, "Выберите высоту голоса персонажа (от [MIN_VOICE_PITCH] до [MAX_VOICE_PITCH], чем меньше значение, тем голос ниже):", "Высота голоса", 1, 1.35, 0.8, round_value = FALSE)
+					var/new_voice_pitch = tgui_input_number(user, "Choose your character's voice pitch ([MIN_VOICE_PITCH] to [MAX_VOICE_PITCH], lower is deeper):", "Voice Pitch", 1, 1.35, 0.8, round_value = FALSE)
 					if(new_voice_pitch)
 						if(new_voice_pitch < MIN_VOICE_PITCH || new_voice_pitch > MAX_VOICE_PITCH)
 							to_chat(user, "<font color='red'>Value must be between [MIN_VOICE_PITCH] and [MAX_VOICE_PITCH].</font>")
@@ -1818,15 +1773,15 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						voice_pitch = new_voice_pitch
 
 				if("highlight_color")
-					var/new_color = color_pick_sanitized(user, "Выберите цвет подсветки прозвища вашего персонажа:", "Настройки персонажа","#"+highlight_color)
+					var/new_color = color_pick_sanitized(user, "Choose your character's nickname highlight color:", "Character Preference","#"+highlight_color)
 					if(new_color)
 						highlight_color = sanitize_hexcolor(new_color)
 
 				if("headshot")
-					to_chat(user, "<span class='notice'>Пожалуйста, используйте неэротические изображение области головы и плеч, чтобы сохранить погружение. ["<span class='bold'>Не используйте реальные фотографии или шуточные изображения.</span>"]</span>")
-					to_chat(user, "<span class='notice'>Если фотография не отображается в игре должным образом, убедитесь, что это ссылка на изображение, которая корректно открывается в браузере.</span>")
-					to_chat(user, "<span class='notice'>Имейте в виду, что фотография будет уменьшена до размера 325x325 пикселей, поэтому чем более квадратной будет картинка, тем лучше она будет выглядеть.</span>")
-					var/new_headshot_link = tgui_input_text(user, "Вставьте ссылку на изображение (https, хосты: gyazo, e621, iBB.co):", "ЛИК ГРЕШНИКА", headshot_link,  encode = FALSE)
+					to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
+					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
+					to_chat(user, "<span class='notice'>Keep in mind that the photo will be downsized to 325x325 pixels, so the more square the photo, the better it will look.</span>")
+					var/new_headshot_link = tgui_input_text(user, "Input the headshot link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Headshot", headshot_link,  encode = FALSE)
 					if(new_headshot_link == null)
 						return
 					if(new_headshot_link == "")
@@ -1838,40 +1793,40 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						ShowChoices(user)
 						return
 					headshot_link = new_headshot_link
-					to_chat(user, "<span class='notice'>Картинка портрета успешно обновлена.</span>")
-					log_game("[user] поставил(а) новую картинку портрета '[headshot_link]'.")
+					to_chat(user, "<span class='notice'>Successfully updated headshot picture</span>")
+					log_game("[user] has set their Headshot image to '[headshot_link]'.")
 				if("legacyhelp")
 					var/list/dat = list()
-					dat += "Этот слот существовал ещё до крупных изменений описания / OOC.<br>"
-					dat += "В связи с этим ему предоставили исключение что позволяет сохранить старую верстку и форматирование профиля, включая HTML.<br>"
-					dat += "Если вы хотите оставить все как есть, <b>не редактируйте его.</b><br><br>"
-					dat += "ЛЮБЫЕ изменения (Даже нажатие кнопки «ОК» на неизменённом описании/OOC заметках) <font color ='red'><b>необратимо</b></font> переопределить весь HTML и удалить устаревший статус слота.<br>"
-					dat += "Никаких исключений. Развлекайтесь!"
-					dat += "(Вы всё ещё можете добавить дополнительное OOC)"
+					dat += "This slot was around since before major Flavortext / OOC changes.<br>"
+					dat += "Due to this, it's been grandfathered in to keep its old profile layout and formatting, including html.<br>"
+					dat += "If you wish to keep it as it is, <b>you cannot edit it anymore.</b><br><br>"
+					dat += "ANY edit (Even pressing OK on an unchanged Flavortext / OOC notes) will <font color ='red'><b>irreversibly</b></font> override all html, and remove the legacy status of the slot.<br>"
+					dat += "There are no exceptions. Have fun!"
+					dat += "(You can still add an OOC Extra)"
 					var/datum/browser/popup = new(user, "Legacy Help", nwidth = 450, nheight = 250)
 					popup.set_content(dat.Join())
 					popup.open(FALSE)
 				if("formathelp")
 					var/list/dat = list()
-					dat +="Вы можете использовать слэш (\\) чтобы избежать избежать активации специальных символов, приведённых ниже:<br>"
+					dat +="You can use backslash (\\) to escape special characters.<br>"
 					dat += "<br>"
-					dat += "# текст : Определяет заголовок.<br>"
-					dat += "|текст| : Центрирует текст.<br>"
-					dat += "**текст** : Делает текст <b>жирным</b>.<br>"
-					dat += "*текс* : Делает текст <i>курсивным</i>.<br>"
-					dat += "^текст^ : Увеличивает <font size = \"4\">размер</font> текста.<br>"
-					dat += "((текст)) : Уменьшает <font size = \"1\">размер</font> текста.<br>"
-					dat += "* item : Пункт неупорядоченного списка.<br>"
-					dat += "--- : Добавляет горизонтальную линию.<br>"
-					dat += "-=FFFFFFtext=- : Добавляет специальный <font color = '#FFFFFF'>цвет</font> тексту.<br><br>"
-					dat += "Минимальное описание персонажа: <b>[MINIMUM_FLAVOR_TEXT]</b> символов.<br>"
-					dat += "Минимальный размер OOC заметок: <b>[MINIMUM_OOC_NOTES]</b> символов."
+					dat += "# text : Defines a header.<br>"
+					dat += "|text| : Centers the text.<br>"
+					dat += "**text** : Makes the text <b>bold</b>.<br>"
+					dat += "*text* : Makes the text <i>italic</i>.<br>"
+					dat += "^text^ : Increases the <font size = \"4\">size</font> of the text.<br>"
+					dat += "((text)) : Decreases the <font size = \"1\">size</font> of the text.<br>"
+					dat += "* item : An unordered list item.<br>"
+					dat += "--- : Adds a horizontal rule.<br>"
+					dat += "-=FFFFFFtext=- : Adds a specific <font color = '#FFFFFF'>colour</font> to text.<br><br>"
+					dat += "Minimum Flavortext: <b>[MINIMUM_FLAVOR_TEXT]</b> characters.<br>"
+					dat += "Minimum OOC Notes: <b>[MINIMUM_OOC_NOTES]</b> characters."
 					var/datum/browser/popup = new(user, "Formatting Help", nwidth = 400, nheight = 350)
 					popup.set_content(dat.Join())
 					popup.open(FALSE)
 				if("flavortext")
-					to_chat(user, "<span class='notice'>["<span class='bold'>Описание не должно содержать ничего нематериального и недоступного восприятию других, например, предысторию или мысли персонажа.</span>"]</span>")
-					var/new_flavortext = tgui_input_text(user, "Введите внешнее описание персонажа:", "ПОВЕРХНОСТНЫЙ ОБЛИК", flavortext, multiline = TRUE,  encode = FALSE, bigmodal = TRUE)
+					to_chat(user, "<span class='notice'>["<span class='bold'>Flavortext should not include nonphysical nonsensory attributes such as backstory or the character's internal thoughts.</span>"]</span>")
+					var/new_flavortext = tgui_input_text(user, "Input your character description:", "Flavortext", flavortext, multiline = TRUE,  encode = FALSE, bigmodal = TRUE)
 					if(new_flavortext == null)
 						return
 					if(new_flavortext == "")
@@ -1879,11 +1834,11 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						ShowChoices(user)
 						return
 					flavortext = new_flavortext
-					to_chat(user, "<span class='notice'>Описание успешно обновлено</span>")
-					log_game("[user] установил/а своё описание'.")
+					to_chat(user, "<span class='notice'>Successfully updated flavortext</span>")
+					log_game("[user] has set their flavortext'.")
 				if("ooc_notes")
-					to_chat(user, "<span class='notice'>["<span class='bold'>OOC заметки - внеигровые. Их следует использовать для обозначения ожиданий от игры в целом и общей информации о вашем подходе к отыгрышу, притязаниях к персонажам и т.д.</span>"]</span>")
-					var/new_ooc_notes = tgui_input_text(user, "Напишите внеигровые примечания:", "OOC заметки", ooc_notes, multiline = TRUE,  encode = FALSE, bigmodal = TRUE)
+					to_chat(user, "<span class='notice'>["<span class='bold'>OOC notes should be used for roleplay hooks and general information about your character.</span>"]</span>")
+					var/new_ooc_notes = tgui_input_text(user, "Input your OOC preferences:", "OOC notes", ooc_notes, multiline = TRUE,  encode = FALSE, bigmodal = TRUE)
 					if(new_ooc_notes == null)
 						return
 					if(new_ooc_notes == "")
@@ -1891,51 +1846,51 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						ShowChoices(user)
 						return
 					ooc_notes = new_ooc_notes
-					to_chat(user, "<span class='notice'>ООС заметки успешно обновлены.</span>")
-					log_game("[user] установил/а свои OOC заметки'.")
+					to_chat(user, "<span class='notice'>Successfully updated OOC notes.</span>")
+					log_game("[user] has set their OOC notes'.")
 				if("nsfwflavortext")
-					to_chat(user, "<span class='notice'>["<span class='bold'>Откровенное описание можно использовать для описания голого тела и других деталей, которые могут быть сочтены пикантными.</span>"]</span>")
-					to_chat(user, "<font color = '#d6d6d6'>Оставьте пустым, чтобы очистить.</font>")
-					var/new_nsfwflavortext = tgui_input_text(user, "Введите описание обнажённого персонажа:", "ОТКРОВЕННАЯ НАРУЖНОСТЬ", nsfwflavortext, multiline = TRUE,  encode = FALSE, bigmodal = TRUE)
+					to_chat(user, "<span class='notice'>["<span class='bold'>NSFW Flavortext can be used for setting things like body descriptions and other physical details that may be conisdered explicit.</span>"]</span>")
+					to_chat(user, "<font color = '#d6d6d6'>Leave blank to clear.</font>")
+					var/new_nsfwflavortext = tgui_input_text(user, "Input your character description:", "NSFW Flavortext", nsfwflavortext, multiline = TRUE,  encode = FALSE, bigmodal = TRUE)
 					if(new_nsfwflavortext == null)
 						return
 					if(new_nsfwflavortext == "")
 						new_nsfwflavortext = null
 						nsfwflavortext = null
-						to_chat(user, "<span class='notice'>Откровенное описание успешно удалено.</span>")
+						to_chat(user, "<span class='notice'>Successfully deleted NSFW Flavor Text.</span>")
 						ShowChoices(user)
 						return
 					nsfwflavortext = new_nsfwflavortext
-					to_chat(user, "<span class='notice'>Откровенное описание успешно обновлено</span>")
-					log_game("[user] установил(а) своё откровенное описание'.")
+					to_chat(user, "<span class='notice'>Successfully updated NSFW flavortext</span>")
+					log_game("[user] has set their NSFW flavortext'.")
 				if("erpprefs")
-					to_chat(user, "<span class='notice'>["<span class='bold'>Вкусы в эротическом отыгрыше. Если вы укажете здесь «всё разрешено» или «делайте что хотите», то не жалуйтесь, если люди воспользуются этим.</span>"]</span>")
-					to_chat(user, "<font color = '#d6d6d6'>Оставьте пустым, чтобы очистить.</font>")
-					var/new_erpprefs = tgui_input_text(user, "Опишите свои эротические предпочтения:", "СЛАСТОЛЮБИЕ", erpprefs, multiline = TRUE,  encode = FALSE, bigmodal = TRUE)
+					to_chat(user, "<span class='notice'>["<span class='bold'>Erotic Roleplay preferences. If you put 'anything goes' or 'no limits' here, do not be surprised if people take you up on it.</span>"]</span>")
+					to_chat(user, "<font color = '#d6d6d6'>Leave blank to clear.</font>")
+					var/new_erpprefs = tgui_input_text(user, "Input your preferences:", "ERP Preferences", erpprefs, multiline = TRUE,  encode = FALSE, bigmodal = TRUE)
 					if(new_erpprefs == null)
 						return
 					if(new_erpprefs == "")
 						new_erpprefs = null
 						erpprefs = null
-						to_chat(user, "<span class='notice'>ERP пристрастия успешно удалены.</span>")
+						to_chat(user, "<span class='notice'>Successfully deleted ERP preferences.</span>")
 						ShowChoices(user)
 						return
 					erpprefs = new_erpprefs
-					to_chat(user, "<span class='notice'>ЕRP пристрастия успешно обновлены.</span>")
-					log_game("[user] установил(а) свои EPR пристрастия'.")
+					to_chat(user, "<span class='notice'>Successfully updated ERP Preferences.</span>")
+					log_game("[user] has set their ERP preferences'.")
 
 				if("img_gallery")
 
 					if(img_gallery.len >= 3)
-						to_chat(user, "У вас уже есть три изображения в галерее!")
+						to_chat(user, "You already have three images in your gallery!")
 						return
 
-					to_chat(user, "<span class='notice'>Пожалуйста, не используйте эротические изображения ["<span class='bold'>вашего персонажа</span>"] для поддержания погружения. Напоследок, ["<span class='bold'>не используйте реальные фотографии или шуточные изображения.</span>"]</span>")
-					to_chat(user, "<span class='notice'>Если фотография не отображается в игре должным образом, убедитесь, что это прямая ссылка на изображение, которая корректно открывается в браузере.</span>")
-					to_chat(user, "<span class='notice'>Имейте в виду, что все три изображения отображаются рядом друг с другом и выравниваются по горизонтали, заполняя прямоугольник. Поэтому вертикальные изображения работают лучше всего.</span>")
-					to_chat(user, "<span class='notice'>У вас может быть не больше ["<span class='bold'>ТРЁХ ИЗОБРАЖЕНИЙ</span>"] в галерее.</span>")
-					
-					var/new_galleryimg = tgui_input_text(user, "Вставьте ссылку на изображение (https, хосты: gyazo, e621, iBB.co):", "Галерея изображений",  encode = FALSE)
+					to_chat(user, "<span class='notice'>Please use a relatively SFW image ["<span class='bold'>of your character</span>"] to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
+					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
+					to_chat(user, "<span class='notice'>Keep in mind that all three images are displayed next to eachother and justified to fill a horizontal rectangle. As such, vertical images work best.</span>")
+					to_chat(user, "<span class='notice'>You can only have a maximum of ["<span class='bold'>THREE IMAGES</span>"] in your gallery at a time.</span>")
+
+					var/new_galleryimg = tgui_input_text(user, "Input the image link (https, hosts: gyazo, discord, lensdump, imgbox, catbox):", "Gallery Image",  encode = FALSE)
 
 					if(new_galleryimg == null)
 						return
@@ -1944,25 +1899,25 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						ShowChoices(user)
 						return
 					if(!valid_headshot_link(user, new_galleryimg))
-						to_chat(user, "<span class='notice'>Недействительная ссылка на изображение. Убедитесь, что это прямая ссылка с корректного хостинга. (gyazo, e621, iBB.co).</span>")
+						to_chat(user, "<span class='notice'>Invalid image link. Make sure it's a direct link from a valid host (gyazo, discord, lensdump, imgbox, catbox).</span>")
 						new_galleryimg = null
 						ShowChoices(user)
 						return
 					img_gallery += new_galleryimg
-					to_chat(user, "<span class='notice'>Изображение успешно добавлено в галерею.</span>")
-					log_game("[user] добавил/а изображение в галерею: '[new_galleryimg]'.")
+					to_chat(user, "<span class='notice'>Successfully added image to gallery.</span>")
+					log_game("[user] has added an image to their gallery: '[new_galleryimg]'.")
 
 				if("clear_gallery")
 					if(!img_gallery.len)
-						to_chat(user, "В вашей галерее нет изображений для очистки!")
+						to_chat(user, "You don't have any images in your gallery to clear!")
 						return
-					var/dachoice = tgui_alert(user, "Вы действительно хотите очистить свою галерею изображений?", "Очистить галерею", list("Да", "Неа"))
+					var/dachoice = tgui_alert(user, "Do you really want to clear your image gallery?", "Clear Gallery", list("Yae", "Nae"))
 					if(dachoice == "Nae")
 						ShowChoices(user)
 						return
 					img_gallery = list()
-					to_chat(user, "<span class='notice'>Галерея изображений успешно очищена.</span>")
-					log_game("[user] очистил(а) свою галерею изображений.")
+					to_chat(user, "<span class='notice'>Successfully cleared image gallery.</span>")
+					log_game("[user] has cleared their image gallery.")
 
 				if("ooc_preview")
 					var/datum/examine_panel/preview_examine_panel = new(user)
@@ -1972,17 +1927,17 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					preview_examine_panel.ui_interact(user)
 
 				if("ooc_extra")
-					to_chat(user, "<span class='notice'>Добавьте ссылку с подходящего хоста (catbox, etc) в mp3 файле для вставки в ваше описание.</span>")
-					to_chat(user, "<span class='notice'>Если песня не воспроизводится должным образом, убедитесь, что это прямая ссылка, которая корректно открывается в браузере.</span>")
-					to_chat(user, "<font color = '#d6d6d6'>Оставьте поле пустым, чтобы удалить текущую песню.</font>")
-					to_chat(user, "<font color ='red'>Злоупотребление этим приведет к наказанию.</font>")
-					var/new_extra_link = tgui_input_text(user, "Введите поддерживаемую ссылку (https, хосты: discord, catbox):", "URL песни", ooc_extra, encode = FALSE)
+					to_chat(user, "<span class='notice'>Add a link from a suitable host (catbox, etc) to an mp3 to embed in your flavor text.</span>")
+					to_chat(user, "<span class='notice'>If the song doesn't  play properly, ensure that it's a direct link that opens properly in a browser.</span>")
+					to_chat(user, "<font color = '#d6d6d6'>Leave blank to clear your current song.</font>")
+					to_chat(user, "<font color ='red'>Abuse of this will get you banned.</font>")
+					var/new_extra_link = tgui_input_text(user, "Input the accessory link (https, hosts: discord, catbox):", "Song URL", ooc_extra, encode = FALSE)
 					if(new_extra_link == null)
 						return
 					if(new_extra_link == "")
 						new_extra_link = null
 						ooc_extra = null
-						to_chat(user, "<span class='notice'>Дополнительные OOC успешно удалены.</span>")
+						to_chat(user, "<span class='notice'>Successfully deleted OOC Extra.</span>")
 						ShowChoices(user)
 						return
 					var/static/list/valid_extensions = list("mp3")
@@ -1997,30 +1952,30 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					var/extension = value_split[length(value_split)]
 					if((extension in valid_extensions))
 						ooc_extra = new_extra_link
-						to_chat(user, "<span class='notice'>Ссылка на песню успешно удалена.</span>")
-						log_game("[user] установил(а) ссылку песни на '[ooc_extra]'.")
+						to_chat(user, "<span class='notice'>Successfully updated Song URL.</span>")
+						log_game("[user] has set their Song URL to '[ooc_extra]'.")
 
 				if("change_artist")
-					var/new_artist = tgui_input_text(user, "Введите исполнителя вашей песни:", "Исполнитель песни", song_artist,  encode = FALSE)
+					var/new_artist = tgui_input_text(user, "Input your song's artist:", "Song Artist", song_artist,  encode = FALSE)
 					if(new_artist == null)
 						return
 					if(new_artist == "")
 						ShowChoices(user)
 						return
 					song_artist = new_artist
-					to_chat(user, "<span class='notice'>Исполнитель песни успешно обновлен.</span>")
-					log_game("[user] установил(а) исполнителя песни.")
+					to_chat(user, "<span class='notice'>Successfully updated song artist.</span>")
+					log_game("[user] has set their song artist.")
 
 				if("change_title")
-					var/new_title = tgui_input_text(user, "Введите название вашей песни:", "Название песни", song_title,  encode = FALSE)
+					var/new_title = tgui_input_text(user, "Input your song's title:", "Song title", song_title,  encode = FALSE)
 					if(new_title== null)
 						return
 					if(new_title == "")
 						ShowChoices(user)
 						return
 					song_title = new_title
-					to_chat(user, "<span class='notice'>Название песни успешно обновлено.</span>")
-					log_game("[user] обновила/а своё название песни.")
+					to_chat(user, "<span class='notice'>Successfully updated song title.</span>")
+					log_game("[user] has set their song title.")
 
 				if("familiar_prefs")
 					familiar_prefs.fam_show_ui()
@@ -2036,11 +1991,11 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							continue
 						loadouts_available[loadout.name] = loadout
 
-					var/loadout_input = tgui_input_list(user, "Выберите персональные предметы персонажа, не зависящие от его класса. Вы не появляетесь с этим! Чтобы забрать их, нажмите ПКМ на дерево, статую или часы!!!", "Личная вещь I", loadouts_available) 
+					var/loadout_input = tgui_input_list(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK", loadouts_available)
 					if(loadout_input)
 						if(loadout_input == "None")
 							loadout = null
-							to_chat(user, "Да кому это нужно..")
+							to_chat(user, "Who needs stuff anyway?")
 						else
 							loadout = loadouts_available[loadout_input]
 							to_chat(user, "<font color='yellow'><b>[loadout.name]</b></font>")
@@ -2057,11 +2012,11 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							continue
 						loadouts_available[loadout2.name] = loadout2
 
-					var/loadout_input2 = tgui_input_list(user, "Выберите персональные предметы персонажа, не зависящие от его класса. Вы не появляетесь с этим! Чтобы забрать их, нажмите ПКМ на дерево, статую или часы!!!", "Личная вещь II", loadouts_available) 
+					var/loadout_input2 = tgui_input_list(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK", loadouts_available)
 					if(loadout_input2)
 						if(loadout_input2 == "None")
 							loadout2 = null
-							to_chat(user, "Да кому это нужно..")
+							to_chat(user, "Who needs stuff anyway?")
 						else
 							loadout2 = loadouts_available[loadout_input2]
 							to_chat(user, "<font color='yellow'><b>[loadout2.name]</b></font>")
@@ -2078,11 +2033,11 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							continue
 						loadouts_available[loadout3.name] = loadout3
 
-					var/loadout_input3 = tgui_input_list(user, "Выберите персональные предметы персонажа, не зависящие от его класса. Вы не появляетесь с этим! Чтобы забрать их, нажмите ПКМ на дерево, статую или часы!!!", "Личная вещь III", loadouts_available) 
+					var/loadout_input3 = tgui_input_list(user, "Choose your character's loadout item. RMB a tree, statue or clock to collect. I cannot stress this enough. YOU DON'T SPAWN WITH THESE. YOU HAVE TO MANUALLY PICK THEM UP!!", "LOADOUT THAT YOU GET FROM A TREE OR STATUE OR CLOCK", loadouts_available)
 					if(loadout_input3)
 						if(loadout_input3 == "None")
 							loadout3 = null
-							to_chat(user, "Да кому это нужно..")
+							to_chat(user, "Who needs stuff anyway?")
 						else
 							loadout3 = loadouts_available[loadout_input3]
 							to_chat(user, "<font color='yellow'><b>[loadout3.name]</b></font>")
@@ -2129,7 +2084,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 
 					species = sortNames(species)
 
-					var/result = tgui_input_list(user, "Какой из обликов - темница ваша?", "НАРОДНОСТИ", species)
+					var/result = tgui_input_list(user, "By what shape are you bound?", "RACE", species)
 
 					if(result)
 						set_new_race(result, user)
@@ -2154,7 +2109,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							continue
 						virtue_choices[V.name] = V
 					virtue_choices = sort_list(virtue_choices)
-					var/result = tgui_input_list(user, "Каким преимуществом вы обладаете?", "ДОСТОИНСТВА",virtue_choices)
+					var/result = tgui_input_list(user, "What strength shall you wield?", "VIRTUES",virtue_choices)
 
 					if (result)
 						var/datum/virtue/virtue_chosen = virtue_choices[result]
@@ -2175,7 +2130,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							continue
 						virtue_choices[V.name] = V
 					virtue_choices = sort_list(virtue_choices)
-					var/result = tgui_input_list(user, "Какую силу ты будешь использовать?", "ДОСТОИНСТВА",virtue_choices)
+					var/result = tgui_input_list(user, "What strength shall you wield?", "VIRTUES",virtue_choices)
 
 					if (result)
 						var/datum/virtue/virtue_chosen = virtue_choices[result]
@@ -2183,11 +2138,11 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						to_chat(user, process_virtue_text(virtue_chosen))
 					/*	if (statpack.type != /datum/statpack/wildcard/virtuous)
 							statpack = new /datum/statpack/wildcard/virtuous
-							to_chat(user, span_purple("Ваш набор атрибутов изменён на «Чистый» (ничего не получаете) из-за выбора достоиснтва.")) */
+							to_chat(user, span_purple("Your statpack has been set to virtuous (no stats) due to selecting a virtue.")) */
 
 				if("charflaw")
 					var/list/coom = GLOB.character_flaws.Copy()
-					var/result = tgui_input_list(user, "Что станет вашим бременем?", "НЕДОСТАТКИ",coom)
+					var/result = tgui_input_list(user, "What burden will you bear?", "FLAWS",coom)
 					if(result)
 						result = coom[result]
 						var/datum/charflaw/C = new result()
@@ -2197,55 +2152,55 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 
 				if("race_bonus_select")
 					if(length(pref_species.custom_selection))
-						var/choice = tgui_input_list(user, "Чем судьба благословила ваш народ?", "БОНУС", pref_species.custom_selection)
+						var/choice = tgui_input_list(user, "What has fate blessed your race with?", "BONUS", pref_species.custom_selection)
 						if(choice)
 							race_bonus = pref_species.custom_selection[choice]
 
 				if("body_size")
-					var/new_body_size = tgui_input_number(user, "Выберите желаемый размер модельки:\n([BODY_SIZE_MIN*100]%-[BODY_SIZE_MAX*100]%), Предупреждение: ваш персонаж может выглядеть искаженным.", "Настройки персонажа", features["body_size"]*100)
+					var/new_body_size = tgui_input_number(user, "Choose your desired sprite size:\n([BODY_SIZE_MIN*100]%-[BODY_SIZE_MAX*100]%), Warning: May make your character look distorted", "Character Preference", features["body_size"]*100)
 					if(new_body_size)
 						new_body_size = clamp(new_body_size * 0.01, BODY_SIZE_MIN, BODY_SIZE_MAX)
 						features["body_size"] = new_body_size
 
 				if("taur_color")
-					var/new_taur_color = color_pick_sanitized(user, "Выберите цвет звериной части:", "Настройки персонажа", "#"+taur_color)
+					var/new_taur_color = color_pick_sanitized(user, "Choose your character's taur color:", "Character Preference", "#"+taur_color)
 					if(new_taur_color)
 						taur_color = sanitize_hexcolor(new_taur_color)
 
 				if("mutant_color")
-					var/new_mutantcolor = color_pick_sanitized(user, "Выберите окрас #1:", "Настройки персонажа","#"+features["mcolor"])
+					var/new_mutantcolor = color_pick_sanitized(user, "Choose your character's mutant #1 color:", "Character Preference","#"+features["mcolor"])
 					if(new_mutantcolor)
 
 						features["mcolor"] = sanitize_hexcolor(new_mutantcolor)
 						try_update_mutant_colors()
 
 				if("mutant_color2")
-					var/new_mutantcolor = color_pick_sanitized(user, "Выберите окрас #2:", "Настройки персонажа","#"+features["mcolor2"])
+					var/new_mutantcolor = color_pick_sanitized(user, "Choose your character's mutant #2 color:", "Character Preference","#"+features["mcolor2"])
 					if(new_mutantcolor)
 						features["mcolor2"] = sanitize_hexcolor(new_mutantcolor)
 						try_update_mutant_colors()
 
 				if("mutant_color3")
-					var/new_mutantcolor = color_pick_sanitized(user, "Выберите окрас #3:", "Настройки персонажа","#"+features["mcolor3"])
+					var/new_mutantcolor = color_pick_sanitized(user, "Choose your character's mutant #3 color:", "Character Preference","#"+features["mcolor3"])
 					if(new_mutantcolor)
 						features["mcolor3"] = sanitize_hexcolor(new_mutantcolor)
 						try_update_mutant_colors()
 
 /*
 				if("color_ethereal")
-					var/new_etherealcolor = input(user, "Choose your ethereal color", "Настройки персонажа") as null|anything in GLOB.color_list_ethereal
+					var/new_etherealcolor = input(user, "Choose your ethereal color", "Character Preference") as null|anything in GLOB.color_list_ethereal
 					if(new_etherealcolor)
 						features["ethcolor"] = GLOB.color_list_ethereal[new_etherealcolor]
 
 				if("legs")
 					var/new_legs
-					new_legs = input(user, "Выберите ноги вашего персонажа:", "Настройки персонажа") as null|anything in GLOB.legs_list
+					new_legs = input(user, "Choose your character's legs:", "Character Preference") as null|anything in GLOB.legs_list
 					if(new_legs)
 						features["legs"] = new_legs
 */
 				if("s_tone")
 					var/listy = pref_species.get_skin_list()
-					var/new_s_tone = tgui_input_list(user, "Выберите происхождение и цвет кожи персонажа:", "БРЕМЯ НАСЛЕДИЯ", listy)
+					var/new_s_tone = tgui_input_list(user, "Choose your character's skin tone:", "SKINTONE", listy)
 					if(new_s_tone)
 						skin_tone = listy[new_s_tone]
 						features["mcolor"] = sanitize_hexcolor(skin_tone)
@@ -2253,7 +2208,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 
 				if("charflaw")
 					var/selectedflaw
-					selectedflaw = tgui_input_list(user, "Выберите недостаток персонажа:", "НЕДОСТАТОК", GLOB.character_flaws) 
+					selectedflaw = tgui_input_list(user, "Choose your character's flaw:", "FLAWS", GLOB.character_flaws)
 					if(selectedflaw)
 						charflaw = GLOB.character_flaws[selectedflaw]
 						charflaw = new charflaw()
@@ -2261,22 +2216,22 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 							to_chat(user, span_info("[charflaw.desc]"))
 
 				if("char_accent")
-					var/selectedaccent = tgui_input_list(user, "Выберите акцент персонажа:", "Настройки персонажа", GLOB.character_accents)
+					var/selectedaccent = tgui_input_list(user, "Choose your character's accent:", "Character Preference", GLOB.character_accents)
 					if(selectedaccent)
 						char_accent = selectedaccent
 
 				if("ooccolor")
-					var/new_ooccolor = color_pick_sanitized(user, "Выберите ваш цвет ООС:", "Настройки персонажа",ooccolor)
+					var/new_ooccolor = color_pick_sanitized(user, "Choose your OOC colour:", "Game Preference",ooccolor)
 					if(new_ooccolor)
 						ooccolor = new_ooccolor
 
 				if("asaycolor")
-					var/new_asaycolor = color_pick_sanitized(user, "Выберите ваш цвет ASAY:", "Настройки персонажа",asaycolor)
+					var/new_asaycolor = color_pick_sanitized(user, "Choose your ASAY color:", "Game Preference",asaycolor)
 					if(new_asaycolor)
 						asaycolor = new_asaycolor
 
 				if("bag")
-					var/new_backpack = input(user, "Выберите тип вашей торбы:", "Character Preference")  as null|anything in GLOB.backpacklist
+					var/new_backpack = input(user, "Choose your character's style of bag:", "Character Preference")  as null|anything in GLOB.backpacklist
 					if(new_backpack)
 						backpack = new_backpack
 
@@ -2359,7 +2314,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						pickedGender = "female"
 					if(pickedGender && pickedGender != gender)
 						gender = pickedGender
-						to_chat(user, "<font color='red'>У персонажа отныне [friendlyGenders[pickedGender]] телосложение.</font>")
+						to_chat(user, "<font color='red'>Your character will now use a [friendlyGenders[pickedGender]] sprite.</font>")
 						//random_character(gender)
 					genderize_customizer_entries()
 				if("domhand")
@@ -2435,11 +2390,11 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					save_preferences()
 
 				if("keybindings_reset")
-					var/choice = tgalert(user, "Вы хотите сброс до 'обычных' или 'классических' горячих клавиш?", "Настройка сброса", "Обычные", "Классические", "Отмена")
-					if(choice == "Отмена")
+					var/choice = tgalert(user, "Would you prefer 'hotkey' or 'classic' defaults?", "Setup keybindings", "Hotkey", "Classic", "Cancel")
+					if(choice == "Cancel")
 						ShowChoices(user)
 						return
-					hotkeys = (choice == "Обычные")
+					hotkeys = (choice == "Hotkey")
 					key_bindings = (hotkeys) ? deepCopyList(GLOB.hotkey_keybinding_list_by_key) : deepCopyList(GLOB.classic_keybinding_list_by_key)
 					user.client.update_movement_keys()
 				if("chat_on_map")
@@ -2555,21 +2510,14 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					widescreenpref = !widescreenpref
 					user.client.change_view(CONFIG_GET(string/default_view))
 
-				// if("be_defiant")
-				// 	defiant = !defiant
-				// 	if(defiant)
-				// 		to_chat(user, span_notice("Теперь вы будете сопротивляться, если кто-то захочет взять вас силой."))
-				// 	else
-				// 		to_chat(user, span_boldwarning("Вы полностью отдаётесь мраку этого мира, отказываясь от сопротивления людям, что домогаются до вас."))
-
 				if("schizo_voice")
 					toggles ^= SCHIZO_VOICE
 					if(toggles & SCHIZO_VOICE)
-						to_chat(user, "<span class='warning'>Теперь вы Глас.\n\
-										Как Глас, вы будете получать медитации от новичков, спрашивающих о механиках игры и не только!\n\
-										Глас хороший - глас божий. Вы будете вознаграждены PQ за качественные ответы на медитации, а за плохие - наказаны.</span>")
+						to_chat(user, "<span class='warning'>You are now a voice.\n\
+										As a voice, you will receive meditations from players asking about game mechanics!\n\
+										Good voices will be rewarded with PQ for answering meditations, while bad ones are punished at the discretion of The Management.</span>")
 					else
-						to_chat(user, span_warning("Вы теперь не Глас."))
+						to_chat(user, span_warning("You are no longer a voice."))
 
 				if("migrants")
 					migrant.show_ui()
@@ -2599,27 +2547,10 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 					user << browse(null, "window=lobby_window")
 					return
 
-				// if("barkpreview")
-				// 	if(SSticker.current_state == GAME_STATE_STARTUP) //Timers don't tick at all during game startup, so let's just give an error message
-				// 		to_chat(user, "<span class='warning'>Предпрослушивание возгласов не может воспроизводиться во время инициализации!</span>")
-				// 		return
-				// 	if(!COOLDOWN_FINISHED(src, bark_previewing))
-				// 		return
-				// 	if(!parent || !parent.mob)
-				// 		return
-				// 	COOLDOWN_START(src, bark_previewing, (5 SECONDS))
-				// 	var/atom/movable/barkbox = new(get_turf(parent.mob))
-				// 	barkbox.set_bark(bark_id)
-				// 	var/total_delay
-				// 	for(var/i in 1 to (round((32 / bark_speed)) + 1))
-				// 		addtimer(CALLBACK(barkbox, TYPE_PROC_REF(/atom/movable, bark), list(parent.mob), 7, 70, BARK_DO_VARY(bark_pitch, bark_variance)), total_delay)
-				// 		total_delay += rand(DS2TICKS(bark_speed/4), DS2TICKS(bark_speed/4) + DS2TICKS(bark_speed/4)) TICKS
-				// 	QDEL_IN(barkbox, total_delay)
-
 				if("save")
 					save_preferences()
 					save_character()
-					to_chat(user, span_notice("ПЕРСОНАЖ СОХРАНЁН."))
+					to_chat(user, span_notice("CHARACTER SAVED."))
 
 				if("load")
 					load_preferences()
@@ -2637,7 +2568,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 								if(!name)
 									name = "Slot[i]"
 								choices[name] = i
-					var/choice = tgui_input_list(user, "ВЫБЕРИТЕ ГЕРОЯ","АЛОЗОРЦЫ", choices)
+					var/choice = tgui_input_list(user, "CHOOSE A HERO","ROGUETOWN", choices)
 					if(choice)
 						choice = choices[choice]
 						if(!load_character(choice))
@@ -2762,12 +2693,6 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 
 	character.nsfwflavortext = nsfwflavortext
 
-	// character.defiant = defiant // ! REDMOON
-	// character.set_bark(bark_id) // ! REDMOON
-	// character.vocal_speed = bark_speed // ! REDMOON
-	// character.vocal_pitch = bark_pitch // ! REDMOON
-	// character.vocal_pitch_range = bark_variance // ! REDMOON
-
 	character.erpprefs = erpprefs
 
 	character.img_gallery = img_gallery
@@ -2829,7 +2754,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 	if(!namedata)
 		return
 
-	var/raw_name = input(user, "Выберите [namedata["qdesc"]] вашего персонажа:","Настройки персонажа") as text|null
+	var/raw_name = input(user, "Choose your character's [namedata["qdesc"]]:","Character Preference") as text|null
 	if(!raw_name)
 		if(namedata["allow_null"])
 			custom_names[name_id] = get_default_name(name_id)
@@ -2838,15 +2763,15 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 	else
 		var/sanitized_name = reject_bad_name(raw_name,namedata["allow_numbers"])
 		if(!sanitized_name)
-			to_chat(user, "<font color='red'>Неверное имя. Длина вашего имени должна быть не менее 2 и не более [MAX_NAME_LEN] символов. Оно может содержать только следующие символы: A-Z, a-z,[namedata["allow_numbers"] ? ",0-9," : ""] -, ' and .</font>")
+			to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z,[namedata["allow_numbers"] ? ",0-9," : ""] -, ' and .</font>")
 			return
 		else
 			custom_names[name_id] = sanitized_name
 
 /// Resets the client's keybindings. Asks them for which
 /datum/preferences/proc/force_reset_keybindings()
-	var/choice = tgalert(parent.mob, "Необходимо сбросить базовые горячие клавиши. Установленные вами останутся без изменений. Вы хотите сброс до 'обычных' или 'классических' (TG) горячих клавиш? Не выбирайте классические, если не знаете что это.", "Сброс горячих клавиш", "Обычные", "Классические")
-	hotkeys = (choice != "Классические")
+	var/choice = tgalert(parent.mob, "Your basic keybindings need to be reset, the custom keybinds you've set will remain. Would you prefer 'hotkey' or 'classic TG' mode? DO NOT CLICK CLASSIC UNLESS YOU KNOW WHAT YOU'RE DOING.", "Reset keybindings", "Hotkey", "Classic")
+	hotkeys = (choice != "Classic")
 	force_reset_keybindings_direct(hotkeys)
 
 /// Does the actual reset
@@ -2872,7 +2797,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 	var/find_index = findtext(value, "https://")
 	if(find_index != 1)
 		if(!silent)
-			to_chat(user, "<span class='warning'>Ваша ссылка должна начитнаться на https!</span>")
+			to_chat(user, "<span class='warning'>Your link must be https!</span>")
 		return FALSE
 
 	if(!findtext(value, ".") || findtext(value, "<") || findtext(value, ">") || findtext(value, "]") || findtext(value, "\["))	//there is no link in the world that would ever need < or >
@@ -2891,7 +2816,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 	find_index = findtext(value, link_regex)
 	if(find_index != 9)
 		if(!silent)
-			to_chat(usr, "<span class='warning'>Ссылка должна быть размещена на одном из следующих сайтов: 'Gyazo, Lensdump, Imgbox, Catbox'</span>")
+			to_chat(usr, "<span class='warning'>The link must be hosted on one of the following sites: 'Gyazo, Lensdump, Imgbox, Catbox'</span>")
 		return FALSE
 	return TRUE
 
@@ -2907,7 +2832,7 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 	if(V.desc)
 		dat += "<font size = 3>[span_purple(V.desc)]</font><br>"
 	if(length(V.added_skills))
-		dat += "<font color = '#a3e2ff'><font size = 3>Это достоинство добавляет следующие навыки: <br>"
+		dat += "<font color = '#a3e2ff'><font size = 3>This Virtue adds the following skills: <br>"
 		for(var/list/L in V.added_skills)
 			var/name
 			if(ispath(L[1],/datum/skill))
@@ -2918,17 +2843,17 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 	if(V.softcap)
 		dat += "<font color = '#a3e2ff'><font size = 3>This is a soft capped, and values will give only 1 level above the skill cap<br></font>"
 	if(length(V.added_traits))
-		dat += "<font color = '#a3ffe0'><font size = 3>Это достоинство дарует следующие черты: <br>"
+		dat += "<font color = '#a3ffe0'><font size = 3>This Virtue grants the following traits: <br>"
 		for(var/TR in V.added_traits)
 			dat += "[TR] — <font size = 2>[GLOB.roguetraits[TR]]</font><br>"
 		dat += "</font>"
 	if(length(V.added_stashed_items))
-		dat += "<font color = '#eeffa3'><font size = 3>Это достоинство добавляет следующие предметы в ваш инвентарь: <br>"
+		dat += "<font color = '#eeffa3'><font size = 3>This Virtue adds the following items to your stash: <br>"
 		for(var/I in V.added_stashed_items)
 			dat += "<i>[I]</i> <br>"
 		dat += "</font>"
 	if(V.custom_text)
-		dat += "<font color = '#ffffff'><font size = 3>Это достоинство имеет особое поведение: <br>"
+		dat += "<font color = '#ffffff'><font size = 3>This Virtue has this special behaviour: <br>"
 		dat += "[V.custom_text]"
 		dat += "</font>"
 	return dat
