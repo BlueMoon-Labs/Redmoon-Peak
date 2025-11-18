@@ -240,6 +240,22 @@
 	reqs = list(/obj/item/natural/cloth = 3,)
 	craftdiff = 1
 
+/datum/crafting_recipe/roguetown/sewing/clothknapsack
+	name = "cloth knapsack"
+	category = "Container"
+	result = /obj/item/storage/backpack/rogue/satchel/cloth
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 3)
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/sewing/clothpouch
+	name = "cloth pouch"
+	category = "Container"
+	result = /obj/item/storage/belt/rogue/pouch/cloth
+	reqs = list(/obj/item/natural/cloth = 1,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 1
+
 /datum/crafting_recipe/roguetown/sewing/basichood
 	name = "hood"
 	category = "Hoods"
@@ -798,6 +814,14 @@
 	name = "jupon"
 	category = "Cloaks"
 	result = list(/obj/item/clothing/cloak/stabard/surcoat)
+	reqs = list(/obj/item/natural/cloth = 3,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 4
+
+/datum/crafting_recipe/roguetown/sewing/jupon_short
+	name = "short jupon"
+	category = "Cloaks"
+	result = list(/obj/item/clothing/cloak/stabard/surcoat/short)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
