@@ -8,6 +8,8 @@
 #define ANTAG_HUD_TRAITOR 	1
 #define ANTAG_HUD_REV		2
 #define ANTAG_HUD_VAMPIRE	3
+#define ANTAG_HUD_AZURE_CTF 4
+#define ANTAG_HUD_HEARTFELT_CTF 5
 // Notification action types
 #define NOTIFY_JUMP "jump"
 #define NOTIFY_ATTACK "attack"

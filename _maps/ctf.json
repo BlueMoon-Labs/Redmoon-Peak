@@ -1,0 +1,27 @@
+{
+    "map_name": "CTF Heartfelt VS Scarlet Dawn",
+    "map_path": "map_files/ctf",
+    "map_file": ["ctf.dmm"],
+	"traits": [{"Up": true}, {"Up": true, "Down": true}, {"Up": true, "Down": true}],
+	"minetype": null,
+	"is_ctf":true,
+	"space_empty_levels": 0,
+	"space_ruin_levels": 0,
+	"job_override": ["/datum/job/roguetown/captain/ctf_south", 
+					"/datum/job/roguetown/knight/ctf_south",
+					"/datum/job/roguetown/templar/ctf_south",
+					"/datum/job/roguetown/wretch/ctf_south",
+					"/datum/job/roguetown/magician/ctf_south",
+					"/datum/job/roguetown/manorguard/ctf_south",
+					"/datum/job/roguetown/guildmaster/ctf_south",
+
+					"/datum/job/roguetown/captain/ctf_north", 
+					"/datum/job/roguetown/knight/ctf_north",
+					"/datum/job/roguetown/templar/ctf_north",
+					"/datum/job/roguetown/wretch/ctf_north",
+					"/datum/job/roguetown/magician/ctf_north",
+					"/datum/job/roguetown/manorguard/ctf_north",
+					"/datum/job/roguetown/guildmaster/ctf_north"
+				],
+	"shuttles": {}
+}

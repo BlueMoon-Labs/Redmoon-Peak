@@ -7,3 +7,7 @@
 /datum/advclass/captain/infantry
 	name = "Knight Captain"
 	tutorial = "Вы сражались плечом к плечу с самыми достойными рыцарями королевства, находясь непосредственно в составе массовых пехотных формирований. Как непревзойденный боец и тактик, вы представляете собой грозную силу на любом поле боя."
+
+/datum/outfit/job/roguetown/captain/infantry/pre_equip(mob/living/carbon/human/H)
+	..()
+	H.adjust_skillrank(/datum/skill/combat/firearms, 4, TRUE)

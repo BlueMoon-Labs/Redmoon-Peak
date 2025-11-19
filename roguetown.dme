@@ -767,7 +767,7 @@
 #include "code\datums\mob_descriptors\descriptors\body.dm"
 #include "code\datums\mob_descriptors\descriptors\face.dm"
 #include "code\datums\mob_descriptors\descriptors\height.dm"
-#include "code\datums\mob_descriptors\descriptors\other.dm" 
+#include "code\datums\mob_descriptors\descriptors\other.dm"
 #include "code\datums\mob_descriptors\descriptors\prominent.dm"
 #include "code\datums\mob_descriptors\descriptors\skin.dm"
 #include "code\datums\mob_descriptors\descriptors\stature.dm"
@@ -3076,4 +3076,8 @@
 #include "modular_redmoon\modules\overseers_equipment\code\clothing.dm"
 #include "modular_redmoon\modules\overseers_equipment\code\inqshop.dm"
 #include "modular_redmoon\modules\overseers_equipment\code\jobs\puritan.dm"
+#include "modular_redmoon\rogue_fight\general.dm"
+#include "modular_redmoon\rogue_fight\heartfelt.dm"
+#include "modular_redmoon\rogue_fight\scarlet_dawn.dm"
+#include "modular_redmoon\sound\combat_music\redmoon_combat_music.dm"
 // END_INCLUDE
