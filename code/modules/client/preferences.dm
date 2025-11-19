@@ -844,7 +844,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 //	dat += "<a href='?_src_=prefs;preference=reset_all'> настройки</a>"
 
 
-	if(user.client.is_new_player())
+	if(user.client?.is_new_player())
 		dat = list("<center>ЗАРЕГИСТРИРОВАН!</center>")
 
 	winshow(user, "preferencess_window", TRUE)
