@@ -2869,6 +2869,7 @@
 #include "code\modules\spells\warscholar.dm"
 #include "code\modules\spells\pantheon\divine\necra.dm"
 #include "modular_redmoon\code\datums\special_traits\tiny.dm"
+#include "modular_redmoon\code\modules\client\client_procs.dm"
 #include "code\modules\spells\pantheon\inhumen\baotha.dm"
 #include "modular_redmoon\code\modules\events\bandits.dm"
 #include "code\modules\spells\pantheon\inhumen\graggar.dm"
