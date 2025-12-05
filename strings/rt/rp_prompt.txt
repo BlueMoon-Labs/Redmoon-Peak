@@ -1,16 +1,16 @@
-<p><strong><em><span style="font-size:115%"> Welcome to Azure Peak! </span></em></strong></p>
-<p> This lore primer serves as an introduction to Azure Peak's setting.
+<p><strong><em><span style="font-size:115%"> Welcome to Scarlet Dawn! </span></em></strong></p>
+<p> This lore primer serves as an introduction to Scarlet Dawn's setting.
 <br><br>
 As always, note that this lore primer shouldn't be treated as gospel. Don't stress too much about trying to "get it all right" - it's far more fun to spark conflict through contradiction, and to explore the many unique interpretations that characters can have.
 <br><br>
-Only the broadest strokes have been applied onto this canvas. There's plenty of supplemental lore hidden throughout Azure Peak: level a keen eye towards the dungeons, tomes, events, and descriptions of examined items, if you wish to uncover Psydonia's secrets. 
+Only the broadest strokes have been applied onto this canvas. There's plenty of supplemental lore hidden throughout Scarlet Dawn: level a keen eye towards the dungeons, tomes, events, and descriptions of examined items, if you wish to uncover Psydonia's secrets. 
 <br><br>
-Don't be afraid to check out Azure Peak's Wiki - https://azurepeak.miraheze.org/ - for more information regarding the lore, mechanics, and more.</p>
+Don't be afraid to check out Scarlet Dawn's Wiki - https://azurepeak.miraheze.org/ - for more information regarding the lore, mechanics, and more.</p>
 
 <details>
 	<summary><strong><span style="font-size:130%"> THE STORY SO FAR </span></strong></summary>
 
-	<p><strong> The year is 1513 AP. There is a Grand Duchy built on traditional elven homelands, and in that Duchy there is the capital of Azure Peak, and it is the end 	of the world.
+	<p><strong> The year is 1513 AP. There is a Grand Duchy built on traditional elven homelands, and in that Duchy there is the capital of Scarlet Dawn, and it is the end 	of the world.
 	<br><br>
 	A millennium ago, Psydon sent down the Comet Syon to defeat the rampaging Archdevil, which had arisen to destroy Psydonia. The Archdevil was destroyed under such 	divine might, yet a grave cost: for Psydon had collapsed into a deep sleep - (or into a shallow death?) - from which He did not stir. From the Comet Syon's impact, 	ten angels arose: a Pantheon of His divine will, who guided His children out of their primordial stupor and into enlightenment. From Psydonia's ruins, hope blossomed.
 	<br><br>
@@ -158,7 +158,7 @@ More recently, unsettling rumors have arose of an ancient cult, nestled deep wit
 		<br><br>
 		Gradually, the Pantheon's presence in day-to-day life recedes, so that man-and-mer could continue to grow on their own. Clashes between kingdoms are infrequent, but present: most tend to end with mediation by the Holy Celestial Empire. Beyond that, Psydonia is otherwise uncontested - and for centuries to come, His children live in prosperity.
 		<br><br>
-		At this point, almost all of Psydonia now worships the Pantheon. Unlike today, however, the Psydonic minority isn't ostracized: instead, they're still treated as spiritual equals. The resting place of the Comet Syon is rediscovered, and a lesser kingdom is erected upon its coast: the Grand Duchy of Azure Peak. Azuria becomes a holy site for Psydonic worshippers.
+		At this point, almost all of Psydonia now worships the Pantheon. Unlike today, however, the Psydonic minority isn't ostracized: instead, they're still treated as spiritual equals. The resting place of the Comet Syon is rediscovered, and a lesser kingdom is erected upon its coast: the Grand Duchy of Scarlet Dawn. Azuria becomes a holy site for Psydonic worshippers.
 		<br>
 	</details>
 
@@ -207,7 +207,7 @@ More recently, unsettling rumors have arose of an ancient cult, nestled deep wit
 	<details>
 		<summary><strong> AZURIA </strong></summary>
 		<br>
-		<em>The Grand Duchy of Azure Peak, Syon's Rest</em>
+		<em>The Grand Duchy of Scarlet Dawn, Syon's Rest</em>
 		<br><br>
 		Azuria is a lesser kingdom, burrowed halfway into the ancient elvish mountainscapes that stand vigil over Psydonia's central oceans. Long ago, it held host to the final battle between Psydon and the Archdevil: nowadays, it's more well-known for its strong fishing economy and delicious salted trout pies. Owing to its nature as a welcoming refuge for both travelers and pilgrims alike, Azuria's population - both residential and temporary - happens to be unusually diverse. 
 <br><br>
