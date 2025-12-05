@@ -77,6 +77,13 @@
   WeNeedMorePhoron:
   - config: Game_options.txt is now provided out of the box for locally hosted build
       so no more zoomie speed
+  bearrrrrrrr:
+  - rscadd: new dragon lore (or more accurately, actually put lore ingame) and sprites.
+      broodmothers renamed
+  dopamiin0:
+  - balance: briars curse also increases the wielded force of a weapon
+  - bugfix: you no longer fall asleep while doing both kinds of moondust similtaneously
+      if you're a baothan
   hazelrat:
   - rscadd: Added servantry service bells to the keep. Ring them if you want attention
       from the servants!
