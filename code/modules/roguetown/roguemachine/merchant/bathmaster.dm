@@ -17,7 +17,7 @@
 	var/current_cat = "1"
 	var/lockid = "nightman"
 	var/list/categories = list(
-		"Alcohols", 
+		"Alcohols",
 		"Drugs",
 		"Exotic Apparel",
 		"Instruments",
@@ -198,7 +198,7 @@ SUBSYSTEM_DEF(BMtreasury)
 	priority = FIRE_PRIORITY_WATER_LEVEL
 	var/treasury_value = 0
 	var/multiple_item_penalty = 0.7
-	var/interest_rate = 0.25 // Bit more interest, since it's gonna be much harder for the BMaster to get valuables.
+	var/interest_rate = 0.30 // Bit more interest, since it's gonna be much harder for the BMaster to get valuables.
 	var/next_treasury_check = 0
 	var/list/vault_accounting = list()
 	/// The reference to the map's brassface, populated when it initializes.
