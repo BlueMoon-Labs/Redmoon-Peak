@@ -2885,6 +2885,7 @@
 #include "modular_redmoon\code\triumphs\triumph_buy_datums\wipe_triumphs.dm"
 #include "modular_redmoon\code\triumphs\triumph_buy_datums\tiny.dm"
 #include "modular_redmoon\modules\client\preferences.dm"
+#include "modular_redmoon\modules\client\preferences_savefile.dm"
 #include "code\modules\spells\pantheon\inhumen\zizo.dm"
 #include "statpacks\agile.dm"
 #include "statpacks\mental.dm"
