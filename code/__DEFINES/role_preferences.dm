@@ -70,5 +70,5 @@ GLOBAL_LIST_INIT(special_roles_rogue, list(
 
 //Job defines for what happens when you fail to qualify for any job during job selection
 #define BEOVERFLOW 	1
-#define BERANDOMJOB "Быть Случайной Профессией"
-#define RETURNTOLOBBY 	"Вернуться В Лобби"
+#define BERANDOMJOB "Играть за случайный"
+#define RETURNTOLOBBY 	"Остаться в лобби"

@@ -99,8 +99,22 @@
   - bugfix: you no longer fall asleep while doing both kinds of moondust similtaneously
       if you're a baothan
 2025-12-07:
+  FreeStylaLT:
+  - balance: Campfires now require a tree stump, bedsheet or a bed (bedroll is fine
+      too) to heal.
+  - balance: Campfires now restore blue bar.
+  HeroWithYay:
+  - bugfix: Carrot steak and Carrot steal meal no longer make nobles throw up
+  Lamasmaster:
+  - rscadd: Swimming skill to Retinue and bandit
+  - rscadd: Athletics to Hunter
+  - balance: Swimming/Athletics for Knave
+  SillyMoff:
+  - bugfix: fixed t2 and t3 obfuscate tier
   WeNeedMorePhoron:
   - rscadd: Added blood splatter on wall from Caustic Cove made by Posshum.
+  bearrrrrrrr:
+  - bugfix: attacks targeting feet on taurs will no longer ignore their armor
   hazelrat:
   - rscadd: Implemented a significant expansion to the manor kitchen, also including
       mapping changes to the council office and wine cellar.
