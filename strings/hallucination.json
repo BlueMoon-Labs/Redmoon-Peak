@@ -1,64 +1,60 @@
 {
 	"suspicion": [
-		"@pick(add_name)I'm watching you...",
-		"@pick(add_name)I know what you're doing",
-		"@pick(add_name)I'm watching you...",
-		"@pick(add_name)I know what you're doing",
-		"@pick(add_name)what are you hiding?",
-		"I saw that"
+		"@pick(add_name)Я слежу за тобой...",
+		"@pick(add_name)Я знаю чем ты занимаешься",
+		"@pick(add_name)Я слежу за тобой...",
+		"@pick(add_name)Я знаю чем ты занимаешься",
+		"@pick(add_name)что ты скрываешь?",
+		"Я вижу это!"
 	],
 
 	"conversation": [
-		"Yes",
-		"Yeah",
-		"Aye",
-		"Aye",
-		"No",
-		"Nah",
-		"I doubt it",
-		"Uh...",
-		"Why?",
-		"But...",
-		"Hold on",
-		"Hmm",
-		"Yeah, I know",
-		"Peculiar",
-		"Yeah, I know",
-		"Peculiar"
+		"Да",
+		"Ага",
+		"Не",
+		"Ме",
+		"Сомневаюсь",
+		"Э...",
+		"Почему?",
+		"Но...",
+		"Погоди",
+		"Хмм",
+		"Да, знаю",
+		"Странно"
 	],
 
 	"greetings": [
 		"",
-		"Hey, ",
-		"Hi ",
-		"Hello ",
-		"Wait, ",
-		"It's "
+		"Здаров, ",
+		"Привет ",
+		"Здравствуй ",
+		"Стой, ",
+		"Это "
 	],
 
 	"getout": [
-		"@pick(add_name)get out",
-		"@pick(add_name)get out!",
-		"@pick(add_name)go away",
-		"@pick(add_name)fuck off",
-		"OUT!",
-		"@pick(add_name)out!"
+		"@pick(add_name)убирайся",
+		"@pick(add_name)уходи!",
+		"@pick(add_name)отвали",
+		"@pick(add_name)ушёл нахуй!",
+		"ПРОЧЬ!",
+		"@pick(add_name)вон!"
 	],
 
 	"weird": [
-		"Kchck-Chkck? Kchchck!",
-		"Kchckchk...",
+		"Цкчкч-чктсчк? Клц-тчк!",
+		"Кчкчкчкцк...",
 		"EEEeeeeEEEE",
-		"khhhhh",
+		"Гххххх",
 		"#@§*&£",
-		"H**p m*",
-		"H-hhhhh..."
+		"П*м*г* мн*",
+		"Мх-хххх..."
 	],
 
 	"didyouhearthat": [
-		"Did you hear that?",
-		"Did you see that?",
-		"What was that?"
+		"Ты слышал это?",
+		"Ты видел это?",
+		"Это они?"
 	],
 
 	"add_name": [
@@ -68,125 +64,124 @@
 	],
 
 	"doubt": [
-		"Why?",
-		"What?",
-		"Wait, what?",
-		"@pick(add_name)wait",
-		"@pick(add_name)hold on",
-		"Uh..."
+		"Почему?",
+		"Что?",
+		"Стоп, чего?",
+		"@pick(add_name)погоди",
+		"@pick(add_name)подожди",
+		"Э-э..."
 	],
 
 	"aggressive": [
-		"@pick(add_name)give me that!",
-		"@pick(add_name)stop it!",
-		"@pick(add_name)I'm going to kill you!",
-		"@pick(add_name)I'm going to kill you!",
-		"@pick(add_name)fuck you!"
+		"@pick(add_name)отдай мне это!",
+		"@pick(add_name)прекращай!",
+		"@pick(add_name)Я убью тебя!",
+		"@pick(add_name)Я убью тебя!",
+		"@pick(add_name)да иди ты!"
 	],
 
 	"help": [
-		"HELP",
-		"HELP",
-		"HELP",
-		"HELP",
-		"HELP",
-		"HELP ME",
-		"HELP HIM",
-		"HELP HER",
-		"HELP THEM",
-		"HELP US",
-		"HELP YOURSELF"
+		"Помоги!",
+		"Помоги!",
+		"ПОМОГИ!",
+		"Спаси!",
+		"СПАСИ!",
+		"Спаси меня!",
+		"Спаси его!",
+		"Спаси её!",
+		"Спаси их!",
+		"Спаси нас!",
+		"Спасай себя!"
 	],
 
 	"escape": [
-		"@pick(add_name)RUN!!",
-		"They're behind me!",
-		"It's here!",
-		"@pick(add_name)follow me!",
-		"@pick(add_name)follow me"
+		"@pick(add_name)БЕГИ!!",
+		"Они сзади!",
+		"Оно рядом!",
+		"@pick(add_name)за мной!",
+		"@pick(add_name)за мной"
 	],
 
 	"infection_advice": [
-		"@pick(add_name)stay away",
-		"@pick(add_name)don't get close",
-		"@pick(add_name)be careful",
-		"@pick(add_name)help me",
-		"@pick(add_name)kill me"
+		"@pick(add_name)держись подальше",
+		"@pick(add_name)не приближайся",
+		"@pick(add_name)будь осторожен",
+		"@pick(add_name)помоги мне..",
+		"@pick(add_name)убей меня.."
 	],
 
 	"people": [
-		"the hand",
-		"Sergeant",
-		"physician",
-		"apothecary",
-		"smith",
-		"steward",
-		"seneschal",
-		"Duke",
-		"innkeeper",
-		"priest",
+		"Десница",
+		"Сержант",
+		"Лекарь",
+		"Аптекарь",
+		"Кузнец",
+		"Управляющий",
+		"Сенешаль",
+		"Герцог",
+		"Корчмарь",
+		"Жрец",
 		"%TARGETNAME%"
 	],
 
 	"accusations": [
-		"dead",
-		"the vampire",
-		"a Zizoid",
-		"a heretic",
-		"assassin",
-		"a Matthosian",
-		"a Baothian",
-		"a Graggarite",
-		"a bandit",
-		"a werewolf",
-		"a deddite",
-		"coming for you",
-		"aiding the Lich",
-		"after you"
+		"мёртв",
+		"вампир",
+		"зизит",
+		"еретик",
+		"убийца",
+		"маттиосит",
+		"баотиец",
+		"граггарит",
+		"разбойник",
+		"оборотень",
+		"ходячий мертвец",
+		"тот, кто идёт за тобой",
+		"помощник Лича",
+		"тот, кто преследует тебя"
 	],
 
 	"threat": [
-		"Cult",
-		"Werewolf",
-		"Vampire",
-		"Vampire Lord",
-		"Bandit",
-		"Bandits",
-		"Spiders",
-		"Skeletons",
-		"Spirits",
-		"Assassin",
-		"Goblins",
-		"Graggarites",
-		"Handsy Baothians",
-		"Help",
+		"Культ",
+		"Оборотень",
+		"Вампир",
+		"Владыка вампиров",
+		"Разбойник",
+		"Разбойники",
+		"Пауки",
+		"Скелеты",
+		"Духи",
+		"Убийцы",
+		"Гоблины",
+		"Граггариты",
+		"Развратные баотийцы",
+		"Помогите",
 		"%TARGETNAME%"
 	],
 
 	"location": [
-		"near @pick(sublocation)",
-		"the bridge",
-		"the armory",
-		"the barracks",
-		"the keep",
-		"the smithy",
-		"the artificer's",
-		"the sewers",
-		"the north gate",
-		"the south gate",
-		"the grove",
-		"the coast",
-		"outside @pick(sublocation)",
-		"the inn",
-		"the baths",
-		"the farm",
-		"the wizard's tower",
-		"the church",
-		"the archives",
-		"the mansion",
-		"the druid grove",
-		"the vault",
-		"the warden's tower"
+		"рядом с @pick(sublocation)",
+		"на мосту",
+		"в оружейной",
+		"в бараках",
+		"в башне",
+		"в кузне",
+		"в мастерской",
+		"в сукнодельне",
+		"у северных ворот",
+		"у южных ворот",
+		"в роще",
+		"на побережье",
+		"снаружи @pick(sublocation)",
+		"в корчме",
+		"в банях",
+		"в полях",
+		"в академии",
+		"в церкви",
+		"в архивах",
+		"в замке",
+		"в друидской роще",
+		"у старосты"
 	],
 
 	"sublocation": [
@@ -214,17 +209,17 @@
 	],
 
 	"advice": [
-		"Hmm...not sure about that.",
-		"Yes. You're doing the right thing.",
-		"No. Stop what you're doing.",
-		"You should be wary of that person.",
-		"Trust that person.",
-		"That person wants to kill you.",
-		"Kill that person. You know who.",
-		"You should go somewhere else. Quickly.",
-		"Good luck. You'll need it.",
-		"You have my permission. Do it.",
-		"Just do it."
+		"Хмм...не уверен.",
+		"Да. Правильно.",
+		"Нет. Пора прекращать.",
+		"Ты должен опасаться этой особы.",
+		"Доверься им.",
+		"Он хочет тебя убить.",
+		"Убей. Ты знаешь кого.",
+		"Тебе следует уйти. Быстро.",
+		"Удачи. Она тебе понадобится.",
+		"Благословляю тебя. Сделай это.",
+		"Сделай же это."
 	],
 
 	"chemicals": [
