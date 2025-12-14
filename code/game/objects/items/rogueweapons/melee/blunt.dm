@@ -286,6 +286,7 @@
 	force_wielded = 25
 	wbalance = WBALANCE_NORMAL
 	icon_state = "opsyflangedmace"
+	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/mace/cudgel/psy/old/ComponentInitialize()
 	return
@@ -508,21 +509,6 @@
 		added_int = 50,\
 		added_def = 1,\
 	)
-
-/obj/item/rogueweapon/mace/goden/psymace/old
-	name = "enduring mace"
-	desc = "An ornate mace, its silver tarnished by neglect. Even without HIS holy blessing, its weight ENDURES."
-	icon_state = "psymace"
-	force = 15
-	force_wielded = 30
-	minstr = 10
-	wdefense = 3
-	is_silver = FALSE
-	smeltresult = /obj/item/ingot/steel
-	color = COLOR_FLOORTILE_GRAY
-
-/obj/item/rogueweapon/mace/goden/psymace/old/ComponentInitialize()
-	return
 
 /obj/item/rogueweapon/mace/spiked
 	icon_state = "spiked_club"
