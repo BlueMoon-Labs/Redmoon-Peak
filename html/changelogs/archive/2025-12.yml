@@ -246,6 +246,12 @@
   - bugfix: Pillories can now be locked by any member of the garrison, church, or
       inquisition.
 2025-12-14:
+  BurpleBineapple:
+  - rscdel: Removed unused "Enduring" weapons from code.
+  - balance: Psydon Heretics spawn with Psydonic silver weapons.
+  - balance: Rite of Silver-Blessing now only blesses silver weapons.
+  FreeStylaLT:
+  - balance: Wrestling ClickCDs were made static and longer across the board
   Hollyhock:
   - rscadd: Gave sextons cool amulets
   SayonaraEcho:
@@ -254,6 +260,9 @@
   - balance: Increases martyr sword's durability as like Ichor Fang or Ascendant weapon
       and cannot be smelted.
   - code_imp: Deleted duplicated Ichor Fang's code.
+  SpadesNeil:
+  - image: Modified sling bullet sprite to be centered correctly.
+  - image: Added sprite for "silver bullet" that is currently unused.
   hubertjones:
   - balance: shovels can be worn on the belt
   - balance: necran acolytes spawn with silver shovels

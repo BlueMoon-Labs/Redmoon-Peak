@@ -473,7 +473,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	A.override = 1
 	if(target.client)
 		if(wabbajack)
-			to_chat(target, pick("<span class='hear'>...they are coming...</span>","<span class='holoparasite'>THEY ARE WATCHING ME</span>","<span class='userdanger'>I don't feel very good...</span>","<span class='artery'>...please...help...me...</span>"))
+			to_chat(target, pick("<span class='hear'>...они приближаются...</span>","<span class='holoparasite'>ОНИ НАБЛЮДАЮТ ЗА МНОЙ</span>","<span class='userdanger'>Мне дурно...</span>","<span class='artery'>...пожалуйста...помоги...мне...</span>"))
 			target.playsound_local(target,'sound/misc/dun.ogg', 40, 1)
 		delusion = A
 		target.client.images |= A
@@ -500,13 +500,13 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		"[pick_list_replacements(HAL_LINES_FILE, "aggressive")]",\
 		"[pick_list_replacements(HAL_LINES_FILE, "help")]!!",\
 		"[pick_list_replacements(HAL_LINES_FILE, "escape")]",\
-		"I was bitten by a [pick("deddite","werebeast","vampire","squire")], [pick_list_replacements(HAL_LINES_FILE, "infection_advice")]!",\
-		"[pick_list_replacements(HAL_LINES_FILE, "people")] is [pick_list_replacements(HAL_LINES_FILE, "accusations")]!",\
-		"Help!",\
-		"[pick_list_replacements(HAL_LINES_FILE, "threat")] in [pick_list_replacements(HAL_LINES_FILE, "location")][prob(50)?"!":"!!"]",\
-		"[pick("[target.first_name()] is a heretic!", "Make [target.first_name()] an outlaw!")]",\
-		"[pick("I","Squire","Somebody","They")] killed the priest!",\
-		"Duke [pick("is a Zizoid", "is a heretic")]!!")
+		"Меня укусил [pick("мертвец","оборотень","вампир","оруженосец")], [pick_list_replacements(HAL_LINES_FILE, "infection_advice")]!",\
+		"[pick_list_replacements(HAL_LINES_FILE, "people")] - [pick_list_replacements(HAL_LINES_FILE, "accusations")]!",\
+		"Спаси!",\
+		"[pick_list_replacements(HAL_LINES_FILE, "threat")] [pick_list_replacements(HAL_LINES_FILE, "location")][prob(50)?"!":"!!"]",\
+		"[pick("[target.first_name()] - еретик!", "Объявите [target.first_name()] вне закона!")]",\
+		"[pick("Я","Оруженосец","Кто-то","Ты")] убил жреца!",\
+		"Герцог [pick("- зизит", "- еретик")]!!")
 
 	/*var/radio_messages = list("[pick_list_replacements(HAL_LINES_FILE, "people")] is [pick_list_replacements(HAL_LINES_FILE, "accusations")]!",\
 		"Help!",\
@@ -578,30 +578,30 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(other)
 		if(close_other) //increase the odds
 			for(var/i in 1 to 5)
-				message_pool.Add("<span class='warning'>I feel a tiny prick!</span>")
+				message_pool.Add("<span class='warning'>Я чувствую лёгкое укалывание!</span>")
 		var/obj/item/storage/equipped_backpack = other.get_item_by_slot(SLOT_BACK_L)
 		if(istype(equipped_backpack))
 			for(var/i in 1 to 5) //increase the odds
-				message_pool.Add("<span class='notice'>[other] puts the [pick(\
-					"killersice","crimson fang","severed head","crown of Scarlet Dawn","master's rod",\
-					"master key","vault key", "steward's key", "ritual dagger","spellbook",\
-					)] into [equipped_backpack].</span>")
+				message_pool.Add("<span class='notice'>[other] кладёт [pick(\
+					"лёд убийцы","отрубленную голову","корону Алой Зари","господский жезл",\
+					"ключ Господина","ключ от казны", "ключ управляющего", "ритуальный кинжал","книгу заклинаний",\
+					)] в [equipped_backpack].</span>")
 
-		message_pool.Add("<B>[other]</B> [pick("laughs at [target.first_name()]'s ugly outfit","stares at [target.first_name()]","charges aggressively towards [target.first_name()]","is wondering why [target.first_name()] isn't wearing any pants...")].")
+		message_pool.Add("<B>[other]</B> [pick("смеётся над уродливыми одеждами [target.first_name()]","зырит на [target.first_name()]","агрессивно бросается на [target.first_name()]","задаётся вопросом почему [target.first_name()] ходит без трусов...")].")
 
-	message_pool.Add("<span class='notice'>I feel something crawling in my ear...</span>", \
-		"<span class='notice'>My [pick("arm", "leg", "back", "head")] begins to itch incessantly.</span>",\
-		"<span class='warning'>I feel [pick("hot","cold","dry","wet","woozy","faint")].</span>",
-		"<span class='adminhelp'>I cough up blood!</span>",
-		"<span class='warning'>My head hurts.</span>",
-		"<span class='warning'>I hear a faint scratching in my head.</span>",
-		"<B>[target]</B> sneezes.")
+	message_pool.Add("<span class='notice'>Что-то ползает в моём ухе...</span>", \
+		"<span class='notice'>Моя [pick("рука", "нога", "спина", "голова")] начинает непрерывно чесаться.</span>",\
+		"<span class='warning'>Я чувствую [pick("жар","холод","сухость","влагу","головокружение","слабость")].</span>",
+		"<span class='danger'>Я отхаркиваю кровь!</span>",
+		"<span class='warning'>Моя голова раскалывается.</span>",
+		"<span class='warning'>Я слышу как в голове кто-то скребётся.</span>",
+		"<B>[target]</B> чихает.")
 	if(prob(10))
-		message_pool.Add("<span class='warning'>Behind you.</span>",\
-			"<span class='warning'>I hear a faint laughter.</span>",
-			"<span class='warning'>I see something move.</span>",
-			"<span class='warning'>I hear skittering on the ceiling.</span>",
-			"<span class='warning'>I see an inhumanly tall silhouette moving in the distance.</span><span class='userdanger'> It's coming towards me...</span>")
+		message_pool.Add("<span class='warning'>Обернись.</span>",\
+			"<span class='warning'>Я слышу тихий смех.</span>",
+			"<span class='warning'>Я вижу, оно двигается.</span>",
+			"<span class='warning'>Я слышу скрежет выше потолка.</span>",
+			"<span class='warning'>Я вижу высокий нечеловеческий силуэт вдалеке.</span><span class='userdanger'> Он приближается...</span>")
 	if(prob(10))
 		message_pool.Add("[pick_list_replacements(HAL_LINES_FILE, "advice")]")
 	var/chosen = pick(message_pool)
@@ -712,29 +712,29 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	feedback_details += "Type: [message]"
 	switch(message)
 		if("heretic")
-			to_chat(target, "<h1 class='alert'>SHAME</h1>") //Only uses first name, as a clue it's not real...and I suck at coding too much to figure out getting the full name.
-			to_chat(target, "<br><br><span class='alert'>The church has put Xylix's curse of woe on [target.first_name()] for offending the church!</span><br><br>")
+			to_chat(target, "<h1 class='alert'>ПОЗОР</h1>") //Only uses first name, as a clue it's not real...and I suck at coding too much to figure out getting the full name.
+			to_chat(target, "<br><br><span class='alert'>Церковь наложила проклятье горя на [target.first_name()] за хуление Богов!</span><br><br>")
 			SEND_SOUND(target, 'sound/misc/excomm.ogg')
 		if("outlaw")
-			to_chat(target, "<h1 class='alert'>The [SSticker.rulertype] Decrees</h1>")
-			to_chat(target, "<br><br><span class='alert'>[target.first_name()] has been declared an outlaw and must be captured or slain.</span><br><br>")
+			to_chat(target, "<h1 class='alert'> Указ [SSticker.rulertype]</h1>")
+			to_chat(target, "<br><br><span class='alert'>[target.first_name()] объявлен вне закона и должен быть пойман. Живым или мёртвым.</span><br><br>")
 			SEND_SOUND(target, 'sound/misc/royal_decree.ogg')
 		if("duke dead")
-			to_chat(target, "<h1 class='alert'>Bad Omen</h1>")
-			to_chat(target, "<br><br><span class='alert'>The [SSticker.rulertype] is dead! We need a new ruler.</span><br><br>")
+			to_chat(target, "<h1 class='alert'>Дурное знамение</h1>")
+			to_chat(target, "<br><br><span class='alert'>[SSticker.rulertype] мёртв! Нам нужен новый правитель.</span><br><br>")
 			SEND_SOUND(target, 'sound/misc/evilevent.ogg')
 		if("priest dead") 
-			to_chat(target, "<h1 class='alert'>Bad Omen</h1>")
-			to_chat(target, "<br><br><span class='alert'>The High Priest is dead!</span><br><br>")
+			to_chat(target, "<h1 class='alert'>Дурное знамение</h1>")
+			to_chat(target, "<br><br><span class='alert'>Верховный Жрец мёртв!</span><br><br>")
 			SEND_SOUND(target, 'sound/misc/evilevent.ogg')
 		if("lich")
-			to_chat(target, "<h1 class='alert'>The Lich Decrees</h1>")
-			to_chat(target, "<br><br><span class='alert'>The throne is mine! Bring me [target.first_name()]...by force, if necessary</span><br><br>")
+			to_chat(target, "<h1 class='alert'>Указ Короля мёртвых</h1>")
+			to_chat(target, "<br><br><span class='alert'>Престол отныне мой! Доставьте ко мне [target.first_name()]. Силой, если потребуется</span><br><br>")
 			SEND_SOUND(target, 'sound/misc/royal_decree.ogg')
 			SEND_SOUND(target, 'sound/misc/zizo.ogg')
 		if("ww")
-			to_chat(target, "<h1 class='alert'>The Werewolf Decrees</h1>")
-			to_chat(target, "<br><br><span class='alert'>AWOOOOOOOOOO!!! RRrrrRRrRRRRRrrrRRR RRrrrRRRrrrRRRRRrr [target.first_name()] RRrrRRRRRRRRRrrrRRR</span><br><br>")
+			to_chat(target, "<h1 class='alert'>Решения вожаков оборотней</h1>")
+			to_chat(target, "<br><br><span class='alert'>АААА-УУУУ-ВУУУУ!!! ГррррррРРРРррр ХрррррГрррррРРРрр [target.first_name()] РРРррррРРРрргргр</span><br><br>")
 			SEND_SOUND(target, 'sound/misc/royal_decree.ogg')
 			SEND_SOUND(target, 'sound/vo/mobs/wwolf/howldist (1).ogg')
 
@@ -923,9 +923,9 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	if(AM == target)
 		if(istype(target, /obj/effect/dummy/phased_mob))
 			return
-		to_chat(target, "<span class='danger'>I fall into the chasm!</span>")
+		to_chat(target, "<span class='danger'>Я падаю в пропасть!</span>")
 		target.Paralyze(40)
-		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), target, "<span class='notice'>It's surprisingly shallow.</span>"), 15)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), target, "<span class='notice'>Она наудивление неглубокая.</span>"), 15)
 		QDEL_IN(src, 30)
 
 /obj/effect/hallucination/danger/anomaly
@@ -961,7 +961,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	target.Paralyze(300)
 	target.playsound_local(target, 'sound/misc/deth.ogg', 100, 0)
 	target.silent += 10
-	to_chat(target, "<span class='deadsay'><b>[target.real_name]</b> has died at <b>[get_area_name(target)]</b>.</span>")
+	to_chat(target, "<span class='deadsay'><b>[target.real_name]</b> сгинул в <b>[get_area_name(target)]</b>.</span>")
 	if(prob(50))
 		var/mob/fakemob
 		var/list/dead_people = list()
@@ -973,8 +973,8 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 			fakemob = target //ever been so lonely you had to haunt yourself?
 		if(fakemob)
 			sleep(rand(20, 50))
-			to_chat(target, "<span class='deadsay'><b>DEAD: [fakemob.name]</b> says, \"[pick("rip","F in chat","lol","lmao","Anybody else just randomly die?","anyone else just die?","wtf!","why did i just drop dead?","hey [target.first_name()]","lol poison?","you too?","was that a crossbow?",\
-			"i[prob(50)?" fucking":""] hate [pick("the ww", "the lich", "rogues", "this round","this","myself","squires","you")]")]\"</span>")
+			to_chat(target, "<span class='deadsay'><b>DEAD: [fakemob.name]</b> says, \"[pick("RIP","Всем пока","Ну пиздец","XD","Кто-нибудь ещё сдох как я?","Мёртвые есть?","Да бля!","Поч я просто умер?","Здаров [target.first_name()]","Сука, яд","ты тоже?","это был арбалет?",\
+			"i[prob(50)?" блядь":""] ненавижу [pick("фурри", "магов", "адвенчурок", "этот сервер","эту херь","себя","редмун","тебя")]")]\"</span>")
 	sleep(rand(70,90))
 	target.set_screwyhud(SCREWYHUD_NONE)
 	target.SetParalyzed(0)
@@ -992,7 +992,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	fire_overlay = image('icons/mob/OnFire.dmi', target, "Standing", ABOVE_MOB_LAYER)
 	if(target.client)
 		target.client.images += fire_overlay
-	to_chat(target, "<span class='danger'>You're set on fire!</span>")
+	to_chat(target, "<span class='danger'>Ты горишь!</span>")
 	target.throw_alert("fire", /atom/movable/screen/alert/fire, override = TRUE)
 	sleep(20)
 	for(var/i in 1 to 3)
@@ -1038,7 +1038,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	shock_image.override = TRUE
 	electrocution_skeleton_anim = image('icons/mob/human.dmi', target, icon_state = "electrocuted_base", layer=ABOVE_MOB_LAYER)
 	electrocution_skeleton_anim.appearance_flags |= RESET_COLOR|KEEP_APART
-	to_chat(target, "<span class='danger'>I feel a powerful shock course through my body!</span>")
+	to_chat(target, "<span class='danger'>Я чувствую, как мощный разряд пронзает моё тело!</span>")
 	if(target.client)
 		target.client.images |= shock_image
 		target.client.images |= electrocution_skeleton_anim
@@ -1176,7 +1176,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	set waitfor = FALSE
 	..()
 
-	var/message = pick("It's mom!", "I have to HURRY UP!", "They are CLOSE!", "They are NEAR!")
+	var/message = pick("Мама!", "Мне нужно ТОРОПИТЬСЯ!", "Они РЯДОМ!", "Они БЛИЗКО!")
 	var/icon_state = pick("M3", "deepone", "mom")
 
 	var/turf/start_turf = pick(RANGE_TURFS(7, victim) - RANGE_TURFS(3, victim))
@@ -1226,7 +1226,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 
 	if(next_turf == get_turf(victim))
 		victim.Stun(rand(2 SECONDS, 4 SECONDS))
-		to_chat(victim, span_userdanger(pick("NO!", "THEY GOT ME!", "AGH!")))
+		to_chat(victim, span_userdanger(pick("НЕТ!", "ОНИ НАСТИГЛИ МЕНЯ!", "АЙ!")))
 		qdel(src)
 		return
 
@@ -1257,7 +1257,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		animate(appearance, pixel_y = offset, time = raise_duration, flags = ANIMATION_RELATIVE)
 		addtimer(CALLBACK(src, PROC_REF(floor_back), dreamer, appearance, offset, lower_duration), raise_duration)
 
-	to_chat(dreamer, span_userdanger(pick("WOAH!", "WHERE IS THE FLOOR?", "MOVE!", "HOW!?")))
+	to_chat(dreamer, span_userdanger(pick("Вау!", "ГДЕ ПОЛ?", "ШЕВЕЛИСЬ!", "НО КАК?!")))
 	dreamer.adjustStaminaLoss(10)
 
 	qdel(src)
@@ -1278,7 +1278,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 	set waitfor = FALSE
 	..()
 
-	to_chat(victim, span_userdanger(pick("MY HEART STOPS BEATING!", "I CAN'T FEEL MY HEART!", "WHERE IS MY HEART?")))
+	to_chat(victim, span_userdanger(pick("МОЁ СЕРДЦЕ НЕ БЬЁТСЯ!", "НЕ ЧУВСТВУЮ СЕРДЦА!", "ГДЕ МОЁ СЕРДЦЕ?")))
 
 	victim.freakout_hud_skew()
 	victim.emote("scream")
