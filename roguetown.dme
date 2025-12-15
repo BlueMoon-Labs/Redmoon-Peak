@@ -2878,6 +2878,7 @@
 #include "modular_redmoon\code\modules\client\client_procs.dm"
 #include "code\modules\spells\pantheon\inhumen\baotha.dm"
 #include "modular_redmoon\code\modules\events\bandits.dm"
+#include "modular_redmoon\code\modules\tgs\roundspoke.dm"
 #include "code\modules\spells\pantheon\inhumen\graggar.dm"
 #include "modular_redmoon\code\triumphs\triumph_buy_datums.dm"
 #include "code\modules\spells\pantheon\inhumen\matthios.dm"
