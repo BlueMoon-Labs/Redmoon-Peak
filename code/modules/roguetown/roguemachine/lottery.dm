@@ -1,6 +1,6 @@
 /obj/structure/roguemachine/lottery_roguetown
 	name = "XYLIX'S FORTUNE"
-	desc = "An infinite, yawning hole that makes or breaks men. Come and play!"
+	desc = "Ненасытная пасть, что рождает королей и пожирает дураков. Испытай Судьбу!"
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "lottery"
 	density = FALSE
@@ -25,7 +25,7 @@
 
 /obj/structure/roguemachine/lottery_roguetown/attack_hand(mob/living/user) //empty hand
 
-	src.say("Your current tithe is [src.gamblingprice] mammons. Care to spin?")
+	src.say("Текущая дань тебе: [src.gamblingprice] маммон. Повернёшь колесо Фортуны?")
 	playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 	return
 
@@ -41,18 +41,18 @@
 		return
 	if(istype(P, /obj/item/roguecoin))
 		if(src.gamblingprice + (P.sellprice * P.quantity) > src.maxtithing)
-			say("This puts the starting tithe over [src.maxtithing] mammons.")
+			say("Это превышает порог дани в [src.maxtithing] маммон.")
 			playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 			return
 		if(src.gamblingprice + (P.sellprice * P.quantity) < src.mintithing)
-			say("This is below [src.mintithing] mammons.")
+			say("Дань меньше потребных [src.mintithing] маммон.")
 			playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 			return
 
 		else
 			src.gamblingprice += (P.sellprice * P.quantity)
 			qdel(P)
-			src.say("Your current tithe is now [src.gamblingprice] mammons. Care to spin?")
+			src.say("Текущая дань тебе: [src.gamblingprice] маммон. Повернёшь колесо Фортуны?")
 			playsound(src, 'sound/misc/machinequestion.ogg', 100, FALSE, -1)
 			return
 
@@ -62,7 +62,7 @@
 	if(src.stopgambling == 1)
 		return
 	if(src.gamblingprice == 0)
-		src.say(pick("Eager fool; you need mammons to gamble your life away.", "You are missing your tithe.", "A lord without land is no lord at all."))
+		src.say(pick("Глупец! Тебе нужны хотя бы что-то иметь, чтобы проиграть это и свою жизнь.", "И где твоя дань?.", "Владыка без владений - не владыка."))
 		src.stopgambling = 1
 		sleep(20)
 		src.stopgambling = 0
@@ -71,7 +71,7 @@
 
 	else
 		src.diceroll = rand(1,100)
-		src.say(pick("Around and around I go, where I stop, only I know.", "Xylix smiles upon your idiocy, child.", "The wheel of fate spins, and spins.", "Oh, you poor fool.", "This is going to hurt for one of us.", "I laugh, you cry; I weep, you cheer..", "I will be your fool; I'll perform for you...", "Let's go gambling!", "Around and around, folly abounds.", "Dance with ruin and wealth."))
+		src.say(pick("И вращаюсь, и кружу; где конец, лишь Я сужу.", "Ксайликс улыбается твоей глупости, дитя.", "Рок всё подступает и подступает.", "О, какой жалкий глупец.", "Один из нас сейчас пожалеет.", "Мой смех - твой плач. Мои слёзы - твоё ликование.", "Побуду твоим шутом, сыграю-ка для тебя..", "Отдадимся Судьбе!", "Всё вертится, всё кружится, а глупость здесь лишь множится.", "Танец меж злата и погибели.."))
 		playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 		playsound(src, 'sound/misc/letsgogambling.ogg', 100, FALSE, -1)
 		src.gamblingprob += (user.STALUC - src.probpenalty)
@@ -94,7 +94,7 @@
 
 			peasant_betting()
 			letsgogamblinggamblers()
-			src.say(pick("Well-maneuvered, aristocrat! Your peasant's tithe is now [src.gamblingprice] mammons. Play again?", "A bountiful harvest, this year- the peasant's tithe rises to [src.gamblingprice] mammons. Spin me again?",))
+			src.say(pick("Искусное решение, знатный муж! Крепостные выплатили [src.gamblingprice] маммон. Повторишь?", "Богатая жатва ныне - крепостные собрали урожая на [src.gamblingprice] маммон. Запустишь меня ещё разок?",))
 
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			src.gamblingprob = src.gamblingbaseprob
@@ -104,10 +104,10 @@
 			return
 
 		else
-			src.say(pick("TEN, WHEEL OF FORTUNE - inversed.", "The Castle. O, Omen!", "A harvest of locusts...!", "Look into my eyes and whisper your woes.", "Aw, dangit.", "Fool. Poor fool.", "Your eyes leak out of your skull, drool falling from your lips.", "Divine idiocy.", "You stand just as I did; loser and a freek."))
+			src.say(pick("Десять, перевёрнутое Колесо Фортуны!", "Дурное знамение!", "Жатва для саранчи!", "Взгляни мне в глаза и прошепчи о своей скорби.", "Ах, вот досада!.", "Глупец. Жалкий глупец.", "Глаза покидают твой череп, слюна изливается изо рта.", "Божественная глупость!", "Ты сидишь, как я сидел здесь когда-то. Как неудачник и урод."))
 			playsound(src, 'sound/misc/bug.ogg', 100, FALSE, -1)
 			sleep(20) //really make them THINK about their life choices up to this point
-			src.say(pick("King of fools, your land is barren. Play again?", "Divine comedy. Play again?", "Next time, surely. Play again?", "Haha-...ah-ha-ha! Again! Play again, jester!", "Poor beggar! Spin me again?"))
+			src.say(pick("Царь глупцов, твои земли пусты. Сыграешь снова?", "Не только глупость, но и потеха. Сыграешь снова?", "В следующий раз ТОЧНО повезёт. Сыграешь снова?", "Хаха-... ах-ха-ха! Снова! Шут мой, сыграй ещё!", "Жалкий нищий! Запустишь меня снова?"))
 			playsound(src, 'sound/misc/bug.ogg', 100, FALSE, -1)
 			src.gamblingprob = src.gamblingbaseprob
 			src.gamblingprice = 0
@@ -128,10 +128,10 @@
 
 	else
 		if(gamblingprice <= 0)
-			say("Poor thing, you are coinless.")
+			say("Бедняжка, ты безмонетчик.")
 			return
 		if(gamblingprice < 0)
-			say("Your peasant's tithe is NEGATIVE.")
+			say("Ты должен своим крепостным!")
 			return
 		var/list/choicez = list()
 		if(gamblingprice > 10)
@@ -182,79 +182,79 @@
 
 	switch(chatterbox)
 		if(1)
-			src.say("I still remember the rain on my skin.")
+			src.say("Я всё ещё помню, как дождь касался моей кожи.")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			sleep(30)
-			src.say("The wind in my fur...or was it hair? Either way...")
+			src.say("Ветер в моей шерсти.. или это волосы? Впрочем, неважно...")
 			playsound(src, 'sound/misc/machinequestion.ogg', 100, FALSE, -1)
 		if(2)
-			src.say("The worship of gods is pernicious.")
+			src.say("Служение богам губительно.")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			sleep(20)
-			src.say("But this punishment is not as bad as others'! Ha-ha-ha!")
+			src.say("Это наказание не так уж страшно в сравнении с иными! Ха-ха-ха!")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 		if(3)
-			src.say("There are fates worse than death...")
+			src.say("Бывает участь страшнее смерти...")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			sleep(30)
-			src.say("...especially for a lowly fool who thought himself a king.")
+			src.say("...особенно для глупца, возомнившего себя царём.")
 			playsound(src, 'sound/misc/bug.ogg', 100, FALSE, -1)
 		if(4)
-			src.say("She didn't realize Her machine would kill Her, of course.")
+			src.say("Она, конечно, не ожидала, что Её же машина погубит Её.")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			sleep(30)
-			src.say("...though 'tis difficult to argue what happened after that didn't benefit Her.")
+			src.say("...хотя трудно спорить с тем, что случившееся позже пошло Ей на пользу.")
 			playsound(src, 'sound/misc/bug.ogg', 100, FALSE, -1)
 		if(5)
-			src.say("Oh, Psydon?")
+			src.say("O, Псайдон?")
 			playsound(src, 'sound/misc/machinequestion.ogg', 100, FALSE, -1)
 			sleep(30)
-			src.say("To be honest, I'm about PSY-DONE with this whole debate! Ha-ha-h- ...No? Too soon? Alright.")
+			src.say("Честно, ПСАЙ-ДОвольно с меня этих споров! Ха-ха-ха ...Не? Рано? Ну ладно.")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 		if(6)
-			src.say("You know, jester, those Ecclesials have the right idea.")
+			src.say("Дурак, ты же знаешь, что идеи Экклесии в целом верны?")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			sleep(30)
-			src.say("Won't someone think of the deadite-loving, tax-hating, drug-using murderers?!")
+			src.say("Неужто никто не подумает о любящих мертвецов, ненавидящих поборы, наркотических убийцах?!")
 			playsound(src, 'sound/misc/bug.ogg', 100, FALSE, -1)
 		if(7)
-			src.say("...well, don't look at me for conversation.")
+			src.say("...не жди, что я поддержу с тобой беседу.")
 			playsound(src, 'sound/misc/bug.ogg', 100, FALSE, -1)
 			sleep(30)
-			src.say("I've been the one doing all the chatting.")
+			src.say("Хотя я здесь единственный болтун.")
 			playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 		if(8)
-			src.say("Can't you smell the stench in the air? It's terrible.")
+			src.say("Ты не чувствуешь вонь в воздухе? Она ужасна.")
 			playsound(src, 'sound/misc/bug.ogg', 100, FALSE, -1)
 			sleep(30)
-			src.say("It wasn't nearly so bad, before. Rot and puss. Oh, well.")
+			src.say("Раньше было лучше, а сейчас только гниль и гной. Ну да ладно.")
 			playsound(src, 'sound/misc/bug.ogg', 100, FALSE, -1)
 		if(9)
-			src.say("Can't you smell the stench in the air, fool? It's terrible.")
+			src.say("Ты не чувствуешь вонь в воздухе? Она ужасна.")
 			playsound(src, 'sound/misc/bug.ogg', 100, FALSE, -1)
 			sleep(30)
-			src.say("I don't know how you could miss it. Rot and puss. Oh, well.")
+			src.say("Раньше было лучше, а сейчас только гниль и гной. Ну да ладно.")
 			playsound(src, 'sound/misc/bug.ogg', 100, FALSE, -1)
 		if(10)
-			src.say("Maybe you ought stop while you are ahead, jester.")
+			src.say("Может остановишься, пока ты в выигрыше, дурак?")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			sleep(30)
-			src.say("...greed is what got your lot into this mess, after all.")
+			src.say("...ибо алчность и загнала твой род в этот Хаос.")
 			playsound(src, 'sound/misc/bug.ogg', 100, FALSE, -1)
 		if(11)
-			src.say("A father and his son are riding a carriage through a forrest. Suddenly, Z's curse! The axle snaps!")
+			src.say("Отец и сын его ехали через лес на повозке. Вдруг, проклятье З.! Ось сломалась!")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			sleep(30)
-			src.say("The father dies, but the son- the son yet lives! He's brought to the nearby village's physician.")
+			src.say("Отец умер, но сын.. сын ещё жив! Его доставили к лекарю в ближайшей деревне.")
 			playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
 			sleep(30)
-			src.say("Upon seeing him, the physician ga-...what do you mean, you've heard this one before?")
+			src.say("Увидев его, лекарь ахн-... что значит ты уже слышал этот рассказ?")
 			playsound(src, 'sound/misc/bug.ogg', 100, FALSE, -1)
 		else
-			src.say("Me? Am I anybody important...? Oh, no.")
+			src.say("Я? Важен ли я? О, нет.")
 			playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 			sleep(25)
-			src.say("I am nothing but a lowly jester, just like you! Ha-ha-ha!")
+			src.say("Я всего лишь жалкий никому не нужный дурак. Как и ты! Ха-ха-ха!")
 			playsound(src, 'sound/misc/bug.ogg', 100, FALSE, -1)
 
 	sleep(40)
