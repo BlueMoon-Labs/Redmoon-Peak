@@ -1,16 +1,12 @@
 2025-12-01:
   Geevies:
   - balance: The priestly robes that Bishops and the like get are now fireproof.
-  NewyearnewmeUwu:
-  - bugfix: chaining people after walking away is no longer possible
   PatapoIIIa:
   - bugfix: Items that are explicitly blocked from being used as ingredients (e.g.,
       full storage bags, written paper, etc.) will no longer be consumed when performing
       multi-quantity crafting.
   - code_imp: Synchronized the item consumption logic with the `can_craft_with()`
       check, making the crafting system more robust against complex item states.
-  mazzinsanity:
-  - rscadd: Added new stat roll emotes
 2025-12-02:
   NewyearnewmeUwu:
   - bugfix: chaining people after walking away is no longer possible
@@ -77,13 +73,6 @@
   WeNeedMorePhoron:
   - config: Game_options.txt is now provided out of the box for locally hosted build
       so no more zoomie speed
-  bearrrrrrrr:
-  - rscadd: new dragon lore (or more accurately, actually put lore ingame) and sprites.
-      broodmothers renamed
-  dopamiin0:
-  - balance: briars curse also increases the wielded force of a weapon
-  - bugfix: you no longer fall asleep while doing both kinds of moondust similtaneously
-      if you're a baothan
   hazelrat:
   - rscadd: Added servantry service bells to the keep. Ring them if you want attention
       from the servants!
@@ -99,22 +88,8 @@
   - bugfix: you no longer fall asleep while doing both kinds of moondust similtaneously
       if you're a baothan
 2025-12-07:
-  FreeStylaLT:
-  - balance: Campfires now require a tree stump, bedsheet or a bed (bedroll is fine
-      too) to heal.
-  - balance: Campfires now restore blue bar.
-  HeroWithYay:
-  - bugfix: Carrot steak and Carrot steal meal no longer make nobles throw up
-  Lamasmaster:
-  - rscadd: Swimming skill to Retinue and bandit
-  - rscadd: Athletics to Hunter
-  - balance: Swimming/Athletics for Knave
-  SillyMoff:
-  - bugfix: fixed t2 and t3 obfuscate tier
   WeNeedMorePhoron:
   - rscadd: Added blood splatter on wall from Caustic Cove made by Posshum.
-  bearrrrrrrr:
-  - bugfix: attacks targeting feet on taurs will no longer ignore their armor
   hazelrat:
   - rscadd: Implemented a significant expansion to the manor kitchen, also including
       mapping changes to the council office and wine cellar.
@@ -246,12 +221,6 @@
   - bugfix: Pillories can now be locked by any member of the garrison, church, or
       inquisition.
 2025-12-14:
-  BurpleBineapple:
-  - rscdel: Removed unused "Enduring" weapons from code.
-  - balance: Psydon Heretics spawn with Psydonic silver weapons.
-  - balance: Rite of Silver-Blessing now only blesses silver weapons.
-  FreeStylaLT:
-  - balance: Wrestling ClickCDs were made static and longer across the board
   Hollyhock:
   - rscadd: Gave sextons cool amulets
   SayonaraEcho:
@@ -260,9 +229,6 @@
   - balance: Increases martyr sword's durability as like Ichor Fang or Ascendant weapon
       and cannot be smelted.
   - code_imp: Deleted duplicated Ichor Fang's code.
-  SpadesNeil:
-  - image: Modified sling bullet sprite to be centered correctly.
-  - image: Added sprite for "silver bullet" that is currently unused.
   hubertjones:
   - balance: shovels can be worn on the belt
   - balance: necran acolytes spawn with silver shovels
@@ -274,14 +240,21 @@
   - balance: Rite of Silver-Blessing now only blesses silver weapons.
   FreeStylaLT:
   - balance: Wrestling ClickCDs were made static and longer across the board
+  Lamasmaster:
+  - rscdel: Duped See longswords
+  SpadesNeil:
+  - image: Modified sling bullet sprite to be centered correctly.
+  - image: Added sprite for "silver bullet" that is currently unused.
+2025-12-16:
   JustSomeGal:
   - bugfix: You can now actually make the Inquisition's armors with the Inquisition's
       silver, rather than needing a Malum acolyte to bless silver ingots
   Ketrai:
   - balance: Crimson arils heal more on average, and are less deadly now
   Lamasmaster:
-  - rscdel: Duped See longswords
   - balance: Bonus explosion damage on bombs/fireball against players
+  - rscadd: Dried fish filet recipe
+  - bugfix: Drying recipes not being under COOKING
   - rscadd: Padded Arming Cap
   - balance: Arming Cap
   - rscadd: Battlemaster trait (not for the class but Ravoxian cleric classes)
@@ -290,8 +263,6 @@
   - rscadd: New Shortsword
   - bugfix: fixed grammar mistakes and clarity issues with gronnite item descriptions
   SpadesNeil:
-  - image: Modified sling bullet sprite to be centered correctly.
-  - image: Added sprite for "silver bullet" that is currently unused.
   - bugfix: Meathooks can no longer be constructed out of sticks. Now require small
       logs.
   - bugfix: Meat hook in crafting recipes is now one word to match the actual object
@@ -303,3 +274,92 @@
   - balance: many staff wielders now have actual staff skill
   - rscadd: the shillelagh, craftable wooden staff that still uses polearms. mostly
       for training with
+2025-12-17:
+  BurpleBineapple:
+  - bugfix: Sergeant-at-Arms now gets the weapon skill for the flail loadout they
+      have.
+  Gigigger:
+  - balance: decrease required strength of maul from 14 to 13
+  - bugfix: now heavy gronn mercenary can wield his maul without additional statpacks
+      or race bonuses, as intended
+  Ketrai:
+  - rscadd: Racelocked dwarf class - trollslayer!
+  - rscadd: Deprived adventurer class
+  Lamasmaster:
+  - balance: WW being able to use weapons
+  - bugfix: Hijab icon
+  SayonaraEcho:
+  - bugfix: Ravoxian's gorget FOV removed
+  - bugfix: Heartfelt magos old age bonus spellpoints
+  - bugfix: Looking down no longer creates a chat message if you are sneaking
+  - bugfix: Marque bug powergaming exploit
+  - bugfix: Being unconscious, dead, or paralyzed prevents you from learning of hidden
+      travel tile locations
+  SpadesNeil:
+  - bugfix: All cloaks now have inventory by default.
+  - refactor: Moved a fake blacksteel helmet to not be in the file for cloaks.
+  bearrrrrrrr:
+  - rscadd: Arcane Mark system; certain spells are now combo spells that apply a stack
+      of 'arcane mark' that can be detonated by 'combo finishers'. Certain spells
+      CD's reduced to be less spammable. You glow violently purplepink when you have
+      max stacks, as well as making a big noise and **'MARKED'** appearing in your
+      chat.
+  dopamiin0:
+  - bugfix: wither now goes where it's aimed instead of stopping a tile short
+  - bugfix: many spells no longer inexplicably stop working when the lights are out
+2025-12-18:
+  FreeStylaLT:
+  - bugfix: Goblins now have a physical descriptor.
+  - bugfix: Fixed Immobilize not being applied correctly on some jumps.
+  Lamasmaster:
+  - balance: Merchantry mercenary weapon shop.
+  Randall:
+  - bugfix: Fixed the dreamwalker summon weapon rite showing the wrong skill name
+  Ryan180602:
+  - bugfix: allowed_patrons is usable for adv_class now.
+  - sound: adds prbt emote.
+  - balance: Removes focus target from Sgts/KCs.
+  SirSwagmeyer:
+  - balance: rebalanced maul wdef
+  dopamiin0:
+  - bugfix: snap freeze and bladeburst now correctly function at range again. sorry
+  - bugfix: wither no longer misses anyone sharing a tile with a target
+2025-12-19:
+  Geevies:
+  - bugfix: You can now shoot arrows up and down stairs.
+  - rscadd: Throwing anything into a river will now cause it to process and shift
+      downstream.
+  - bugfix: Rivers now stop processing when there's nothing in them.
+  - bugfix: NPCs no longer try to swim upstream.
+  - qol: Honorary titles are now checked before joining, avoiding duplicates.
+  - bugfix: Bundles now spawn at the correct 2x1 grid size.
+  - qol: Left clicking a scabbard on the ground or in storage will now pick the entire
+      thing up.
+  - qol: Right clicking a scabbard will now always draw from it, as it works now.
+  - bugfix: Nets now drop to the floor after their timer runs out.
+  Lamasmaster:
+  - rscadd: Tunic in cloak slot
+  SayonaraEcho:
+  - rscadd: Handcart moving animation
+  TheNeoGamer42:
+  - qol: Footman squires now start with apprentice shield skill. In-line with Errant
+      Squire, and no more bonking a dummy for a few minutes.
+  kano-dot:
+  - bugfix: fixed half-elves not being able to pick wood elf ears.
+2025-12-20:
+  FreeStylaLT:
+  - rscadd: New ears for Aaasimar / Elves / Dark Elves / Tieflings
+  - refactor: XP drops now round to the nearest 0.1 decimal.
+  - image: Targeting Gargoyle shows Left and Right now.
+  HeroWithYay:
+  - bugfix: Psydonian Barbarians no longer get mini-pain crits.
+  PatapoIIIa:
+  - bugfix: Legendary (Rank 6) skills are no longer incorrectly reduced to lower ranks
+      when applying a Virtue with the softcap flag.
+  - code_imp: Refactored the entire skill application logic in `handle_skills` to
+      use sequential hardcap/softcap checks, ensuring no negative skill adjustments.
+  Stutternov:
+  - bugfix: fixed badly named helmet state.
+  ToasterStrudes:
+  - rscadd: Added new Venard sounds!
+  - rscadd: Added friendly Venard sounds to Mimi the Guild Pet.
