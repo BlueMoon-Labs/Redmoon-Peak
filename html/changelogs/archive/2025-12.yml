@@ -373,3 +373,18 @@
   - rscadd: Added friendly Venard sounds to Mimi the Guild Pet.
   hubertjones:
   - bugfix: marshal appropriately gets scabbard and sheath
+2025-12-22:
+  FreeStylaLT:
+  - balance: Most half-plates are now Medium AC.
+  - rscadd: A new preference for showing floating text for where the user was last
+      struck.
+  - balance: Combat Aware no longer shows targeting zones on parries / dodges. It
+      only shows on successful hits.
+  - balance: Combat Aware no longer shows where the user of the virtue were targeting
+      themselves.
+  Lamasmaster:
+  - rscadd: Bailiff subclass
+  - rscdel: Dungeoneer role
+  hubertjones:
+  - bugfix: iron haubergeon sleeves function as intended
+  - image: greyscales more leather armor
