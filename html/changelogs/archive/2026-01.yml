@@ -150,3 +150,23 @@
   - bugfix: carpet's to_chat makes sense
   - bugfix: removed redundant information from some recipes
   - bugfix: you no longer fall on your the left leg
+2026-01-08:
+  ADONAI:
+  - bugfix: actually fixes examine text im so sorry
+  Antoonij:
+  - rscadd: firewalker and fire cascade spells
+  Geevies:
+  - rscadd: Xylixians can now disguise their amulet as any other psycross amulet by
+      shift-right-clicking it.
+  - rscadd: The HUD face reacts faster, and will react to injury.
+  SillyMoff:
+  - bugfix: icons for spells and arcyne bolt is back
+  WatermelonsEverywhere:
+  - rscadd: Adds a unique sound effect to Mending
+  bearrrrrrrr:
+  - bugfix: churn wealth dmg properly applied at max level, now kills and delimbs
+      over 1k moni
+  hazelrat:
+  - bugfix: Arrow quivers no longer appear full if emptied by clicking them directly
+      with a bow.
+  - rscadd: The city walls can now be fully navigated by anyone with a wall key.
