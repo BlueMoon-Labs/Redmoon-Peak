@@ -34823,7 +34823,7 @@
 "iEi" = (
 /obj/structure/fluff/signage{
 	dir = 4;
-	name = "AZURE PEAK - EAST"
+	name = "SCARLET DAWN - EAST"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/mountains)
@@ -49680,7 +49680,7 @@
 "meQ" = (
 /obj/structure/fluff/signage{
 	dir = 1;
-	name = "AZURE PEAK - NORTHWEST"
+	name = "SCARLET DAWN - NORTHWEST"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
@@ -77969,7 +77969,7 @@
 "tkE" = (
 /obj/structure/fluff/signage{
 	dir = 8;
-	name = "AZURE PEAK - WEST"
+	name = "SCARLET DAWN - WEST"
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
@@ -79211,7 +79211,7 @@
 "tzc" = (
 /obj/structure/fluff/signage{
 	dir = 8;
-	name = "AZURE PEAK - WEST"
+	name = "SCARLET DAWN - WEST"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
@@ -94330,7 +94330,7 @@
 /area/rogue/indoors/shelter/mountains/decap)
 "xkL" = (
 /obj/structure/fluff/signage{
-	name = "AZURE PEAK - SOUTH"
+	name = "SCARLET DAWN - SOUTH"
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
@@ -95836,7 +95836,7 @@
 /area/rogue/druidsgrove)
 "xFd" = (
 /obj/structure/fluff/signage{
-	name = "AZURE PEAK - SOUTH"
+	name = "SCARLET DAWN - SOUTH"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
