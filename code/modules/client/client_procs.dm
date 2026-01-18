@@ -1147,7 +1147,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 
 /client/proc/whitelisted()
 	if(whitelisted != 2)
-		return whitelisted
+		return TRUE
 	else
 		if(BC_IsKeyWhitelisted(ckey))
 			whitelisted = 1
