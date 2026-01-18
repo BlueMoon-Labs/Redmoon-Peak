@@ -633,6 +633,12 @@
   - rscadd: A new antag, gnolls!
   - rscadd: Necrans have a new T3 miracle, bless cross.
   - rscdel: Abrogation miracle has been disabled.
+  Kokserva:
+  - balance: 5 sec to get out of the net, instead of 2 as before and net falls off
+      after 30 sec
+  Kolibri-B:
+  - rscadd: Hair for the Metal Construct species
+  - rscadd: 'Three additional skin tones for Metal Construct: Gold, Wood, Porcelain'
   Lamasmaster:
   - balance: Keyrings / keys
   - refactor: Keyrings / keys
@@ -654,3 +660,6 @@
       :cl:'
   SpartanBobby:
   - rscadd: Elven Barbutes to silverface
+  the real lockpicking lawyer:
+  - balance: '"high security" doors (check their descriptions for "reinforced locks")
+      are slightly easier to pick than before'
