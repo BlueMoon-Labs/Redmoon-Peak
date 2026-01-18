@@ -1153,7 +1153,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 			whitelisted = 1
 		else
 			whitelisted = 0
-		return whitelisted
+		return TRUE
 
 /client/proc/blacklisted()
 	if(blacklisted != 2)
