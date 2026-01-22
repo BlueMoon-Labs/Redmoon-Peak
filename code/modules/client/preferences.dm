@@ -1658,28 +1658,6 @@ Slots: [job.spawn_positions] [job.round_contrib_points ? "RCP: +[job.round_contr
 						else
 							to_chat(user, "<font color='red'>Неверное прозвище. Длина прозвища должна быть не менее 2 и не более [MAX_NAME_LEN] символов. Оно может содержать только символы A-Z, a-z, -, ', . and ,.</font>")
 
-				if("subclassoutfit")
-					var/list/choices = list("None")
-					var/datum/job/highest_pref
-					for(var/job in job_preferences)
-						if(job_preferences[job] > highest_pref)
-							highest_pref = SSjob.GetJob(job)
-					if(isnull(highest_pref))
-						to_chat(user, "<b>I don't have a Class set to High!</b>")
-					if(length(highest_pref.job_subclasses))
-						for(var/adv in highest_pref.job_subclasses)
-							var/datum/advclass/advpath = adv
-							var/datum/advclass/advref = SSrole_class_handler.get_advclass_by_name(initial(advpath.name))
-							choices[advref.name] = advref
-					if(length(choices))
-						var/new_choice = input(user, "Choose an outfit preview:", "Outfit Preview")  as anything in choices|null
-						if(new_choice && new_choice != "None")
-							preview_subclass = choices[new_choice]
-							update_preview_icon()
-						else
-							preview_subclass = null
-							update_preview_icon(jobOnly = TRUE)
-
 //				if("age")
 //					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Years Dead") as num|null
 //					if(new_age)
