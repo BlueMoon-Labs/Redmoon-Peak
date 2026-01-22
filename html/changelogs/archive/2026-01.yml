@@ -663,3 +663,26 @@
   the real lockpicking lawyer:
   - balance: '"high security" doors (check their descriptions for "reinforced locks")
       are slightly easier to pick than before'
+2026-01-22:
+  Burrito-Justice:
+  - bugfix: Purging laws no longer explodes your eardrums
+  Ketrai:
+  - rscadd: Town blacksmiths and guild smiths, as well as the merchant now spawns
+      with an artefact blueprint.
+  Klein3:
+  - rscadd: Abyssal language added, and available Dreamwalkers, Abyssorite clergy,
+      heretical wretches and mad worshippers of Abyssor.
+  - bugfix: Old acolytes have their legendary miracle skill back
+  - bugfix: Shoes take 5 seconds to stip instead of 10
+  SirSwagmeyer:
+  - rscadd: Added armor blacklist and whitelist to ruma clan
+  - balance: rebalanced tattoo armor and swords
+  kittysmooch:
+  - rscadd: thrown items now apply their demolition modifier
+  - rscadd: 'overhauled ricochet code and added ricochet mechanics to sling bullets
+      and arcyne bolt.
+
+      :cl:'
+  - bugfix: 'fresh character slots default to no underwear selection
+
+      :cl:'
