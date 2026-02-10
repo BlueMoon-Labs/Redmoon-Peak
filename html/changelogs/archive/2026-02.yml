@@ -387,11 +387,22 @@
   - rscadd: You're no longer able to summon creatures while at Ravox's arena.
   - rscadd: Dendorites no longer able to transform while at Ravox's arena.
   - rscadd: Necrites no longer able to leave through the Door while at Ravox's arena.
+  Clem-The-Duck:
+  - bugfix: Fixes forlorn getting splinted leggings instead of brig chausses
+  Lamasmaster:
+  - balance: Sling stamina drain
+  - balance: Antag Blacklist now includes Knight and Veteran
   NewyearnewmeUwu:
   - bugfix: prosthetics now render properly
   Ryan180602:
   - bugfix: lets filling pits have a 3s delay.
   - code_imp: seperate it/its into masc-fem
+  - bugfix: Fix pronouns being fucked.
+  - code_imp: small holes are filled instantly.
+  - bugfix: Removes diagnosis' cooldown.
   WeNeedMorePhoron:
   - balance: Adventurer & Pilgrimage wave weight reverted back to 100 with approximately
       20% chance of rolling each wave.
+  - bugfix: Probably fixed the daylight cycle breaking
+  - rscadd: Template hammer is now named hammer to reduce confusion when it is referred
+      to by name in recipes
