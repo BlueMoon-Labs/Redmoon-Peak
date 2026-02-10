@@ -48,8 +48,6 @@
 			continue
 		if(CTAG_TEMPLAR in CHECKS.category_tags)
 			continue
-		if(CTAG_CAPTAIN in CHECKS.category_tags)
-			continue
 		if(CTAG_LORD in CHECKS.category_tags)
 			continue
 		possible_classes += CHECKS
