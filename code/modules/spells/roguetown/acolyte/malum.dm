@@ -69,7 +69,7 @@
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	recharge_time = 5 MINUTES
-	chargetime = 2 SECONDS
+	chargetime = 3 SECONDS // Used to be 2 seconds but we don't want a race condition and chain casting
 	miracle = TRUE
 	charging_slowdown = 3
 	chargedloop = /datum/looping_sound/invokegen
@@ -111,6 +111,7 @@
 	for (var/turf/closed/mineral/aoemining in view(radius, fallzone))
 		aoemining.lastminer = usr
 		aoemining.take_damage(damage,BRUTE,"blunt",1)
+	return TRUE
 
 /obj/effect/temp_visual/lavastaff
 	icon_state = "lavastaff_warn"
@@ -402,7 +403,7 @@ var/global/list/anvil_recipe_prices[][]
 
 /obj/effect/proc_holder/spell/invoked/rework
 	name = "Rework"
-	desc = "Burn a piece of equipment to create a blessing for the appropriate type of equipment. Cast the second one for the item you wish to bless."
+	desc = "Burn a piece of equipment to create a blessing for the appropriate type of equipment. Cast once more on another item to bless it."
 	action_icon = 'icons/mob/actions/malummiracles.dmi'
 	overlay_icon = 'icons/mob/actions/malummiracles.dmi'
 	overlay_state = "rework"
@@ -568,7 +569,7 @@ var/global/list/anvil_recipe_prices[][]
 
 /obj/effect/proc_holder/spell/self/repair
 	name = "Order: Repair"
-	desc = "Stand and fix all your metallic equipment"
+	desc = "Repair a metal item in your hands."
 	action_icon = 'icons/mob/actions/malummiracles.dmi'
 	overlay_icon = 'icons/mob/actions/malummiracles.dmi'
 	overlay_state = "repair"
@@ -602,7 +603,7 @@ var/global/list/anvil_recipe_prices[][]
 			continue
 		if(!I.smeltresult) //only metal items.
 			continue
-		if(I.smeltresult == /obj/item/ash && I.smeltresult == /obj/item/rogueore/coal) //not clotch and wood.
+		if(I.smeltresult == /obj/item/ash && I.smeltresult == /obj/item/rogueore/coal) //not cloth and wood.
 			continue
 		if(I.max_integrity <= I.obj_integrity)
 			continue
@@ -625,7 +626,7 @@ var/global/list/anvil_recipe_prices[][]
 				I.visible_message(span_info("[I]'s mend together, completely."))
 				continue
 		if((user.devotion?.devotion - cost) < 0)
-			to_chat(user, span_warning("I don't have enough devotion!"))
+			to_chat(user, span_warning("I do not have enough devotion!"))
 			return FALSE
 		cast(user)
 	revert_cast()
@@ -633,7 +634,7 @@ var/global/list/anvil_recipe_prices[][]
 
 /obj/effect/proc_holder/spell/invoked/restoration
 	name = "Order: Restoration"
-	desc = "Restor health any structure"
+	desc = "Restore integrity of any structure."
 	action_icon = 'icons/mob/actions/malummiracles.dmi'
 	overlay_icon = 'icons/mob/actions/malummiracles.dmi'
 	overlay_state = "restoration"

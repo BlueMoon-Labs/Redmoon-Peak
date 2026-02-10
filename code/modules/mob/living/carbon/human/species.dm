@@ -170,6 +170,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/custom_rotation_icon = null
 	var/custom_base_icon = null
 
+	var/preload = TRUE
+
 ///////////
 // PROCS //
 ///////////
@@ -352,7 +354,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		else
 			var/new_type = slot_mutantorgans[slot]
 			if(new_type)
-				neworgan = new new_type()
+				neworgan = SSwardrobe.provide_type(new_type)
 				neworgan.build_colors_for_accessory(source_key_list)
 
 		var/used_neworgan = FALSE
@@ -943,9 +945,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 ////////
 
 /datum/species/proc/handle_digestion(mob/living/carbon/human/H)
-	if(HAS_TRAIT(H, TRAIT_NOHUNGER))
-		return //hunger is for BABIES
-
 	//The fucking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
 //	if(HAS_TRAIT_FROM(H, TRAIT_FAT, OBESITY))//I share my pain, past coder.
 //		if(H.overeatduration < 100)
@@ -1034,6 +1033,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 //					H.add_movespeed_modifier(MOVESPEED_ID_HUNGRY, override = TRUE, multiplicative_slowdown = (1.5 * (1 - E.get_charge(H) / 100)))
 //			else
 //				H.remove_movespeed_modifier(MOVESPEED_ID_HUNGRY)
+
+	if(HAS_TRAIT(H, TRAIT_NOHUNGER)) //hunger is for BABIES
+		H.nutrition = NUTRITION_LEVEL_DEATHLESS
+		H.hydration = HYDRATION_LEVEL_DEATHLESS
 
 	switch(H.nutrition)
 //		if(NUTRITION_LEVEL_FAT to INFINITY) //currently disabled/999999 define
@@ -1726,8 +1729,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	if(!affecting)
 		return
-	var/datum/intent/effect/int = user.used_intent
-	if(istype(int, /datum/intent/effect) && selzone)
+	var/datum/intent/int = user.used_intent
+	if((int.intent_effect) && selzone)
 		var/do_effect = FALSE
 		if(length(int.target_parts))
 			if(selzone in int.target_parts)
@@ -2358,3 +2361,21 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/modifier = -distance
 	if(!prob(STASPD+skill_modifier+modifier))
 		Paralyze(15)
+
+
+/// Returns a list of all organ typepaths this species probably has
+/datum/species/proc/get_organs(include_brain = TRUE)
+	var/list/preload = list()
+	for(var/slot in organs)
+		var/type_to_load = organs[slot]
+		if(!ispath(type_to_load))
+			continue
+
+		if(type_to_load == /obj/item/organ/brain && !include_brain)
+			continue
+
+		preload += type_to_load
+	return preload
+
+/datum/species/proc/get_types_to_preload()
+	return get_organs(FALSE)

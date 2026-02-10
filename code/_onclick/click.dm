@@ -503,32 +503,33 @@ GLOBAL_LIST_EMPTY(reach_dummy_pool)
 
 /proc/CheckToolReach(atom/movable/here, atom/movable/there, reach)
 	if(!here || !there)
-		return
+		return FALSE
+
+	var/turf/start = get_turf(here)
+	if(!start)
+		return FALSE
+
 	switch(reach)
 		if(0)
 			return FALSE
 		if(1)
-			return FALSE //here.Adjacent(there)
-		if(2 to INFINITY)
-			var/obj/dummy
-			if(GLOB.reach_dummy_pool.len)
-				dummy = GLOB.reach_dummy_pool[GLOB.reach_dummy_pool.len]
-				GLOB.reach_dummy_pool.len--
-			else
-				dummy = new /obj()
-				dummy.pass_flags |= PASSTABLE
-				dummy.invisibility = INVISIBILITY_ABSTRACT
-			dummy.forceMove(get_turf(here))
-			for(var/i in 1 to reach) //Limit it to that many tries
-				var/turf/T = get_step(dummy, get_dir(dummy, there))
-				if(dummy.CanReach(there))
-					GLOB.reach_dummy_pool += dummy
-					return TRUE
-				if(!dummy.Move(T)) //we're blocked!
-					GLOB.reach_dummy_pool += dummy
-					return
-			GLOB.reach_dummy_pool += dummy
 			return FALSE
+		if(2 to INFINITY)
+			var/obj/effect/dummy = new(start)
+			dummy.pass_flags |= PASSTABLE
+			dummy.movement_type = FLYING
+			dummy.invisibility = INVISIBILITY_ABSTRACT
+			for(var/i in 1 to reach)
+				if(dummy.CanReach(there))
+					qdel(dummy)
+					return TRUE
+				var/turf/T = get_step(dummy, get_dir(dummy, there))
+				if(!T || !dummy.Move(T))
+					qdel(dummy)
+					return FALSE
+			qdel(dummy)
+			return FALSE
+
 
 // Default behavior: ignore double clicks (the second click that makes the doubleclick call already calls for a normal click)
 /mob/proc/DblClickOn(atom/A, params)
@@ -908,8 +909,8 @@ GLOBAL_LIST_EMPTY(reach_dummy_pool)
 		targeti.pixel_y = I.Height() - world.icon_size - 4
 		targeti.pixel_x = -1
 		src.client.images |= targeti
-		for(var/atom/movable/screen/eye_intent/eyet in hud_used.static_inventory)
-			eyet.update_icon(src) //Update eye icon
+		// for(var/atom/movable/screen/eye_intent/eyet in hud_used.static_inventory)
+		// 	eyet.update_icon(src) //Update eye icon
 	else
 		UntargetMob()
 
@@ -927,8 +928,8 @@ GLOBAL_LIST_EMPTY(reach_dummy_pool)
 		nodirchange = FALSE
 	src.client.images -= targeti
 	//clear hud icon
-	for(var/atom/movable/screen/eye_intent/eyet in hud_used.static_inventory)
-		eyet.update_icon(src)
+	// for(var/atom/movable/screen/eye_intent/eyet in hud_used.static_inventory)
+	// 	eyet.update_icon(src)
 
 /mob/proc/ShiftRightClickOn(atom/A, params)
 //	pointed(A, params)
@@ -970,8 +971,8 @@ GLOBAL_LIST_EMPTY(reach_dummy_pool)
 	if(!fixedeye)
 		nodirchange = TRUE
 	tempfixeye = TRUE
-	for(var/atom/movable/screen/eye_intent/eyet in hud_used.static_inventory)
-		eyet.update_icon(src) //Update eye icon
+	// for(var/atom/movable/screen/eye_intent/eyet in hud_used.static_inventory)
+	// 	eyet.update_icon(src) //Update eye icon
 
 /// A special proc to fire rmb_intents *before* checking click cooldown, since some intents (guard) should be used regardless of CD.
 /mob/proc/try_special_attack(atom/A, list/modifiers)

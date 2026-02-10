@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt/sacred_flame_rogue
 	name = "Sacred Flame"
-	desc = "Deals damage and ignites target, Deals extra damage to undead."
+	desc = "Deals damage and ignites target, with extra damage done to undead."
 	overlay_state = "sacredflame"
 	base_icon_state = "regalyscroll"
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
@@ -130,17 +130,15 @@
 	/// Amount of PQ gained for reviving people
 	var/revive_pq = PQ_GAIN_REVIVE
 
-/obj/effect/proc_holder/spell/invoked/revive/start_recharge()
-	var/old_recharge = recharge_time
-	// Because the cooldown for anastasis is so incredibly low, not having tech impacts them more heavily than other faiths
+/obj/effect/proc_holder/spell/invoked/revive/calculate_recharge_time()
+	var/final_time = ..() 
+	
 	var/tech_resurrection_modifier = SSchimeric_tech.get_resurrection_multiplier()
+	
 	if(tech_resurrection_modifier > 1)
-		recharge_time = initial(recharge_time) * (tech_resurrection_modifier * 1.25)
-	else
-		recharge_time = initial(recharge_time)
-	if(charge_counter >= old_recharge && old_recharge > 0)
-		charge_counter = recharge_time
-	. = ..()
+		final_time *= (tech_resurrection_modifier * 1.25)
+	
+	return max(cooldown_min, round(final_time))
 
 /obj/effect/proc_holder/spell/invoked/revive/cast(list/targets, mob/living/user)
 	..()
@@ -193,7 +191,7 @@
 	target.apply_status_effect(/datum/status_effect/debuff/revived)	//Temp debuff on revive, your stats get hit temporarily. Doubly so if having rotted.
 	return TRUE
 
-/obj/effect/proc_holder/spell/invoked/revive/cast_check(skipcharge = 0,mob/user = usr)
+/obj/effect/proc_holder/spell/invoked/revive/cast_check(skipcharge, mob/user = usr)
 	if(!..())
 		return FALSE
 	var/found = null
@@ -206,10 +204,9 @@
 
 /obj/effect/proc_holder/spell/invoked/astrataspark
 	name = "Flame Order"
-	desc = "A spell can make any flame source burst into a bright, searing flash. \n\
-	Cast it on any light emit structure witch flame inside, for create 3x3 flame explosion. \n\
-	You can cast it on burning mobs, for doubles their firestacks. \n\
-	Cast on self, for burning all lighting object in radius."
+	desc = "Casting on a fire-based light source will make a searing explosion in a 3x3 area around the light source. \n\
+	Casting on a burning mob will double their fire stacks.\n\
+	Casting on yourself will ignite any flammable object in a 3x3 area around yourself."
 	clothes_req = FALSE
 	overlay_state = "astraflame"
 	base_icon_state = "regalyscroll"
@@ -235,7 +232,7 @@
 /obj/effect/proc_holder/spell/invoked/astrataspark/cast(list/targets, mob/user = usr)
 	var/turf/T = get_turf(targets[1])
 	if(T.z != user.z)
-		to_chat(span_warning("You can't cast this spell on a different z-level!"))
+		to_chat(span_warning("You cannot cast this spell on a different z-level!"))
 		revert_cast()
 		return FALSE
 	for(var/obj/effect/hotspot/H in T.contents)
@@ -416,7 +413,7 @@
 			cost = 0
 	if(user.has_status_effect(/datum/status_effect/buff/dragonhide/fireresist) || user.has_status_effect(/datum/status_effect/buff/dragonhide/fireresist/buff))
 		if((user.devotion?.devotion - cost) < 0)
-			to_chat(user, span_warning("I don't have enough devotion!"))
+			to_chat(user, span_warning("I do not have enough devotion!"))
 			return
 		user.devotion?.update_devotion(-cost)
 		if(cost != 0)
@@ -441,11 +438,11 @@
 	owner.weather_immunities -= "lava"
 
 /obj/effect/proc_holder/spell/targeted/touch/summonrogueweapon/astratagrasp
-	name = "Astrata Grasp"
-	desc = "Summon the sacred flame from your soul and let it envelop your hands."
+	name = "Astrata's Grasp"
+	desc = "Summon the Sacred Flame from your soul and let it envelop your hand. Use on ashes, fire dust and fyritius flowers to convert them into devotion. Can ignite objects."
 	clothes_req = FALSE
-	drawmessage = "I prepare to perform a miracle incantation."
-	dropmessage = "I release my miracle focus."
+	drawmessage = "I prepare to perform a divine incantation."
+	dropmessage = "I release my divine focus."
 	overlay_state = "astratagrasp"
 	base_icon_state = "regalyscroll"
 	chargedrain = 0
@@ -499,7 +496,7 @@
 	if(!iscarbon(user)) //Look ma, no hands
 		return
 	if(!(user.mobility_flags & MOBILITY_USE))
-		to_chat(user, "<span class='warning'>I can't reach out!</span>")
+		to_chat(user, "<span class='warning'>I cannot reach out!</span>")
 		return
 	..()
 
@@ -910,7 +907,7 @@
 		S.AOE_flash(user, range = 8)
 	new /obj/effect/temp_visual/firewave/sunstrike/primary(target)
 
-/obj/effect/proc_holder/spell/invoked/sunstrike/cast_check(skipcharge = 0,mob/user = usr)
+/obj/effect/proc_holder/spell/invoked/sunstrike/cast_check(skipcharge, mob/user = usr)
 	if(!..())
 		return FALSE
 	var/found = null
@@ -924,7 +921,7 @@
 		if(H.mind?.assigned_role == "Bishop")
 			found = H
 	if(!found)
-		to_chat(user, span_warning("I need a holy cross, Bishop or cast it in more holy-area."))
+		to_chat(user, span_warning("I need to be near a Holy Cross, the Bishop or on Holy Land to cast it."))
 		revert_cast()
 		return FALSE
 	return TRUE
@@ -964,7 +961,7 @@
 
 	for(var/turf/Target_turf in range(1, get_turf(src)))
 		for(var/mob/living/L in Target_turf.contents)
-			to_chat(L, span_userdanger("Unatural heavy gaze bring on you"))
+			to_chat(L, span_userdanger("I feel a terrifyingly heavy gaze upon me!!"))
 
 /obj/effect/temp_visual/firewave/sunstrike/primary/proc/strike()
 	var/turf/T = get_turf(src)
@@ -978,7 +975,7 @@
 			new /obj/effect/hotspot(get_turf(turf))
 	for(var/turf/Target_turf in range(5, T))
 		for(var/mob/living/L in Target_turf.contents)
-			to_chat(L, span_userdanger("Sun falls on your head!!"))
+			to_chat(L, span_userdanger("The sun crushes you!!"))
 			var/dist_to_epicenter = get_dist(T, L)
 			var/firedamage = 200 - (dist_to_epicenter*15)
 			var/firestack = 10 - dist_to_epicenter
@@ -1012,3 +1009,58 @@
 		aoemining.take_damage(1100,BRUTE,"blunt",1)
 	sleep(10)
 	animate(mark, alpha = 5, time = 10, flags = ANIMATION_PARALLEL)
+
+/obj/effect/proc_holder/spell/self/astrata_sword
+	name = "Solar Blade"
+	desc = "Call for a blade to preserve light and order in Psydonia. Its strength is middling, but it glows fiercly and can be used to cauterize wounds."
+	overlay_state = "sacredflame"
+	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
+	associated_skill = /datum/skill/magic/holy
+	recharge_time = 5 MINUTES
+	miracle = TRUE
+	devotion_cost = 100
+
+	invocations = list("raises their hand skyward, sacred light materializing into brilliant blade!")
+	invocation_emote_self = "<span class='notice'>I hold my hand skyward, a glimmering blade forms from light itself.</span>"
+	invocation_type = "emote"
+
+	sound = list('sound/combat/clash_charge.ogg')
+
+	var/obj/item/rogueweapon/conjured_sword = null
+
+/obj/effect/proc_holder/spell/self/astrata_sword/cast(list/targets, mob/living/user = usr)
+	if(src.conjured_sword)
+		qdel(conjured_sword)
+	var/obj/item/rogueweapon/astrata_blade = new /obj/item/rogueweapon/sword/astrata_sword(user.drop_location())
+
+	user.put_in_hands(astrata_blade)
+	src.conjured_sword = astrata_blade
+	return TRUE
+
+/obj/item/rogueweapon/sword/astrata_sword
+	name = "Solar Sabre"
+	desc = "More a holy tool of ceremony than a weapon of her fury.\
+	  It harshly radiates sacred light, rebuking rot and darkness alike; \
+	  it is a ruler's blade, knight your soldiers and cleanse their wounds."
+	force = 15			//more comparable to a dagger than a sword, for it is ultimately a tool
+	force_wielded = 20
+	max_blade_int = 400 //Astrata made this out of light not dull, duh.
+	max_integrity = 200
+	minstr = 6
+	wdefense = 5
+	wdefense_wbonus = 3 //8 total. 1 better than a basic arming sword
+	tool_behaviour = TOOL_CAUTERY //The Main Gimmick here
+
+	icon = 'icons/roguetown/weapons/special/astratablade.dmi'
+	icon_state = "solar_blade"
+
+	//These sounds were chosen bc they sound Light-ey and Wooshey, remove if this fucks with sound-queues.
+	parrysound = list(
+		'sound/combat/clash_disarm_us.ogg'
+	)
+	pickup_sound = 'sound/combat/clash_charge.ogg'
+
+/obj/item/rogueweapon/sword/astrata_sword/Initialize()
+	. = ..()
+	set_light(5, 4, l_color = LIGHT_COLOR_WHITE)
+
