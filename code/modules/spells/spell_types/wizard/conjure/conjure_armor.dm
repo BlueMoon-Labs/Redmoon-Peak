@@ -31,8 +31,16 @@
 
 
 /obj/effect/proc_holder/spell/self/conjure_armor/cast(list/targets, mob/living/user = usr)
+	// #region agent log
+	log_world("DEBUG: Cast started. User: [user], Checkspot: [checkspot]")
+	text2file("DEBUG: Cast started. User: [user], Checkspot: [checkspot]", "debug.log")
+	// #endregion
 	var/mob/living/carbon/human/H = user
 	var/targetac = H.highest_ac_worn()
+	// #region agent log
+	log_world("DEBUG: AC Check. TargetAC: [targetac]")
+	text2file("DEBUG: AC Check. TargetAC: [targetac]", "debug.log")
+	// #endregion
 	if(targetac > 1)
 		to_chat(user, span_warning("I must be wearing lighter armor!"))
 		revert_cast()
@@ -56,6 +64,15 @@
 		if("armor")
 			if(H.wear_armor)
 				to_chat(user, span_warning("I cannot wear this while wearing armor over my chest!"))
+				revert_cast()
+				return FALSE
+		if("mask")
+			// #region agent log
+			log_world("DEBUG: Mask Check. Wear_mask: [H.wear_mask]")
+			text2file("DEBUG: Mask Check. Wear_mask: [H.wear_mask]", "debug.log")
+			// #endregion
+			if(H.wear_mask)
+				to_chat(user, span_warning("My face must be free to conjure a mask!"))
 				revert_cast()
 				return FALSE
 
